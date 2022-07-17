@@ -7,11 +7,12 @@
         </tr>
     </thead>
     <tbody>
+    <?php foreach ($movies as $key => $m): ?>
         <tr>
-            <td>1</td>
+            <td><?= $m ?></td>
             <td>Superman</td>
             <td>•</td>
         </tr>
-
+        <?php endforeach?>
     </tbody>
 </table>

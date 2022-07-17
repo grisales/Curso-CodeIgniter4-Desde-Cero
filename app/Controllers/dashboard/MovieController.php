@@ -8,9 +8,20 @@ class MovieController extends BaseController {
 
     public function index()
     {
+        $dataHeader = [
+            'title' => 'Listado de peliculas',
+            //'title2'=> 'Listado de peliculas 2',
+            //''
+        ];
+
+        $data = [
+            'movies' => array(0,1,2,3,4),
+            //'',
+            //''
+        ];
         
-        echo view ("dashboard/template/header");
-        echo view ("dashboard/movie/index");
+        echo view ("dashboard/template/header", $dataHeader);
+        echo view ("dashboard/movie/index", $data);
         echo view ("dashboard/template/footer");
         
     }

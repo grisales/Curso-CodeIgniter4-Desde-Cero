@@ -7,3 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+
+<h1>
+    <?php echo $title ?>
+</h1>
+<h5>
+    <?php //echo $title2 ?>
+</h5>
