@@ -1,3 +1,25 @@
+# Notas Aulas 
+## Aula 26 - Bug en las rutas
+[No hay bugs de este tipo en la version 4.2.1 de codeigniter], en la clase dice que habia un Bug al usar NamedRoutes para ubicar controladores con argumento (parametros) 4.0(RC) con la que se hiso el video. Sin embargo, al replicar el ejercicio todo esta ok en la versión 4.2.1.
+## Aula 25 - Rutas: Rutas con nombre
+Todo Ok
+## Aula 24 - Rutas: Navegación entre páginas
+Todo Ok
+## Aula 23 - Rutas: Pasar datos a func. de controlad.
+Todo Ok
+## Aula 22 - Paso de datos controladores/vista
+Todo Ok
+## Aula 21 - Trabajar con multiples vistas
+Todo Ok
+## Aula 20 - Segundo controlador en carpeta aparte
+Todo Ok
+## Aula 19 - Segunda ruta, método en el controlador
+Todo Ok
+## Aula 18 - Primer controlador y ruta asociada
+Todo Ok
+## Aulas 1 a 17 - Teoria y presentacion del framework.
+Conceptos básicos Ok 
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
