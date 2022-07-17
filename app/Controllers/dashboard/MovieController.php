@@ -1,15 +1,17 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\dashboard;
+use App\Controllers\BaseController;
+
 
 class MovieController extends BaseController {
 
     public function index()
     {
         
-        $sum = 1+1;
-
-        return view ("test");
+        echo view ("dashboard/template/header");
+        echo view ("dashboard/movie/index");
+        echo view ("dashboard/template/footer");
         
     }
 
