@@ -37,7 +37,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 //$routes->get('/contacto', 'Home::contacto');
-$routes->get('/contactame/(:any)', 'Home::contacto/$1');
+$routes->get('/contacto/(:any)', 'Home::contacto/$1',['as' => 'paginaDeContacto']);
 $routes->get('/movie', 'dashboard\MovieController::index');
 $routes->get('/dashboard/category', 'dashboard\CategoryController::index');
 

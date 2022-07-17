@@ -1,7 +1,7 @@
 <footer>
     Pie de página
 
-<a href="/contactame/Chapetto">Contacto</a>
+    <a href="<?= route_to('paginaDeContacto','Juan') ?>">Contacto</a>
 </footer>
 
 </body>
