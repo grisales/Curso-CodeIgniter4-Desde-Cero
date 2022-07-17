@@ -6,6 +6,16 @@ class MovieController extends BaseController {
 
     public function index()
     {
-        echo "Hola mundo CodeIgniter 4.2.1";
+        
+        $sum = 1+1;
+
+        return view ("test");
+        
     }
+
+    public function test()
+    {
+        echo "Hola mundo CodeIgniter 4.2.1, soy el test";
+    }
+
 }
