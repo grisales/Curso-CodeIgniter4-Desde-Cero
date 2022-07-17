@@ -10,14 +10,10 @@ class MovieController extends BaseController {
     {
         $dataHeader = [
             'title' => 'Listado de peliculas',
-            //'title2'=> 'Listado de peliculas 2',
-            //''
         ];
 
         $data = [
             'movies' => array(0,1,2,3,4),
-            //'',
-            //''
         ];
         
         echo view ("dashboard/template/header", $dataHeader);
