@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-
+<a href="/contactame/Chapetto">Contacto</a>
 <h1>
     <?php echo $title ?>
 </h1>

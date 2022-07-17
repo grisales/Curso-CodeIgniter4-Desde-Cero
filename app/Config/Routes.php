@@ -36,8 +36,8 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/contacto', 'Home::contacto');
-$routes->get('/contacto/(:any)', 'Home::contacto/$1');
+//$routes->get('/contacto', 'Home::contacto');
+$routes->get('/contactame/(:any)', 'Home::contacto/$1');
 $routes->get('/movie', 'dashboard\MovieController::index');
 $routes->get('/dashboard/category', 'dashboard\CategoryController::index');
 

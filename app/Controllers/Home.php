@@ -16,9 +16,9 @@ class Home extends BaseController
             'title' => 'Contacto '.$name,
         ];
 
-        echo view ("dashboard/template/header", $dataHeader);
+        echo view ("dashboard/templates/header", $dataHeader);
         echo view('welcome_message');
-        echo view ("dashboard/template/footer");
+        echo view ("dashboard/templates/footer");
 
     }
 }
