@@ -40,7 +40,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/contacto/(:any)', 'Home::contacto/$1',['as' => 'paginaDeContacto']);
 $routes->get('/movie', 'dashboard\MovieController::index');
 $routes->get('/movie/test/(:any)', 'dashboard\MovieController::test/$1',['as' => 'paginaDePeliculas']);
-$routes->get('/dashboard/category', 'dashboard\CategoryController::index');
+$routes->get('/category', 'dashboard\CategoryController::index');
 
 /*
  * --------------------------------------------------------------------
