@@ -126,4 +126,7 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
+# Anotaciones German *.GFWC
+.gfwcnotes
+
 env

@@ -1,8 +1,10 @@
 # Notas Aulas 
+## Aula 36 - Modelo: Crear modelo para conectar a la base de datos
+Todo Ok, Especial atención al uso de la extensión PHP NameResolver para importar las clases.
 ## Aula 35 - Seeder: Generar muchos registros de prueba
 Todo Ok 
 ## Aula 34 - Seeder: Truncar la tabla desde los seeder
-En la video aula el archivo de clase MovieSeeder es creado manualmente, sin 
+Todo Ok
 ## Aula 33 - Seeder: Generar datos de prueba
 En la video aula el archivo de clase MovieSeeder es creado manualmente, sin embargo en mi practica lo generé usando el comando spark 'make:seeder MovieSeeder', no hubo problema.
 ## Aula 32 - Migraciones: Revertir cambios / Rollback
@@ -13,7 +15,7 @@ Todo Ok
 Todo Ok
 ## Aula 29 - Presentación de la línea de comandos de CodeIgniter
 En las aulas anteriores la ruta de navegación de "category" habia sido definida en el controlador como
-```[$routes->get(**'/dashboard/category'**, 'dashboard\CategoryController::index');]```
+```[$routes->get( **'/dashboard/category'** , 'dashboard\CategoryController::index');]```
 para dejarla dentro del dashboard.
 
 Sin embargo, en el transcurso de la video aula 29 aparece como:

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers\dashboard;
+use App\Models\MovieModel;
 use App\Controllers\BaseController;
 
 
@@ -35,6 +36,15 @@ class MovieController extends BaseController {
         echo view ("dashboard/templates/header", $dataHeader);
         echo view ("dashboard/movie/index", $data);
         echo view ("dashboard/templates/footer");
+        
+    }
+
+    public function show()
+    {
+        $movie = new MovieModel();
+        
+        // var_dump($movie->get(7)->movie_title); //selección del valor como elemento del objeto
+        var_dump($movie->get(7)['movie_title']); //selección del valor como elemento dentro del array
         
     }
 
