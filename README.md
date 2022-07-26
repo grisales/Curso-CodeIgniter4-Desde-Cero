@@ -1,4 +1,20 @@
 # Notas Aulas 
+## Aula 32 - Migraciones: Revertir cambios / Rollback
+Todo Ok
+## Aula 31 - Migraciones: Crear la tabla categories
+Todo Ok
+## Aula 30 - Migraciones: Crear la tabla movies
+Todo Ok
+## Aula 29 - Presentación de la línea de comandos de CodeIgniter
+En las aulas anteriores la ruta de navegación de "category" habia sido definida en el controlador como:
+>[$routes->get(' **/dashboard/category** ', 'dashboard\CategoryController::index');] 
+para dejarla dentro del dashboard.
+Sin embargo, en el transcurso de la video aula 29 aparece como:
+>[$routes->get(' **/category** ', 'dashboard\CategoryController::index');] 
+## Aula 28 - Crear la conexión a la base de datos
+Todo Ok
+## Aula 27 - Presentación de las migraciones para planificación de la Base de datos
+Todo Ok
 ## Aula 26 - Bug en las rutas
 [No hay bugs de este tipo en la version 4.2.1 de codeigniter], en la clase dice que habia un Bug al usar NamedRoutes para ubicar controladores con argumento (parametros) 4.0(RC) con la que se hiso el video. Sin embargo, al replicar el ejercicio todo esta ok en la versión 4.2.1.
 ## Aula 25 - Rutas: Rutas con nombre
