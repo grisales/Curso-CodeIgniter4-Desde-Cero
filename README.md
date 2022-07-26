@@ -1,6 +1,8 @@
 # Notas Aulas 
+## Aula 37 - Modelo: Crear modelo para las categorias
+Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code 
 ## Aula 36 - Modelo: Crear modelo para conectar a la base de datos
-Todo Ok, Especial atención al uso de la extensión PHP NameResolver para importar las clases.
+Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code para importar las clases.
 ## Aula 35 - Seeder: Generar muchos registros de prueba
 Todo Ok 
 ## Aula 34 - Seeder: Truncar la tabla desde los seeder
