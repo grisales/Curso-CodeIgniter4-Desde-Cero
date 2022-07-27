@@ -1,5 +1,9 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 46 - Rutas: Agrupar rutas
+Todo Ok 
+### Aula 45 - paginar registros
+Todo Ok 
 ### Aula 44 - Más características del findAll()
 Todo Ok 
 ### Aula 43 - Crear la vista del listado de peliculas
