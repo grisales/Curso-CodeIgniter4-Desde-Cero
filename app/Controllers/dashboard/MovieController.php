@@ -19,7 +19,7 @@ class MovieController extends BaseController {
         //var_dump($movie->asObject()->findAll());
 
         $data = [
-            'movies' => $movie->asObject()->findAll(),
+            'movies' => $movie->asObject()->findAll(5,0),
         ];
         
         echo view ("dashboard/templates/header", $dataHeader);

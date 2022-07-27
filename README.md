@@ -1,8 +1,9 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 44 - Más características del findAll()
+Todo Ok 
 ### Aula 43 - Crear la vista del listado de peliculas
 Todo Ok 
-
 ### Aula 42 - Intro a la sección 3
 Todo Ok 
 

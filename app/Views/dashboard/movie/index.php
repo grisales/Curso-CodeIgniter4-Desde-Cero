@@ -10,7 +10,7 @@
     <?php foreach ($movies as $key => $m): ?>
         <tr>
             <td><?= $m->movie_id?></td>
-            <td>Superman</td>
+            <td><?= $m->movie_title?></td>
             <td>•</td>
         </tr>
         <?php endforeach?>
