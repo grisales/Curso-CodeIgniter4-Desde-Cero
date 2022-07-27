@@ -1,23 +1,25 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 47 - Rutas: Rutas de tipo recurso para el controlador Movie
+Todo Ok
 ### Aula 46 - Rutas: Agrupar rutas
-Todo Ok 
+Todo Ok
 ### Aula 45 - paginar registros
-Todo Ok 
+Todo Ok
 ### Aula 44 - Más características del findAll()
-Todo Ok 
+Todo Ok
 ### Aula 43 - Crear la vista del listado de peliculas
-Todo Ok 
+Todo Ok
 ### Aula 42 - Intro a la sección 3
-Todo Ok 
+Todo Ok
 
 <details><summary>Sección 2 - primeros pasos con Codeigniter 4</summary>
 
 ## Sección 2 - primeros pasos con Codeigniter 4
 ### Aula 38 - El archivo .env en codeigniter 4
-Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code 
+Todo Ok
 ### Aula 37 - Modelo: Crear modelo para las categorias
-Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code 
+Todo Ok
 ### Aula 36 - Modelo: Crear modelo para conectar a la base de datos
 Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code para importar las clases.
 ### Aula 35 - Seeder: Generar muchos registros de prueba

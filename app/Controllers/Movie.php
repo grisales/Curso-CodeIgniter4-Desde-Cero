@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Controllers\dashboard;
+namespace App\Controllers;
+// namespace App\Controllers\dashboard;
 use App\Models\MovieModel;
 use App\Controllers\BaseController;
 
 
-class MovieController extends BaseController {
+class Movie extends BaseController {
 
     public function index()
     {
@@ -42,12 +43,12 @@ class MovieController extends BaseController {
         
     }
 
-    public function show()
+    public function show($id = null)
     {
         $movie = new MovieModel();
         
         // var_dump($movie->get(7)->movie_title); //selección del valor como elemento del objeto
-        var_dump($movie->get(7)['movie_title']); //selección del valor como elemento dentro del array
+        var_dump($movie->get($id)); //selección del valor como elemento dentro del array
         
     }
 
