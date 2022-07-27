@@ -22,16 +22,17 @@ class Movie extends BaseController {
 
     public function new()
     {
-        
-        $this->_loadDefaultView('Crear pelicula',[],'new');
+        $validation = \Config\Services::validation();
+        $this->_loadDefaultView('Crear pelicula',['validation'=>$validation],'new');
         
     }
     
     public function create()
     {
         if($this->validate([
-            'title' => 'required|min_length[3]|max_length[255]'
-        ]))
+            'title' => 'required|min_length[3]|max_length[255]',
+            'description' => 'min_length[3]|max_length[5000]'
+            ]))
         {
             echo "Datos: <br>";
             
@@ -41,6 +42,8 @@ class Movie extends BaseController {
         }
         else{
             echo "Error";
+            $validation = \Config\Services::validation();
+            $this->_loadDefaultView('Crear pelicula',['validation'=>$validation],'new');
         }
         ;
         

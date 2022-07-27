@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 52. mostrar errores en la vista
+Todo Ok, bueno tener en cuenta que la regla required se vuelve "implicita" cuando se le define un tamaño "minimo" al campo.
 ### Aula 51. Validar los datos
 Todo Ok
 ### Aula 50. Recibir los datos
@@ -23,7 +25,7 @@ use CodeIgniter\RESTful\ResourceController;
 class Movie extends ResourceController {
 ```
 
-2da alternativa
+2da alternativa 
 ```
 $routes->group('dashboard', static function ($routes) {
    $routes->get('movie', 'Movie::index');
@@ -31,15 +33,9 @@ $routes->group('dashboard', static function ($routes) {
    $routes->post('movie/create', 'Movie::create'); 
 });
 ```
-<<<<<<< HEAD
 ##### Solución
-Una tercera alternativa fué crear la ruta perdida dentro del grupo dashboard.
-```php
-=======
-
 Una tercera alternativa fué crear la ruta perdida dentro del grupo dashboard despues del resource.
-```
->>>>>>> baabe562d1f4f0848167af9098152f0db75ef9d3
+```php
 $routes->group('dashboard', static function ($routes) {
     $routes->resource('movie');
     $routes->post('movie/create', 'Movie::create');
