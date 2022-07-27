@@ -29,18 +29,20 @@ class Movie extends BaseController {
     
     public function create()
     {
+        $movie = new MovieModel();
+
         if($this->validate([
             'title' => 'required|min_length[3]|max_length[255]',
             'description' => 'min_length[3]|max_length[5000]'
             ]))
         {
-            echo "Datos: <br>";
-            
-            echo $this->request->getPost('title');
-            echo $this->request->getPost('description');
 
-        }
-        else{
+            $movie->save([
+                'movie_title' => $this->request->getPost('title'),
+                'movie_description' => $this->request->getPost('description'),
+            ]);
+
+        }else{
             echo "Error";
             $validation = \Config\Services::validation();
             $this->_loadDefaultView('Crear pelicula',['validation'=>$validation],'new');

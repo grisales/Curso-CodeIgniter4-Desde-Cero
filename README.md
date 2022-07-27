@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 54 - Formularios: Campos permitidos para guardar o actualizar
+En el modelo los campos deben ser identicos a como estan nombrados en la base de datos, en el controlador las variables que guarden los valores obtenidos por el GET tambien deben coincidir con el nombre de lços campos definidos en la base de datos.
 ### Aula 52. mostrar errores en la vista
 Todo Ok, bueno tener en cuenta que la regla required se vuelve "implicita" cuando se le define un tamaño "minimo" al campo.
 ### Aula 51. Validar los datos
@@ -33,7 +35,7 @@ $routes->group('dashboard', static function ($routes) {
    $routes->post('movie/create', 'Movie::create'); 
 });
 ```
-##### Solución
+#### Solución
 Una tercera alternativa fué crear la ruta perdida dentro del grupo dashboard despues del resource.
 ```php
 $routes->group('dashboard', static function ($routes) {

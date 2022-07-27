@@ -8,6 +8,7 @@ class MovieModel extends Model
 {
     protected $table = 'movies';
     protected $primaryKey = 'movie_id';
+    protected $allowedFields = ['movie_title', 'movie_description'];
 
     public function get($id = false)
     {
@@ -15,9 +16,7 @@ class MovieModel extends Model
             return $this->findAll();
         }
 
-        // return $this->asObject()
         return $this->asArray()
-        // return $this
             ->where(['movie_id' => $id])
             ->first();
     }
