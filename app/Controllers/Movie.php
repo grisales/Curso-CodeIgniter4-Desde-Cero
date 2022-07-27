@@ -29,8 +29,20 @@ class Movie extends BaseController {
     
     public function create()
     {
-        
-        echo "Create";
+        if($this->validate([
+            'title' => 'required|min_length[3]|max_length[255]'
+        ]))
+        {
+            echo "Datos: <br>";
+            
+            echo $this->request->getPost('title');
+            echo $this->request->getPost('description');
+
+        }
+        else{
+            echo "Error";
+        }
+        ;
         
     }
     

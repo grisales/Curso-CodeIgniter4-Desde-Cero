@@ -1,5 +1,9 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 51. Validar los datos
+Todo Ok
+### Aula 50. Recibir los datos
+Todo Ok
 ### Aula 49. Definir el formulario para crear peliculas
 En la video aula usan **CI v4.0-RC3** , en la practica estoy usando **CI v4.2.1**.
 Al darle clic al boton del formulario genera un error que dice
@@ -27,10 +31,13 @@ $routes->group('dashboard', static function ($routes) {
    $routes->post('movie/create', 'Movie::create'); 
 });
 ```
-
+##### Solución
 Una tercera alternativa fué crear la ruta perdida dentro del grupo dashboard.
-```
-$routes->post('movie/create', 'Movie::create');
+```php
+$routes->group('dashboard', static function ($routes) {
+    $routes->resource('movie');
+    $routes->post('movie/create', 'Movie::create');
+});
 ```
 Lo que deja la duda siguiente.
 ¿Por que no funciona *create* si está definido de manera implícita al definir la ruta como resource.?
