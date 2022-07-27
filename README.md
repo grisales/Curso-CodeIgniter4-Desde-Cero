@@ -1,4 +1,6 @@
 # Notas Aulas 
+## Aula 38 - El archivo .env en codeigniter 4
+Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code 
 ## Aula 37 - Modelo: Crear modelo para las categorias
 Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code 
 ## Aula 36 - Modelo: Crear modelo para conectar a la base de datos
@@ -47,6 +49,8 @@ Todo Ok
 ## Aulas 1 a 17 - Teoria y presentacion del framework.
 Conceptos básicos Ok 
 
+
+<details><summary>Contenido original del ReadMe inicial</summary>
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
@@ -110,3 +114,4 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
 - xml (enabled by default - don't turn it off)
+</details>
