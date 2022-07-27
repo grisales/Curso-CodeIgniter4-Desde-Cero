@@ -31,9 +31,15 @@ $routes->group('dashboard', static function ($routes) {
    $routes->post('movie/create', 'Movie::create'); 
 });
 ```
+<<<<<<< HEAD
 ##### Solución
 Una tercera alternativa fué crear la ruta perdida dentro del grupo dashboard.
 ```php
+=======
+
+Una tercera alternativa fué crear la ruta perdida dentro del grupo dashboard despues del resource.
+```
+>>>>>>> baabe562d1f4f0848167af9098152f0db75ef9d3
 $routes->group('dashboard', static function ($routes) {
     $routes->resource('movie');
     $routes->post('movie/create', 'Movie::create');
