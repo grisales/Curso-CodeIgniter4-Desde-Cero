@@ -8,13 +8,18 @@ use App\Controllers\BaseController;
 class MovieController extends BaseController {
 
     public function index()
+
+    
     {
+        $movie = new MovieModel();
         $dataHeader = [
             'title' => 'Listado de peliculas',
         ];
 
+        //var_dump($movie->asObject()->findAll());
+
         $data = [
-            'movies' => array(0,1,2,3,4),
+            'movies' => $movie->asObject()->findAll(),
         ];
         
         echo view ("dashboard/templates/header", $dataHeader);

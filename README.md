@@ -1,56 +1,74 @@
 # Notas Aulas 
-## Aula 38 - El archivo .env en codeigniter 4
-Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code 
-## Aula 37 - Modelo: Crear modelo para las categorias
-Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code 
-## Aula 36 - Modelo: Crear modelo para conectar a la base de datos
-Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code para importar las clases.
-## Aula 35 - Seeder: Generar muchos registros de prueba
+## Sección 3 - Creando nuestro CRUD
+### Aula 43 - Crear la vista del listado de peliculas
 Todo Ok 
-## Aula 34 - Seeder: Truncar la tabla desde los seeder
+
+### Aula 42 - Intro a la sección 3
+Todo Ok 
+
+<details><summary>Sección 2 - primeros pasos con Codeigniter 4</summary>
+
+## Sección 2 - primeros pasos con Codeigniter 4
+### Aula 38 - El archivo .env en codeigniter 4
+Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code 
+### Aula 37 - Modelo: Crear modelo para las categorias
+Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code 
+### Aula 36 - Modelo: Crear modelo para conectar a la base de datos
+Todo Ok, Especial atención al uso de la extensión PHP NameResolver en VS Code para importar las clases.
+### Aula 35 - Seeder: Generar muchos registros de prueba
+Todo Ok 
+### Aula 34 - Seeder: Truncar la tabla desde los seeder
 Todo Ok
-## Aula 33 - Seeder: Generar datos de prueba
+### Aula 33 - Seeder: Generar datos de prueba
 En la video aula el archivo de clase MovieSeeder es creado manualmente, sin embargo en mi practica lo generé usando el comando spark 'make:seeder MovieSeeder', no hubo problema.
-## Aula 32 - Migraciones: Revertir cambios / Rollback
+### Aula 32 - Migraciones: Revertir cambios / Rollback
 Todo Ok
-## Aula 31 - Migraciones: Crear la tabla categories
+### Aula 31 - Migraciones: Crear la tabla categories
 Todo Ok
-## Aula 30 - Migraciones: Crear la tabla movies
+### Aula 30 - Migraciones: Crear la tabla movies
 Todo Ok
-## Aula 29 - Presentación de la línea de comandos de CodeIgniter
+### Aula 29 - Presentación de la línea de comandos de CodeIgniter
 En las aulas anteriores la ruta de navegación de "category" habia sido definida en el controlador como
 ```[$routes->get( **'/dashboard/category'** , 'dashboard\CategoryController::index');]```
 para dejarla dentro del dashboard.
 
 Sin embargo, en el transcurso de la video aula 29 aparece como:
 ```[$routes->get(**'/category'**, 'dashboard\CategoryController::index');]```
-## Aula 28 - Crear la conexión a la base de datos
+### Aula 28 - Crear la conexión a la base de datos
 Todo Ok
-## Aula 27 - Presentación de las migraciones para planificación de la Base de datos
+### Aula 27 - Presentación de las migraciones para planificación de la Base de datos
 Todo Ok
-## Aula 26 - Bug en las rutas
+### Aula 26 - Bug en las rutas
 [No hay bugs de este tipo en la version 4.2.1 de codeigniter], en la clase dice que habia un Bug al usar NamedRoutes para ubicar controladores con argumento (parametros) 4.0(RC) con la que se hiso el video. Sin embargo, al replicar el ejercicio todo esta ok en la versión 4.2.1.
-## Aula 25 - Rutas: Rutas con nombre
+### Aula 25 - Rutas: Rutas con nombre
 Todo Ok
-## Aula 24 - Rutas: Navegación entre páginas
+### Aula 24 - Rutas: Navegación entre páginas
 Todo Ok
-## Aula 23 - Rutas: Pasar datos a func. de controlad.
+### Aula 23 - Rutas: Pasar datos a func. de controlad.
 Todo Ok
-## Aula 22 - Paso de datos controladores/vista
+### Aula 22 - Paso de datos controladores/vista
 Todo Ok
-## Aula 21 - Trabajar con multiples vistas
+### Aula 21 - Trabajar con multiples vistas
 Todo Ok
-## Aula 20 - Segundo controlador en carpeta aparte
+### Aula 20 - Segundo controlador en carpeta aparte
 Todo Ok
-## Aula 19 - Segunda ruta, método en el controlador
+### Aula 19 - Segunda ruta, método en el controlador
 Todo Ok
-## Aula 18 - Primer controlador y ruta asociada
+### Aula 18 - Primer controlador y ruta asociada
 Todo Ok
-## Aulas 1 a 17 - Teoria y presentacion del framework.
-Conceptos básicos Ok 
+### Aulas 9 a 17 - Teoria y presentacion del framework  parte II.
+Conceptos básicos Ok
+</details>
 
+<details><summary>Sección 1 - Introduccion al curso</summary>
+
+## Sección 1 - Introduccion al curso
+### Aulas 1 a 8 - Teoria y presentacion del framework parte I.
+Conceptos básicos Ok 
+</details>
 
 <details><summary>Contenido original del ReadMe inicial</summary>
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
