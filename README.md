@@ -28,6 +28,32 @@ $routes->group('dashboard', static function ($routes) {
 });
 ```
 
+Una tercera alternativa fué crear la ruta perdida dentro del grupo dashboard.
+```
+$routes->post('movie/create', 'Movie::create');
+```
+Lo que deja la duda siguiente.
+¿Por que no funciona *create* si está definido de manera implícita al definir la ruta como resource.?
+
+Al consultar por consola dice que esta declarada.
+```
++--------+---------------------------+------------------------------------------------------+----------------+---------------+
+| Method | Route                     | Handler                                              | Before Filters | After Filters |
++--------+---------------------------+------------------------------------------------------+----------------+---------------+
+| GET    | /                         | \App\Controllers\Home::index                         |                | toolbar       |
+| GET    | contacto/(.*)             | \App\Controllers\Home::contacto/$1                   |                | toolbar       |
+| GET    | category                  | \App\Controllers\dashboard\CategoryController::index |                | toolbar       |
+| GET    | dashboard/movie           | \App\Controllers\Movie::index                        |                | toolbar       |
+| GET    | dashboard/movie/new       | \App\Controllers\Movie::new                          |                | toolbar       |
+| GET    | dashboard/movie/(.*)/edit | \App\Controllers\Movie::edit/$1                      |                | toolbar       |
+| GET    | dashboard/movie/(.*)      | \App\Controllers\Movie::show/$1                      |                | toolbar       |
+| POST   | dashboard/movie           | \App\Controllers\Movie::create                       |                | toolbar       |
+| PATCH  | dashboard/movie/(.*)      | \App\Controllers\Movie::update/$1                    |                | toolbar       |
+| PUT    | dashboard/movie/(.*)      | \App\Controllers\Movie::update/$1                    |                | toolbar       |
+| DELETE | dashboard/movie/(.*)      | \App\Controllers\Movie::delete/$1                    |                | toolbar       |
+| CLI    | ci(.*)                    | \CodeIgniter\CLI\CommandRunner::index/$1             |                |               |
++--------+---------------------------+------------------------------------------------------+----------------+---------------+
+```
 
 ### Aula 48. Crear nuestra función y estructura genérica para el controlador de películas
 Todo ok

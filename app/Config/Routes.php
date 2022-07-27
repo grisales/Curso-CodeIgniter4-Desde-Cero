@@ -42,6 +42,7 @@ $routes->get('/category', 'dashboard\CategoryController::index');
 
 $routes->group('dashboard', static function ($routes) {
     $routes->resource('movie');
+    $routes->post('movie/create', 'Movie::create');
     // $routes->get('movie', 'dashboard\MovieController::index');
     // $routes->get('movie/test/(:any)', 'dashboard\MovieController::test/$1',['as' => 'paginaDePeliculas']);
     // $routes->get('movie/show/', 'dashboard\MovieController::show');    
