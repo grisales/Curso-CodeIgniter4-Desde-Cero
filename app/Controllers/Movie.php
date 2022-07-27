@@ -11,38 +11,22 @@ class Movie extends BaseController {
     public function index()
     {
         $movie = new MovieModel();
-
-        $dataHeader = [
-            'title' => 'Listado de peliculas',
-        ];
-
         $data = [
             'movies' => $movie->asObject()->paginate(10),
             'pager' => $movie->pager,
         ];
         
-        echo view ("dashboard/templates/header", $dataHeader);
-        echo view ("dashboard/movie/index", $data);
-        echo view ("dashboard/templates/footer");
+        $this->_loadDefaultView('Listado de peliculas',$data,'index');
         
     }
 
-    public function test($name = "Andrés")
+    public function new()
     {
-        $dataHeader = [
-            'title' => 'Listado de peliculas',
-        ];
-
-        $data = [
-            'movies' => array(0,1,2,3,4),
-        ];
         
-        echo view ("dashboard/templates/header", $dataHeader);
-        echo view ("dashboard/movie/index", $data);
-        echo view ("dashboard/templates/footer");
+        $this->_loadDefaultView('Crear pelicula',[],'new');
         
     }
-
+    
     public function show($id = null)
     {
         $movie = new MovieModel();
@@ -50,6 +34,18 @@ class Movie extends BaseController {
         // var_dump($movie->get(7)->movie_title); //selección del valor como elemento del objeto
         var_dump($movie->get($id)); //selección del valor como elemento dentro del array
         
+    }
+    
+    private function _loadDefaultView($title, $data, $view)
+    {
+        $dataHeader = [
+            'title' => $title
+        ];
+        
+        echo view ("dashboard/templates/header", $dataHeader);
+        echo view ("dashboard/movie/$view", $data);
+        echo view ("dashboard/templates/footer");
+
     }
 
 }

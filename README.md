@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 48. Crear nuestra función y estructura genérica para el controlador de películas
+Todo ok
 ### Aula 47 - Rutas: Rutas de tipo recurso para el controlador Movie
 Todo Ok
 ### Aula 46 - Rutas: Agrupar rutas
