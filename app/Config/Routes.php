@@ -47,6 +47,7 @@ $routes->group('dashboard', static function ($routes) {
     // $routes->get('movie/show/', 'dashboard\MovieController::show');    
 });
 
+// $routes->resource('movie');
 
 /*
  * --------------------------------------------------------------------

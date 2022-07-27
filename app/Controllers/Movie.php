@@ -27,6 +27,13 @@ class Movie extends BaseController {
         
     }
     
+    public function create()
+    {
+        
+        echo "Create";
+        
+    }
+    
     public function show($id = null)
     {
         $movie = new MovieModel();

@@ -1,5 +1,34 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 49. Definir el formulario para crear peliculas
+En la video aula usan **CI v4.0-RC3** , en la practica estoy usando **CI v4.2.1**.
+Al darle clic al boton del formulario genera un error que dice
+> 404 - File Not Found
+Can't find a route for 'get: dashboard/movie/create'.
+
+En el chat de la video aula en Discord dieron dos alternativas que no funcionaron.
+
+1ra alternativa
+```
+<?php namespace App\Controllers;
+
+use App\Models\MovieModel;
+use App\Controllers\BaseController;
+use CodeIgniter\RESTful\ResourceController;
+
+class Movie extends ResourceController {
+```
+
+2da alternativa
+```
+$routes->group('dashboard', static function ($routes) {
+   $routes->get('movie', 'Movie::index');
+   $routes->get('movie/new', 'Movie::new');
+   $routes->post('movie/create', 'Movie::create'); 
+});
+```
+
+
 ### Aula 48. Crear nuestra función y estructura genérica para el controlador de películas
 Todo ok
 ### Aula 47 - Rutas: Rutas de tipo recurso para el controlador Movie
