@@ -28,9 +28,12 @@ $routes->group('dashboard', static function ($routes) {
 });
 ```
 
-Una tercera alternativa fué crear la ruta perdida dentro del grupo dashboard.
+Una tercera alternativa fué crear la ruta perdida dentro del grupo dashboard despues del resource.
 ```
-$routes->post('movie/create', 'Movie::create');
+$routes->group('dashboard', static function ($routes) {
+    $routes->resource('movie');
+    $routes->post('movie/create', 'Movie::create');
+});
 ```
 Lo que deja la duda siguiente.
 ¿Por que no funciona *create* si está definido de manera implícita al definir la ruta como resource.?
