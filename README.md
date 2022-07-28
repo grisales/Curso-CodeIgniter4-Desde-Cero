@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 55 - Formularios: Redirección y mensajes por sesión
+Todo ok. Prestar especial atencion en el uso de variables de sesion!
 ### Aula 54 - Formularios: Campos permitidos para guardar o actualizar
 En el modelo los campos deben ser identicos a como estan nombrados en la base de datos, en el controlador las variables que guarden los valores obtenidos por el GET tambien deben coincidir con el nombre de lços campos definidos en la base de datos.
 ### Aula 52. mostrar errores en la vista
