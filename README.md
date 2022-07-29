@@ -1,5 +1,27 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 56 - Eliminar registros
+En la video aula usan **CI v4.0-RC3** , en la practica estoy usando **CI v4.2.1**.
+Al darle clic al botón del formulario genera un error que dice
+> 404 - File Not Found
+>Can't find a route for 'get: dashboard/movie/delete'.
+
+Después de mucho indagar e intentar entender a que se referia el profesor con el uso de rutas presenter encontré esta referencia:
+
+https://codeigniter.com/user_guide/incoming/restful.html#presenter-routes
+
+Y, el profesor comentó lo siguiente:
+>define tus rutas como presenter y no como recurso, si, en el video uso es la ruta de tipo recurso, grabe el curso al poco tiempo que salió C4 en cuyo momento era un desastre el manejo de las rutas, ya estoy trabajando en el curso para ir haciendo correcciones
+
+Conclusión, para corregir los errores de las aulas 49 y 56 lo que hay que hacer es, dentro del grupo de rutas dashboard  cambiar
+ ```PHP
+ $routes->resource('movie');
+ ```
+ por
+ ```PHP
+ $routes->presenter('movie');
+ ```
+
 ### Aula 55 - Formularios: Redirección y mensajes por sesión
 Todo ok. Prestar especial atencion en el uso de variables de sesion!
 ### Aula 54 - Formularios: Campos permitidos para guardar o actualizar
@@ -14,12 +36,12 @@ Todo Ok
 En la video aula usan **CI v4.0-RC3** , en la practica estoy usando **CI v4.2.1**.
 Al darle clic al boton del formulario genera un error que dice
 > 404 - File Not Found
-Can't find a route for 'get: dashboard/movie/create'.
+>Can't find a route for 'get: dashboard/movie/create'.
 
 En el chat de la video aula en Discord dieron dos alternativas que no funcionaron.
 
 1ra alternativa
-```
+```PHP
 <?php namespace App\Controllers;
 
 use App\Models\MovieModel;
@@ -30,7 +52,7 @@ class Movie extends ResourceController {
 ```
 
 2da alternativa 
-```
+```PHP
 $routes->group('dashboard', static function ($routes) {
    $routes->get('movie', 'Movie::index');
    $routes->get('movie/new', 'Movie::new');
@@ -39,7 +61,7 @@ $routes->group('dashboard', static function ($routes) {
 ```
 #### Solución
 Una tercera alternativa fué crear la ruta perdida dentro del grupo dashboard despues del resource.
-```php
+```PHP
 $routes->group('dashboard', static function ($routes) {
     $routes->resource('movie');
     $routes->post('movie/create', 'Movie::create');
@@ -49,7 +71,7 @@ Lo que deja la duda siguiente.
 ¿Por que no funciona *create* si está definido de manera implícita al definir la ruta como resource.?
 
 Al consultar por consola dice que esta declarada.
-```
+```SHELL
 +--------+---------------------------+------------------------------------------------------+----------------+---------------+
 | Method | Route                     | Handler                                              | Before Filters | After Filters |
 +--------+---------------------------+------------------------------------------------------+----------------+---------------+
@@ -106,11 +128,15 @@ Todo Ok
 Todo Ok
 ### Aula 29 - Presentación de la línea de comandos de CodeIgniter
 En las aulas anteriores la ruta de navegación de "category" habia sido definida en el controlador como
-```[$routes->get( **'/dashboard/category'** , 'dashboard\CategoryController::index');]```
+```PHP
+[$routes->get( **'/dashboard/category'** , 'dashboard\CategoryController::index');]
+```
 para dejarla dentro del dashboard.
 
 Sin embargo, en el transcurso de la video aula 29 aparece como:
-```[$routes->get(**'/category'**, 'dashboard\CategoryController::index');]```
+```PHP
+[$routes->get(**'/category'**, 'dashboard\CategoryController::index');]
+```
 ### Aula 28 - Crear la conexión a la base de datos
 Todo Ok
 ### Aula 27 - Presentación de las migraciones para planificación de la Base de datos

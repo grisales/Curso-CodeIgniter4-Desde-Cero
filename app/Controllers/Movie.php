@@ -15,7 +15,7 @@ class Movie extends BaseController {
             'movies' => $movie->asObject()->paginate(10),
             'pager' => $movie->pager,
         ];
-        
+        echo session('message')."<br>";
         $this->_loadDefaultView('Listado de peliculas',$data,'index');
         
     }
@@ -43,7 +43,7 @@ class Movie extends BaseController {
                 'movie_description' => $this->request->getPost('description'),
             ]);
 
-            return redirect()->to('/dashboard/movie/new')->with('message', 'Película creada con éxito!');
+            return redirect()->to('dashboard/movie/new')->with('message', 'Película creada con éxito!');
             
         }else{
             echo "Error";
@@ -52,6 +52,16 @@ class Movie extends BaseController {
         }
         ;
         
+    }
+    
+    public function delete($movie_id = null)
+    {
+        $movie = new MovieModel();
+
+        $movie->delete($movie_id);
+        // echo "Delete $movie_id";
+        return redirect()->to('dashboard/movie')->with('message', 'Película eliminada con éxito!');
+
     }
     
     public function show($id = null)

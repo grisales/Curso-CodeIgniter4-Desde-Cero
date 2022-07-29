@@ -36,19 +36,14 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-//$routes->get('/contacto', 'Home::contacto');
+$routes->get('/dashboard/movie', 'Home::index',['as' => 'paginaDePeliculas']);
+$routes->get('/dashboard/movie/new', 'Home::index',['as' => 'nuevaPelicula']);
 $routes->get('/contacto/(:any)', 'Home::contacto/$1',['as' => 'paginaDeContacto']);
 $routes->get('/category', 'dashboard\CategoryController::index');
 
 $routes->group('dashboard', static function ($routes) {
-    $routes->resource('movie');
-    $routes->post('movie/create', 'Movie::create');
-    // $routes->get('movie', 'dashboard\MovieController::index');
-    // $routes->get('movie/test/(:any)', 'dashboard\MovieController::test/$1',['as' => 'paginaDePeliculas']);
-    // $routes->get('movie/show/', 'dashboard\MovieController::show');    
+    $routes->presenter('movie');
 });
-
-// $routes->resource('movie');
 
 /*
  * --------------------------------------------------------------------
