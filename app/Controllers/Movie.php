@@ -125,8 +125,23 @@ class Movie extends BaseController {
         {
             if ($imagefile->isValid() && ! $imagefile->hasMoved())
             {
-                $newName = $imagefile->getRandomName();
-                $imagefile->move(WRITEPATH . 'uploads', $newName);
+                $validated = $this->validate([
+                    'image' => [
+                        'uploaded[image]',
+                        'mime_in[image,image/jpg,image/jpeg,image/gif,image/png]',
+                        'max_size[image,4096]',
+                    ],
+                ]);
+         
+                if ($validated) {
+                    $newName = $imagefile->getRandomName();
+                    $imagefile->move(WRITEPATH . 'uploads', $newName);
+                }else{
+                    $newName = 'Errado-'.$imagefile->getRandomName();
+                    $imagefile->move(WRITEPATH . 'uploads', $newName);
+                    var_dump($this->validator->listErrors());
+                }
+                
             }
         }
     }

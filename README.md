@@ -1,5 +1,30 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 63 - Validaciones adicionales al momento de cargar la imagen
+El metodo sugerido funciona para validar el tipo de archivo, sin embargo no es posible ver los mensajes "ECHO" que sugiere el profesor, y para hacerlo por session tendriamos que modificar mucho el codigo de ejemplo entregado en el aula.
+Para no afectar el contenido a seguir, la validacion se hizo cargando los archivos en ambos casos pero agregando el sufijo `Errado-` al inicio del nombre del archivo.
+
+```php
+if ($imagefile->isValid() && ! $imagefile->hasMoved())
+{
+    $validated = $this->validate([
+        'image' => [
+            'uploaded[image]',
+            'mime_in[image,image/jpg,image/jpeg,image/gif,image/png]',
+            'max_size[image,4096]',
+        ],
+    ]);
+
+    if ($validated) {
+        $newName = $imagefile->getRandomName();
+        $imagefile->move(WRITEPATH . 'uploads', $newName);
+    }else{
+        $newName = 'Errado-'.$imagefile->getRandomName();
+        $imagefile->move(WRITEPATH . 'uploads', $newName);
+    }
+    
+}
+```
 ### Aula 62 - Cargar imágenes o archivos
 Todo ok. Para los formularios que cargan archivos, no olvidar incluir el atributo `enctype="multipart/form-data"` en la tag del form.
 ### Aula 61 - Botón para crear
