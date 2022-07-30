@@ -54,6 +54,8 @@ class Movie extends BaseController {
                 'movie_description' => $this->request->getPost('description'),
             ]);
 
+            $this->_upload();
+
             return redirect()->to('dashboard/movie')->with('message', 'Película '.$id.' actualizada con éxito!');
             
         }
@@ -76,6 +78,8 @@ class Movie extends BaseController {
                 'movie_title' => $this->request->getPost('title'),
                 'movie_description' => $this->request->getPost('description'),
             ]);
+
+            $this->_upload();
 
             return redirect()->to('dashboard/movie/new')->with('message', 'Película creada con éxito!');
             
@@ -115,4 +119,15 @@ class Movie extends BaseController {
 
     }
 
+    private function _upload()
+    {
+        if ($imagefile = $this->request->getFile('image'))
+        {
+            if ($imagefile->isValid() && ! $imagefile->hasMoved())
+            {
+                $newName = $imagefile->getRandomName();
+                $imagefile->move(WRITEPATH . 'uploads', $newName);
+            }
+        }
+    }
 }

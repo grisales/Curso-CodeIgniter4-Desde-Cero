@@ -6,4 +6,7 @@
 <label for="description">Description</label>
 <textarea name="description" id="description" cols="45" rows="4"><?= old('description', $movie->movie_description) ?></textarea><br />
 
+<label for="image">Image</label>
+<input type="file" name="image" />
+
 <input type="submit" name="submit" value="Guardar" />

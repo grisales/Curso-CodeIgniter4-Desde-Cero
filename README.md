@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 62 - Cargar imágenes o archivos
+Todo ok. Para los formularios que cargan archivos, no olvidar incluir el atributo `enctype="multipart/form-data"` en la tag del form.
 ### Aula 61 - Botón para crear
 En aulas anteriores yo habia creado un link en el header para la página de creacion, en esta aula se usa un metodo diferente para hacer lo mismo.
 
@@ -8,7 +10,7 @@ El código que yo habia creado para imprimir el link en el header, llamaba a una
 <a href="<?= route_to('nuevaPelicula','') ?>">Nueva Peli</a>
 ```
 
-Pero, en esta video aula se llamó a la funcion de crear sin llamar a la ruta usando el código
+Pero, en esta video aula se llamó a la funcion de crear de forma directa, es decir sin usar las rutas de CodeIgniter. Eso se hizo usando el código:
 ```php
 <a href="movie/new">Crear</a>
 ```
