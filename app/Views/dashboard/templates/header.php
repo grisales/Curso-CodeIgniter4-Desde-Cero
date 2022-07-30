@@ -9,7 +9,7 @@
 <body>
 <a href="<?= route_to('paginaDeContacto','Juan') ?>">Contacto</a> |
 <a href="<?= route_to('paginaDePeliculas','') ?>">Pelis</a> |
-<a href="<?= route_to('nuevaPelicula','') ?>">Nueva Peli</a>
+<!-- <a href="<?= route_to('nuevaPelicula','') ?>">Nueva Peli</a> -->
 <h1 style="color:blue;">
     <?php echo $title ?>
 </h1>
