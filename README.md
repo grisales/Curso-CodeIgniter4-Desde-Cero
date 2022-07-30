@@ -1,7 +1,9 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 64 - Crear tabla (migración) para guardar imágenes
+Todo Ok
 ### Aula 63 - Validaciones adicionales al momento de cargar la imagen
-El metodo sugerido funciona para validar el tipo de archivo, sin embargo no es posible ver los mensajes "ECHO" que sugiere el profesor, y para hacerlo por session tendriamos que modificar mucho el codigo de ejemplo entregado en el aula.
+El metodo sugerido funciona para validar el tipo de archivo, sin embargo no es posible ver los mensajes "ECHO" que sugiere el profesor sin anular los retornos de la funcion de update/create, y para hacerlo por session tendriamos que modificar mucho el codigo de ejemplo entregado en el aula.
 Para no afectar el contenido a seguir, la validacion se hizo cargando los archivos en ambos casos pero agregando el sufijo `Errado-` al inicio del nombre del archivo.
 
 ```php

@@ -136,10 +136,14 @@ class Movie extends BaseController {
                 if ($validated) {
                     $newName = $imagefile->getRandomName();
                     $imagefile->move(WRITEPATH . 'uploads', $newName);
+                    // echo "Todo OK";
+                    // return true;
                 }else{
                     $newName = 'Errado-'.$imagefile->getRandomName();
                     $imagefile->move(WRITEPATH . 'uploads', $newName);
-                    var_dump($this->validator->listErrors());
+                    // var_dump($this->validator->listErrors());
+                    // echo "Error";
+                    // return false;
                 }
                 
             }
