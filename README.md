@@ -1,5 +1,18 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+
+### Aula 57 - Actualizar: Crear funciones y vistas asociadas
+De **CI v4.0-RC3** para  **CI v4.2.1**, cambió la estructura de la ruta del método GET para actualizar datos.
+En **CI v4.0-RC3** la estructura tenia el **keyvalue en el medio de la URL**
+```SHELL
+ GET    | dashboard/movie/(.*)/edit   | \App\Controllers\Movie::edit/$1                      |
+
+```
+En **CI v4.2.1** la estructura la estructura tiene el **keyvalue en el final de la URL**
+```SHELL
+ GET    | dashboard/movie/edit/(.*)   | \App\Controllers\Movie::edit/$1                      |
+```
+
 ### Aula 56 - Eliminar registros
 En la video aula usan **CI v4.0-RC3** , en la practica estoy usando **CI v4.2.1**.
 Al darle clic al botón del formulario genera un error que dice
