@@ -54,9 +54,11 @@ class Movie extends BaseController {
                 'movie_description' => $this->request->getPost('description'),
             ]);
 
-            return redirect()->to('dashboard/movie')->with('message', 'Película actualizada con éxito!');
+            return redirect()->to('dashboard/movie')->with('message', 'Película '.$id.' actualizada con éxito!');
             
-        };
+        }
+        
+        return redirect()->back()->withInput();
         
     }
     

@@ -1,8 +1,10 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
-
+### Aula 58 - Actualizar: valores por defecto y anterior en el formulario
+Todo ok
 ### Aula 57 - Actualizar: Crear funciones y vistas asociadas
 De **CI v4.0-RC3** para  **CI v4.2.1**, cambió la estructura de la ruta del método GET para actualizar datos.
+
 En **CI v4.0-RC3** la estructura tenia el **keyvalue en el medio de la URL**
 ```SHELL
  GET    | dashboard/movie/(.*)/edit   | \App\Controllers\Movie::edit/$1                      |
