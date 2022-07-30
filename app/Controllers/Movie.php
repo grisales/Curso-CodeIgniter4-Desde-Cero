@@ -22,7 +22,7 @@ class Movie extends BaseController {
 
     public function new()
     {
-        echo "Sesión: ".session('message')."<br>";
+
         $validation = \Config\Services::validation();
         $this->_loadDefaultView('Crear pelicula',['validation'=>$validation,'movie'=> new MovieModel()],'new');
         

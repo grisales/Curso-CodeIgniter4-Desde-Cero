@@ -1,12 +1,18 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 60 - Crear partials para los mensajes de sesión y errores de formulario
+En general todo ok, pero con el detalle que los mensajes de session al **Editar** están generando doble salida en el header
 ### Aula 59 - Definir un formulario base para la creación y actualización
 _**De la video aula**_
+
 Todo ok
+
 _**Por mi lado**_
+
 Tuve la necesidad de remover el **index.php** de las URLS.
 
 Para suprimir la cadena `index.php` de la URL en los redirects, en el archivo `app/Config/App.php` cambié la configuracion de la pagina de index asi:
+
 De:
 ```PHP
 public $indexPage = 'index.php';
