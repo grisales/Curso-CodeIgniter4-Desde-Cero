@@ -1,5 +1,31 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 59 - Definir un formulario base para la creación y actualización
+_**De la video aula**_
+Todo ok
+_**Por mi lado**_
+Tuve la necesidad de remover el **index.php** de las URLS.
+
+Para suprimir la cadena `index.php` de la URL en los redirects, en el archivo `app/Config/App.php` cambié la configuracion de la pagina de index asi:
+De:
+```PHP
+public $indexPage = 'index.php';
+```
+Para:
+```PHP
+public $indexPage = '';
+```
+Y agregué un archivo .htaccess en la carpeta Raiz con los Rewrites
+```
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+```
+Tal cual indica la documentación oficial en: 
+http://www.codeigniter.com/user_guide/general/urls.html#apache-web-server
+
+
 ### Aula 58 - Actualizar: valores por defecto y anterior en el formulario
 Todo ok
 ### Aula 57 - Actualizar: Crear funciones y vistas asociadas

@@ -24,7 +24,7 @@ class Movie extends BaseController {
     {
         echo "Sesión: ".session('message')."<br>";
         $validation = \Config\Services::validation();
-        $this->_loadDefaultView('Crear pelicula',['validation'=>$validation],'new');
+        $this->_loadDefaultView('Crear pelicula',['validation'=>$validation,'movie'=> new MovieModel()],'new');
         
     }
     
@@ -79,12 +79,8 @@ class Movie extends BaseController {
 
             return redirect()->to('dashboard/movie/new')->with('message', 'Película creada con éxito!');
             
-        }else{
-            echo "Error";
-            $validation = \Config\Services::validation();
-            $this->_loadDefaultView('Crear pelicula',['validation'=>$validation],'new');
         }
-        ;
+        return redirect()->back()->withInput();
         
     }
     
