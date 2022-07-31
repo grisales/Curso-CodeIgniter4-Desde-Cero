@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\MovieModel;
 use App\Models\MovieImageModel;
 use App\Controllers\BaseController;
+use \CodeIgniter\Exceptions\PageNotFoundException;
 
 
 class Movie extends BaseController {
@@ -31,17 +32,6 @@ class Movie extends BaseController {
         
     }
     
-    public function edit($id = null)
-    {
-        $movie = new MovieModel();
-
-        echo "Sesión: ".session('message')."<br>";
-        
-        $validation = \Config\Services::validation();
-        $this->_loadDefaultView('Crear pelicula',['validation'=>$validation,'movie'=>$movie->asObject()->find($id)],'edit');
-        
-    }
-    
     public function create()
     {
         $movie = new MovieModel();
@@ -56,7 +46,7 @@ class Movie extends BaseController {
                     'movie_title' => $this->request->getPost('title'),
                 'movie_description' => $this->request->getPost('description'),
             ]);
-
+            
             return redirect()->to("dashboard/movie/edit/$id")->with('message', 'Película creada con éxito!');
             
         }
@@ -64,9 +54,30 @@ class Movie extends BaseController {
         
     }
     
+    public function edit($id = null)
+    {
+        $movie = new MovieModel();
+
+        if ($movie->find($id) == null)
+        {
+            throw PageNotFoundException::forPageNotFound();
+        }
+
+        echo "Sesión: ".session('message')."<br>";
+        
+        $validation = \Config\Services::validation();
+        $this->_loadDefaultView('Crear pelicula',['validation'=>$validation,'movie'=>$movie->asObject()->find($id)],'edit');
+        
+    }
+    
     public function update($id = null)
     {
         $movie = new MovieModel();
+
+        if ($movie->find($id) == null)
+        {
+            throw PageNotFoundException::forPageNotFound();
+        }
 
         if($this->validate([
             'title' => 'required|min_length[3]|max_length[255]',
@@ -93,6 +104,11 @@ class Movie extends BaseController {
     {
         $movie = new MovieModel();
 
+        if ($movie->find($movie_id) == null)
+        {
+            throw PageNotFoundException::forPageNotFound();
+        }
+
         $movie->delete($movie_id);
         // echo "Delete $movie_id";
         return redirect()->to('dashboard/movie')->with('message', 'Película eliminada con éxito!');
@@ -102,29 +118,20 @@ class Movie extends BaseController {
     public function show($id = null)
     {
         $movie = new MovieModel();
-        
+
+        if ($movie->find($id) == null)
+        {
+            throw PageNotFoundException::forPageNotFound();
+        }
         // var_dump($movie->get(7)->movie_title); //selección del valor como elemento del objeto
-        var_dump($movie->get($id)); //selección del valor como elemento dentro del array
-        
+        var_dump($movie->asObject()->find($id)->movie_id); //selección del valor como elemento dentro del array
     }
     
-    private function _loadDefaultView($title, $data, $view)
-    {
-        $dataHeader = [
-            'title' => $title
-        ];
-        
-        echo view ("dashboard/templates/header", $dataHeader);
-        echo view ("dashboard/movie/$view", $data);
-        echo view ("dashboard/templates/footer");
-
-    }
-
     private function _upload($movie_id)
     {
 
         $images = new MovieImageModel();
-
+        
         if ($imagefile = $this->request->getFile('image'))
         {
             if ($imagefile->isValid() && ! $imagefile->hasMoved())
@@ -160,4 +167,17 @@ class Movie extends BaseController {
             }
         }
     }
+
+    private function _loadDefaultView($title, $data, $view)
+    {
+        $dataHeader = [
+            'title' => $title
+        ];
+        
+        echo view ("dashboard/templates/header", $dataHeader);
+        echo view ("dashboard/movie/$view", $data);
+        echo view ("dashboard/templates/footer");
+
+    }
+
 }

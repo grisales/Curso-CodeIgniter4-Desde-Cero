@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 69 - Verificar id Nulo
+Todo ok
 ### Aula 68 - Crear carpeta para guardar imágenes
 Todo ok
 ### Aula 67 - Personalizar formulario de creación/edición
