@@ -1,7 +1,21 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 74 - Listado de categorías en actualizar película
+Todo ok en la práctica.
+
+En aulas anteriores recuerdo que el profesor comento que no entendia por que el uso del nombre de la tabla junto al id (concepto básico de modelado de bases de datos), y en esta clase ocurre justamente lo que se qiere evitar con eso que son los conflictos de nombres al realizar queries de SQL.
+
+Para el caso, en la video aula el profesor tiene en dos tablas distintas `movies` y `categories` un campo con el mismo nombre `title`.
+
+Así, al hacer una consulta join, habrá un conflicto de perdida de datos pués solo se almacenará uno de los dos campos title (esto por que de forma abstracta se crea una unica variable title y un dato sobre escribira el otro), esto acontece pues el campo title que retornara será el de la última unión, ya que este query funciona de forma LIFO (Last In First Out).
+
+Previendo este resultado, y siguiendo las buenas prácticas de programación y SQL, en mis tablas, estos campos desde el inicio de las aulas fueron llamados `movie_title` dentro de la tabla *movies* y `category_name` dentro de la tabla *categories*.
+
+Conclusión, el profesor tiene excelentes conceptos de PHP y programación con  CodeIgniter pero conceptos débiles en lo que respecta a estructuración y modelado de Bases de datos.
+
 ### Aula 73 - Listado de categorías en actualizar película
 Todo Ok
+
 En esta aula enseñan algo bien particular de PHP _(no de codeigniter)_, que es la forma como se usan los condicionales abreviados `(PHP Ternary Operator AKA PHP Shorthand If / Else)`
 ```php
 $result = condition ? value1 : value2;

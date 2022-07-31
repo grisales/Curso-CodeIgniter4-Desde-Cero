@@ -13,12 +13,17 @@ class Movie extends BaseController {
 
     public function index()
     {
+
         $movie = new MovieModel();
+        
         $data = [
-            'movies' => $movie->asObject()->paginate(10),
+            'movies' => $movie->asObject()
+            ->select('movies.*, categories.category_name')
+            ->join('categories','categories.category_id = movies.category_id')
+            ->paginate(10),
             'pager' => $movie->pager,
         ];
-        echo session('message')."<br>";
+
         $this->_loadDefaultView('Listado de peliculas',$data,'index');
         
     }
