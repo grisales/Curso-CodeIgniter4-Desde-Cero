@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 71 - Crear seeder para las categorías
+Todo Ok
 ### Aula 70 - Modificar migración de movie para las categorías: rollback y refresh
 Todo Ok
 ### Aula 69 - Verificar id Nulo
