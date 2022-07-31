@@ -50,12 +50,12 @@ class Movie extends BaseController {
             ]))
             {
                 
-                $movie->save([
+                $id = $movie->insert([
                     'movie_title' => $this->request->getPost('title'),
                 'movie_description' => $this->request->getPost('description'),
             ]);
 
-            return redirect()->to('dashboard/movie/new')->with('message', 'Película creada con éxito!');
+            return redirect()->to("dashboard/movie/edit/$id")->with('message', 'Película creada con éxito!');
             
         }
         return redirect()->back()->withInput();

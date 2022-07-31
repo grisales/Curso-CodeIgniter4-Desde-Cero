@@ -1,5 +1,19 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 66 - Redirección a actualizar en vista de creación
+Todo ok.
+**Observaciones importantes**
+
+1. El metodo `save` no sirve cuando se requiere obtener el ID del objeto creado, es necesario cambiarlo por `insert`.
+
+2. Al concatenar valores en las URL hay que usar comillas `"`
+```php
+return redirect()->to("dashboard/movie/edit/$id")
+```
+usando apostrofes `'` y concatenando con `.` genera conflictos
+```php
+return redirect()->to('dashboard/movie/edit/'.$id)
+```
 ### Aula 65 - Cargar imágenes y registrar en la base de datos
 Todo OK
 ### Aula 64 - Crear tabla (migración) para guardar imágenes
