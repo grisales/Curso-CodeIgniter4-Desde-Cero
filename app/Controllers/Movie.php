@@ -3,6 +3,7 @@
 namespace App\Controllers;
 // namespace App\Controllers\dashboard;
 use App\Models\MovieModel;
+use App\Models\MovieImageModel;
 use App\Controllers\BaseController;
 
 
@@ -39,6 +40,28 @@ class Movie extends BaseController {
         
     }
     
+    public function create()
+    {
+        $movie = new MovieModel();
+        
+        if($this->validate([
+            'title' => 'required|min_length[3]|max_length[255]',
+            'description' => 'min_length[3]|max_length[5000]'
+            ]))
+            {
+                
+                $movie->save([
+                    'movie_title' => $this->request->getPost('title'),
+                'movie_description' => $this->request->getPost('description'),
+            ]);
+
+            return redirect()->to('dashboard/movie/new')->with('message', 'Película creada con éxito!');
+            
+        }
+        return redirect()->back()->withInput();
+        
+    }
+    
     public function update($id = null)
     {
         $movie = new MovieModel();
@@ -54,36 +77,12 @@ class Movie extends BaseController {
                 'movie_description' => $this->request->getPost('description'),
             ]);
 
-            $this->_upload();
+            $this->_upload($id);
 
             return redirect()->to('dashboard/movie')->with('message', 'Película '.$id.' actualizada con éxito!');
             
         }
         
-        return redirect()->back()->withInput();
-        
-    }
-    
-    public function create()
-    {
-        $movie = new MovieModel();
-
-        if($this->validate([
-            'title' => 'required|min_length[3]|max_length[255]',
-            'description' => 'min_length[3]|max_length[5000]'
-            ]))
-        {
-
-            $movie->save([
-                'movie_title' => $this->request->getPost('title'),
-                'movie_description' => $this->request->getPost('description'),
-            ]);
-
-            $this->_upload();
-
-            return redirect()->to('dashboard/movie/new')->with('message', 'Película creada con éxito!');
-            
-        }
         return redirect()->back()->withInput();
         
     }
@@ -119,8 +118,11 @@ class Movie extends BaseController {
 
     }
 
-    private function _upload()
+    private function _upload($movie_id)
     {
+
+        $images = new MovieImageModel();
+
         if ($imagefile = $this->request->getFile('image'))
         {
             if ($imagefile->isValid() && ! $imagefile->hasMoved())
@@ -132,20 +134,27 @@ class Movie extends BaseController {
                         'max_size[image,4096]',
                     ],
                 ]);
-         
-                if ($validated) {
+            
+                if ($validated)
+                {
                     $newName = $imagefile->getRandomName();
                     $imagefile->move(WRITEPATH . 'uploads', $newName);
-                    // echo "Todo OK";
-                    // return true;
-                }else{
-                    $newName = 'Errado-'.$imagefile->getRandomName();
-                    $imagefile->move(WRITEPATH . 'uploads', $newName);
-                    // var_dump($this->validator->listErrors());
-                    // echo "Error";
+    
+                    $images->save([
+                        'movie_id' => $movie_id,
+                        'movie_image' => $newName
+                    ]);
+                }
+                else
+                {
+                    // $newName = 'Errado-'.$imagefile->getRandomName();
+                    // $imagefile->move(WRITEPATH . 'uploads', $newName);
+                    var_dump($this->validator->listErrors());
+                    echo "Error";
+                    // El retorno que esta abajo no funciona, prevalecen
+                    // los retornos de la funcion update ¯\_(ツ)_/¯
                     // return false;
                 }
-                
             }
         }
     }

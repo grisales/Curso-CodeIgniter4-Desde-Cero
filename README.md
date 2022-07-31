@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 65 - Cargar imágenes y registrar en la base de datos
+Todo OK
 ### Aula 64 - Crear tabla (migración) para guardar imágenes
 Todo Ok
 ### Aula 63 - Validaciones adicionales al momento de cargar la imagen
