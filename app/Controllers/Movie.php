@@ -67,6 +67,8 @@ class Movie extends BaseController {
     
     public function edit($id = null)
     {
+        $category = new CategoryModel();
+
         $movie = new MovieModel();
 
         if ($movie->find($id) == null)
@@ -77,7 +79,16 @@ class Movie extends BaseController {
         echo "Sesión: ".session('message')."<br>";
         
         $validation = \Config\Services::validation();
-        $this->_loadDefaultView('Crear pelicula',['validation'=>$validation,'movie'=>$movie->asObject()->find($id)],'edit');
+        $this->_loadDefaultView
+        (
+            'Crear pelicula',
+            [
+                'validation'=>$validation,
+                'movie'=>$movie->asObject()->find($id),
+                'categories' => $category->asObject()->findAll()
+            ],
+            'edit'
+        );
         
     }
     
@@ -99,6 +110,7 @@ class Movie extends BaseController {
             $movie->update($id, [
                 'movie_title' => $this->request->getPost('title'),
                 'movie_description' => $this->request->getPost('description'),
+                'category_id' => $this->request->getPost('category_id'),
             ]);
 
             $this->_upload($id);

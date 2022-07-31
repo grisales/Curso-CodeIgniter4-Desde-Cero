@@ -1,5 +1,32 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 73 - Listado de categorías en actualizar película
+Todo Ok
+En esta aula enseñan algo bien particular de PHP _(no de codeigniter)_, que es la forma como se usan los condicionales abreviados `(PHP Ternary Operator AKA PHP Shorthand If / Else)`
+```php
+$result = condition ? value1 : value2;
+```
+En esa forma de uso del condicional, PHP evalua la condición. Si es verdadero, retorna `value1`; en caso contrario, retorna `value2`, y ese valor es asignado/retornado a la variable `$result`.
+
+De esa forma, en el ejercicio de la clase, la instrucción
+```php
+<?= $movie->category_id !== $c->category_id ?: " selected" ?>
+```
+es equivalente a esta otra pero de forma abreviada
+```php
+<?= $movie->category_id == $c->category_id ? " selected" : "" ?>
+```
+o en su forma extendida
+```php
+if($movie->category_id == $c->category_id)
+{
+ echo "selected";
+}
+else
+{
+ echo "";
+}
+```
 ### Aula 72 - Crear listado de categorías
 Todo Ok
 ### Aula 71 - Crear seeder para las categorías
