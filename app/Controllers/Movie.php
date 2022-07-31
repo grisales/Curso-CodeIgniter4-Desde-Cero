@@ -3,6 +3,7 @@
 namespace App\Controllers;
 // namespace App\Controllers\dashboard;
 use App\Models\MovieModel;
+use App\Models\CategoryModel;
 use App\Models\MovieImageModel;
 use App\Controllers\BaseController;
 use \CodeIgniter\Exceptions\PageNotFoundException;
@@ -24,11 +25,19 @@ class Movie extends BaseController {
 
     public function new()
     {
-        echo WRITEPATH;
-        // mkdir('/writeable/uploads/test',0755,true);
-
+        $category = new CategoryModel();
+        
         $validation = \Config\Services::validation();
-        $this->_loadDefaultView('Crear pelicula',['validation'=>$validation,'movie'=> new MovieModel()],'new');
+        $this->_loadDefaultView
+        (
+            'Crear pelicula',
+            [
+                'validation'=>$validation,
+                'movie'=> new MovieModel(),
+                'categories' => $category->asObject()->findAll()
+            ],
+            'new'
+        );
         
     }
     
@@ -42,10 +51,12 @@ class Movie extends BaseController {
             ]))
             {
                 
-                $id = $movie->insert([
+                $id = $movie->insert(
+                [
                     'movie_title' => $this->request->getPost('title'),
-                'movie_description' => $this->request->getPost('description'),
-            ]);
+                    'movie_description' => $this->request->getPost('description'),
+                    'category_id' => $this->request->getPost('category_id'),
+                ]);
             
             return redirect()->to("dashboard/movie/edit/$id")->with('message', 'Película creada con éxito!');
             

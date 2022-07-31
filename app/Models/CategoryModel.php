@@ -4,14 +4,14 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class MovieModel extends Model
+class CategoryModel extends Model
 {
     protected $table = 'categories';
     protected $primaryKey = 'category_id';
 
-    public function get($id = false)
+    public function get($id = null)
     {
-        if ($id === false) {
+        if ($id === null) {
             return $this->findAll();
         }
 

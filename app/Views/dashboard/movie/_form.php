@@ -11,5 +11,11 @@
 <input type="file" name="image" />
 <?php endif ?>
 
+<label for="category_id">Categoría</label>
+<select name="category_id" id="category_id">
+<?php foreach ($categories as $c): ?>
+    <option value="<?= $c->category_id ?>"><?= $c->category_name ?></option>
+<?php endforeach?>
+</select>
 
 <input type="submit" name="submit" value="<?= $textButton ?>" />
