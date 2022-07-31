@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 68 - Crear carpeta para guardar imágenes
+Todo ok
 ### Aula 67 - Personalizar formulario de creación/edición
 Todo ok.
 Desde las vistas de `edit.php` y `new.php` enviamos un parametro a la vista del `archivo _form.php` que determina si se esta creando o actualizando el registro y de esta forma imprime o no algunos campos.
@@ -9,11 +11,11 @@ Todo ok.
 
 1. El metodo `save` no sirve cuando se requiere obtener el ID del objeto creado, es necesario cambiarlo por `insert`.
 
-2. Al concatenar valores en las URL hay que usar comillas `"`
+2. Al concatenar valores en las URL hubo que usar comillas `"`
 ```php
 return redirect()->to("dashboard/movie/edit/$id")
 ```
-usando apostrofes `'` y concatenando con `.` genera conflictos
+eso por que usando apostrofes `'` y concatenando con `.` generó conflictos `¯\_(ツ)_/¯`
 ```php
 return redirect()->to('dashboard/movie/edit/'.$id)
 ```

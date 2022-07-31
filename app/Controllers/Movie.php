@@ -23,6 +23,8 @@ class Movie extends BaseController {
 
     public function new()
     {
+        echo WRITEPATH;
+        // mkdir('/writeable/uploads/test',0755,true);
 
         $validation = \Config\Services::validation();
         $this->_loadDefaultView('Crear pelicula',['validation'=>$validation,'movie'=> new MovieModel()],'new');
@@ -138,7 +140,7 @@ class Movie extends BaseController {
                 if ($validated)
                 {
                     $newName = $imagefile->getRandomName();
-                    $imagefile->move(WRITEPATH . 'uploads', $newName);
+                    $imagefile->move(WRITEPATH . 'uploads/movies/'.$movie_id, $newName);
     
                     $images->save([
                         'movie_id' => $movie_id,
