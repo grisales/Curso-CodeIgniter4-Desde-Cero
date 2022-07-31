@@ -15,6 +15,11 @@ class Movies extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
+            'category_id' => [
+                'type'           => 'INT',
+                'constraint'     => 5,
+                'unsigned'       => true,
+            ],
             'movie_title' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',

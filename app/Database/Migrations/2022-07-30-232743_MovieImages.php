@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Movies extends Migration
+class MovieImages extends Migration
 {
     public function up()
     {

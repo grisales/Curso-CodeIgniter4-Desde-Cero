@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 70 - Modificar migración de movie para las categorías: rollback y refresh
+Todo Ok
 ### Aula 69 - Verificar id Nulo
 Todo ok
 ### Aula 68 - Crear carpeta para guardar imágenes
