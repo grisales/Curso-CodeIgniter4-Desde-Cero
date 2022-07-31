@@ -1,5 +1,4 @@
-
-<div style="color:orange;"><?= view("dashboard/partials/_form-error"); ?></div>
+<?= view("dashboard/partials/_form-error"); ?>
 <form action="create" method="post" enctype="multipart/form-data">
-<?= view("dashboard/movie/_form",['movie' => $movie]); ?>
+<?= view("dashboard/movie/_form",['textButton' => 'Guardar','created' => true]); ?>
 </form>

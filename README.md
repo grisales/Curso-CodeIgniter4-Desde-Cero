@@ -1,5 +1,8 @@
 # Notas Aulas 
 ## Sección 3 - Creando nuestro CRUD
+### Aula 67 - Personalizar formulario de creación/edición
+Todo ok.
+Desde las vistas de `edit.php` y `new.php` enviamos un parametro a la vista del `archivo _form.php` que determina si se esta creando o actualizando el registro y de esta forma imprime o no algunos campos.
 ### Aula 66 - Redirección a actualizar en vista de creación
 Todo ok.
 **Observaciones importantes**
