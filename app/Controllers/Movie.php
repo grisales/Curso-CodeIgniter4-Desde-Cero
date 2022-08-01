@@ -50,10 +50,7 @@ class Movie extends BaseController {
     {
         $movie = new MovieModel();
         
-        if($this->validate([
-            'title' => 'required|min_length[3]|max_length[255]',
-            'description' => 'min_length[3]|max_length[5000]'
-            ]))
+        if($this->validate('movies'))
             {
                 
                 $id = $movie->insert(
@@ -106,10 +103,7 @@ class Movie extends BaseController {
             throw PageNotFoundException::forPageNotFound();
         }
 
-        if($this->validate([
-            'title' => 'required|min_length[3]|max_length[255]',
-            'description' => 'min_length[3]|max_length[5000]'
-            ]))
+        if($this->validate('movies'))
         {
 
             $movie->update($id, [
