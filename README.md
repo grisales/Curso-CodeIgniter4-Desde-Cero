@@ -1,5 +1,10 @@
 # Notas Aulas 
+
+<details><summary>Sección 3 - Creando nuestro CRUD</summary>
+
 ## Sección 3 - Creando nuestro CRUD
+### Aulas 76 y 77
+Todo Ok
 ### Aula 75 - Validar datos de formulario mediante una clase aparte
 Todo ok
 ### Aula 74 - Listado de categorías en actualizar película
@@ -265,6 +270,7 @@ Todo Ok
 Todo Ok
 ### Aula 42 - Intro a la sección 3
 Todo Ok
+</details>
 
 <details><summary>Sección 2 - primeros pasos con Codeigniter 4</summary>
 
