@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 5 - Instalar y configurar BootStrap en la aplicación
+### Aula 99 - Bootstrap:Activar la clase de paginación
+Todo Ok. Atención a la forma como se concatenó el contenido de la case en HTML para el correcto funcionamiento del link activo en la paginación.
 ### Aula 98 - Bootstrap:Links de paginación y creación de vista personalizada en CodeIgniter
 Todo Ok
 ### Aula 97 - Bootstrap:Alert para los mensajes

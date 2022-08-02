@@ -24,7 +24,7 @@ $pager->setSurroundCount(2);
 		<?php endif ?>
 
 		<?php foreach ($pager->links() as $link) : ?>
-			<li <?= $link['active'] ? 'class="active"' : '' ?>>
+			<li class="page-item <?= $link['active'] == 1 ? 'active' : '' ?>">
 				<a class="page-link" href="<?= $link['uri'] ?>">
 					<?= $link['title'] ?>
 				</a>
