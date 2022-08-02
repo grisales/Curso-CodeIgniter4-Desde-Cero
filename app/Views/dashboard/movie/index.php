@@ -1,6 +1,6 @@
 <a href="movie/new">Crear</a>
 
-<table class="table">
+<table class="table table-hover ">
     <thead>
         <tr>
             <th>Id</th>
