@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 5 - Instalar y configurar BootStrap en la aplicación
+### Aula 97 - Bootstrap:Alert para los mensajes
+Todo Ok
 ### Aula 96 - Bootstrap:Configurar el layout de la app
 Todo Ok
 ### Aula 95 - Bootstrap:Configurar formulario
