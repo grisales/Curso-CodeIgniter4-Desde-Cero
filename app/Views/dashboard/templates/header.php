@@ -17,4 +17,7 @@
     <?php echo $title ?>
 </h1>
 
-<div style="color:red;"><?= view("dashboard/partials/_session"); ?></div>
+<?= view("dashboard/partials/_session"); ?>
+
+<!-- Inicio del container -->
+<div class="container-md">

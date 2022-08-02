@@ -1,3 +1,6 @@
+<!-- Fin del container -->
+</div>
+
 <footer>
     Pie de página
 
