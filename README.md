@@ -1,4 +1,10 @@
 # Notas Aulas 
+## Sección 5 - Instalar y configurar BootStrap en la aplicación
+### Aula 92 -Instalar la CDN de Bootstrap 4 y dependencias en CodeIgniter 4
+Todo Ok
+
+
+##_La sección 4 fué trabajada en un ambiente separado que se encuentra en la aplicacion `*ci4dcs4*`_##
 
 <details><summary>Sección 3 - Creando nuestro CRUD</summary>
 
@@ -17,8 +23,6 @@ Para el caso, en la video aula el profesor tiene en dos tablas distintas `movies
 Así, al hacer una consulta join, habrá un conflicto de perdida de datos pués solo se almacenará uno de los dos campos title (esto por que de forma abstracta se crea una unica variable title y un dato sobre escribirá el otro), esto acontece pues el campo title que retornara será el de la última unión, ya que este query funciona de forma LIFO (Last In First Out).
 
 Previendo este resultado, y siguiendo las buenas prácticas de programación y SQL, en mis tablas, estos campos desde el inicio de las aulas fueron llamados `movie_title` dentro de la tabla *movies* y `category_name` dentro de la tabla *categories*.
-
-Conclusión, el profesor tiene excelentes conceptos de PHP y programación con  CodeIgniter pero conceptos débiles en lo que respecta a estructuración y modelado de Bases de datos.
 
 ### Aula 73 - Listado de categorías en actualizar película
 Todo Ok
