@@ -1,6 +1,10 @@
 # Notas Aulas 
 ## Sección 5 - Instalar y configurar BootStrap en la aplicación
-### Aula 93 - Bootstrap:Configurar las tablas
+### Aula 95 - Bootstrap:Configurar formulario
+Todo Ok
+### Aula 94 - Bootstrap:Configurar las tablas
+Todo Ok
+### Aula 93 - Opcional: Emplear Bootstrap 5
 Todo Ok
 ### Aula 92 -Instalar la CDN de Bootstrap 4 y dependencias en CodeIgniter 4
 Todo Ok
