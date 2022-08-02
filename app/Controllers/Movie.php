@@ -70,7 +70,7 @@ class Movie extends BaseController {
     public function edit($id = null)
     {
         $category = new CategoryModel();
-
+        $images = new MovieImageModel();
         $movie = new MovieModel();
 
         if ($movie->find($id) == null)
@@ -78,16 +78,15 @@ class Movie extends BaseController {
             throw PageNotFoundException::forPageNotFound();
         }
 
-        echo "Sesión: ".session('message')."<br>";
-        
         $validation = \Config\Services::validation();
         $this->_loadDefaultView
         (
-            'Crear pelicula',
+            'Actualizar película',
             [
                 'validation'=>$validation,
                 'movie'=>$movie->asObject()->find($id),
-                'categories' => $category->asObject()->findAll()
+                'categories' => $category->asObject()->findAll(),
+                'images' => $images->getByMovieId($id)
             ],
             'edit'
         );

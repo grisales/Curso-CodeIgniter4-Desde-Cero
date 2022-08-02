@@ -10,4 +10,11 @@ class MovieImageModel extends Model
     protected $primaryKey = 'image_id';
     protected $allowedFields = ['movie_id', 'movie_image'];
 
+    function getByMovieId($movie_id)
+    {
+        return $this->asObject()
+            ->where(['movie_id' => $movie_id])
+            ->findAll();
+    }
+
 }
