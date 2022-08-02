@@ -20,7 +20,7 @@ class Movie extends BaseController {
             'movies' => $movie->asObject()
             ->select('movies.*, categories.category_name')
             ->join('categories','categories.category_id = movies.category_id')
-            ->paginate(10),
+            ->paginate(6),
             'pager' => $movie->pager,
         ];
 

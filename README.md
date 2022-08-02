@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 5 - Instalar y configurar BootStrap en la aplicación
+### Aula 98 - Bootstrap:Links de paginación y creación de vista personalizada en CodeIgniter
+Todo Ok
 ### Aula 97 - Bootstrap:Alert para los mensajes
 Todo Ok
 ### Aula 96 - Bootstrap:Configurar el layout de la app

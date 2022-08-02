@@ -25,12 +25,13 @@ class MovieSeeder extends Seeder
         // $builder->delete();
 
         
-        for ($i=1; $i <= 20; $i++)
+        for ($i=1, $j=1; $i <= 40; $i++,$j++)
         {
+            if($j>20){$j=1;}
             $data =
             [
-                'category_id' => $i,
-                'movie_title' => "Movie $i",
+                'category_id' => $j,
+                'movie_title' => "Pelicula $i",
                 'movie_description' => 'No guns, no killing. Bats frighten me. It\'s time my enemies shared my dread. This isn\'t a car. My anger outweights my guilt. Hero can be anyone. Even a man knowing something as simple and reassuring as putting a coat around a young boy shoulders to let him know the world hadn\'t ended.'
             ];
 
