@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 5 - Instalar y configurar BootStrap en la aplicación
+### Aula 101 - Personalizar los errores de formulario en CodeIgniter 4
+Todo Ok
 ### Aula 100 - Bootstrap:Header o cabecera del App
 Todo Ok
 ### Aula 99 - Bootstrap:Activar la clase de paginación
