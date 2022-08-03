@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 5 - Instalar y configurar BootStrap en la aplicación
+### Aula 106 - CRUD imágenes movies: Columnas en bootstrap
+Todo ok
 ### Aula 105 - CRUD imágenes movies: Definir la nueva ruta
 Todo Ok
 ### Aula 104 - CRUD imágenes movies: get y validar errores al momento de proceso
