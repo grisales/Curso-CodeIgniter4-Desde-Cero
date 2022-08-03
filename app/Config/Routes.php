@@ -43,6 +43,7 @@ $routes->get('/category', 'dashboard\CategoryController::index');
 
 $routes->get('/image', 'Home::obtenerImagen');
 $routes->get('/image/(:num)/(:any)', 'Home::obtenerImagen/$1/$2',['as' => 'get_image']);
+$routes->get('/movie/image/(:num)', 'Movie::deleteImage/$1',['as' => 'image_delete']);
 
 $routes->group('dashboard', static function ($routes) {
     $routes->presenter('movie');

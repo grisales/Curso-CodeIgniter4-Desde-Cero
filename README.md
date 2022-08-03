@@ -1,5 +1,9 @@
 # Notas Aulas 
 ## Sección 5 - Instalar y configurar BootStrap en la aplicación
+### Aula 108 - CRUD imágenes movies: Eliminar imágenes, dar funcionalidad al botón
+Todo ok
+Surgio un BUG en el desarrollo de la aplicacion en el cual unicamente se borraba la imagen con `id =1`.
+Depurando, me di cuenta de que el link para eliminar la imagen estaba siendo creado con el id de la pelicula `movie_id` y no con el id de la imagen `image_id`.
 ### Aula 107 - CRUD imágenes movies: Eliminar imágenes, botón personalizado
 Todo ok
 ### Aula 106 - CRUD imágenes movies: Columnas en bootstrap

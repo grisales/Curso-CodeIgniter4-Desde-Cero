@@ -189,6 +189,38 @@ class Movie extends BaseController {
         }
     }
 
+    public function deleteImage($imageId)
+    {
+        $imageModel = new MovieImageModel();
+        
+        
+        $image = $imageModel->asObject()->find($imageId);
+        
+        //var_dump($this->$image);
+
+        if ($image == null)
+        {
+            throw PageNotFoundException::forPageNotFound();
+        }
+
+        $imgPath = WRITEPATH.'uploads/movies/'.$image->movie_id.'/'.$image->movie_image;
+
+        //echo $imgPath;
+
+        if(!file_exists($imgPath))
+        {
+            throw PageNotFoundException::forPageNotFound();
+        }
+
+        $imageModel->delete($imageId);
+
+        unlink($imgPath);
+        // echo "Delete $movie_id";
+        return redirect()->to('dashboard/movie')->with('message', 'Imagen removida con éxito!'.$image->movie_image);
+
+    }
+
+
     private function _loadDefaultView($title, $data, $view)
     {
         $dataHeader = [
