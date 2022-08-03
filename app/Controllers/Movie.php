@@ -11,22 +11,40 @@ use \CodeIgniter\Exceptions\PageNotFoundException;
 
 class Movie extends BaseController {
 
+
+    /**
+     * ===================================
+     *    ---:::[ FUNCIÓN INDEX ]:::---   
+     * ===================================
+     * 
+     * Descripción
+     */
+
     public function index()
     {
-
+        
         $movie = new MovieModel();
         
         $data = [
-            'movies' => $movie->asObject()
-            ->select('movies.*, categories.category_name')
-            ->join('categories','categories.category_id = movies.category_id')
-            ->paginate(6),
-            'pager' => $movie->pager,
-        ];
+                'movies' => $movie->asObject()
+                ->select('movies.*, categories.category_name')
+                ->join('categories','categories.category_id = movies.category_id')
+                ->paginate(6),
+                'pager' => $movie->pager,
+            ];
 
         $this->_loadDefaultView('Listado de peliculas',$data,'index');
-        
+            
     }
+
+        
+    /**
+     * ===================================
+     *    ---:::[ FUNCIÓN NUEVO REGISTRO ]:::---   
+     * ===================================
+     * 
+     * Descripción
+     */
 
     public function new()
     {
@@ -45,7 +63,16 @@ class Movie extends BaseController {
         );
         
     }
-    
+
+        
+    /**
+     * ===================================
+     *    ---:::[ FUNCIÓN CREAR REGISTRO ]:::---   
+     * ===================================
+     * 
+     * Descripción
+     */
+
     public function create()
     {
         $movie = new MovieModel();
@@ -66,7 +93,16 @@ class Movie extends BaseController {
         return redirect()->back()->withInput();
         
     }
-    
+
+        
+    /**
+     * ==========================================
+     *    ---:::[ FUNCIÓN EDITAR REGISTRO ]:::---   
+     * ==========================================
+     * 
+     * Descripción
+     */
+
     public function edit($id = null)
     {
         $category = new CategoryModel();
@@ -92,7 +128,16 @@ class Movie extends BaseController {
         );
         
     }
-    
+
+        
+    /**
+     * ==============================================
+     *    ---:::[ FUNCIÓN ACTUALIZAR REGISTRO ]:::---   
+     * ==============================================
+     * 
+     * Descripción
+     */
+
     public function update($id = null)
     {
         $movie = new MovieModel();
@@ -120,7 +165,16 @@ class Movie extends BaseController {
         return redirect()->back()->withInput();
         
     }
-    
+
+        
+    /**
+     * ==========================================
+     *    ---:::[ FUNCIÓN BORRAR REGISTRO ]:::---   
+     * ==========================================
+     * 
+     * Descripción
+     */
+
     public function delete($movie_id = null)
     {
         $movie = new MovieModel();
@@ -135,19 +189,49 @@ class Movie extends BaseController {
         return redirect()->to('dashboard/movie')->with('message', 'Película eliminada con éxito!');
 
     }
-    
+
+        
+    /**
+     * ===========================================
+     *    ---:::[ FUNCIÓN MOSTRAR REGISTRO ]:::---   
+     * ===========================================
+     * 
+     * Descripción
+     */
+
     public function show($id = null)
     {
-        $movie = new MovieModel();
+        $movieModel = new MovieModel();
+        $imageModel = new MovieImageModel();
 
-        if ($movie->find($id) == null)
+        $movie = $movieModel->asObject()->find($id);
+
+        if ($movie == null)
         {
             throw PageNotFoundException::forPageNotFound();
         }
-        // var_dump($movie->get(7)->movie_title); //selección del valor como elemento del objeto
-        var_dump($movie->asObject()->find($id)->movie_id); //selección del valor como elemento dentro del array
+
+        $this->_loadDefaultView
+        (
+            $movie->movie_title,
+            [
+                'movie'=>$movie,
+                'images' => $imageModel->getByMovieId($id)
+            ],
+            'show'
+        );
+
     }
-    
+
+        
+    /**
+     * =========================================
+     *    ---:::[ FUNCIÓN CARGAR ARCHIVO ]:::---   
+     * =========================================
+     * 
+     * Descripción
+     */
+
     private function _upload($movie_id)
     {
 
@@ -169,7 +253,7 @@ class Movie extends BaseController {
                 {
                     $newName = $imagefile->getRandomName();
                     $imagefile->move(WRITEPATH . 'uploads/movies/'.$movie_id, $newName);
-    
+
                     $images->save([
                         'movie_id' => $movie_id,
                         'movie_image' => $newName
@@ -188,6 +272,15 @@ class Movie extends BaseController {
             }
         }
     }
+
+        
+    /**
+     * ===================================
+     *    ---:::[ FUNCIÓN BORRAR ARCHIVO ]:::---   
+     * ===================================
+     * 
+     * Descripción
+     */
 
     public function deleteImage($imageId)
     {
@@ -216,11 +309,19 @@ class Movie extends BaseController {
 
         unlink($imgPath);
         // echo "Delete $movie_id";
-        return redirect()->to('dashboard/movie')->with('message', 'Imagen removida con éxito!'.$image->movie_image);
+        return redirect()->to('dashboard/movie')->with('message', 'Imagen <b>['.$image->movie_image.']</b> removida con éxito!');
 
     }
 
-
+    
+    /**
+     * ===================================
+     *    ---:::[ FUNCIÓN CARGAR LAYOUT ]:::---   
+     * ===================================
+     * 
+     * Descripción
+     */
+    
     private function _loadDefaultView($title, $data, $view)
     {
         $dataHeader = [

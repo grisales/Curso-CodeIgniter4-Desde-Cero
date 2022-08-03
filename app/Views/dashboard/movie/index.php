@@ -16,11 +16,13 @@
                 <td><?= $m->movie_title?></td>
                 <td><?= $m->category_name?></td>
                 <td>
+                    <a class="btn btn-primary btn-sm mt-2" href="movie/<?= $m->movie_id ?>">Ver</a>
+
                     <form action="movie/delete/<?= $m->movie_id ?>" method="POST">
-                        <input type="submit" class="btn btn-danger btn-sm" name="submit" value="Borrar" />
+                        <input type="submit" class="btn btn-danger btn-sm mt-2" name="submit" value="Borrar" />
                     </form>
 
-                    <a class="mt-2 btn btn-primary btn-sm" href="movie/edit/<?= $m->movie_id ?>">Editar</a>
+                    <a class="btn btn-primary btn-sm mt-2" href="movie/edit/<?= $m->movie_id ?>">Editar</a>
                 </td>
             </tr>
             <?php endforeach?>
