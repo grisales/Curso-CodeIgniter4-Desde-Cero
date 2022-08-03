@@ -1,5 +1,19 @@
 # Notas Aulas 
 ## Sección 5 - Instalar y configurar BootStrap en la aplicación
+### Aula 104 - CRUD imágenes movies: get y validar errores al momento de proceso
+Todo ok. Atención a las sigueintes observaciones:
+
+1. Ojo con el uso del `getGet()`, por que son esos los nombres de los parametros reconocidos por la URL, en caso contrario generara una Excepción/Error.
+
+2. Antes de cargar el archivo que esta en area privada usamos 5 validaciones
+   1. Validámos que estén definidos el id y el archivo de la manera `URL/$1/$2`.
+   2. Si el id y el archivo no están definidos de la manera `URL/$1/$2` verificamos con `getGet();`si estan parametrizados de la manera `URL?var_1=XX&&var_2=YY`.
+   3. Verificamos que el archivo exista en la ruta construida con el `file_exists();`.
+   4. En caso de que falte o que este errado alguno de los parametros, se arroja la excepción 404.
+   5. En caso de que no exista el archivo, se arroja la excepción 404.
+
+### Aula 103 - CRUD imágenes movies: Procesar y devolver desde el servidor
+Todo ok
 ### Aula 102 - CRUD imágenes movies: Listar
 Todo Ok. Especial atención al query usado en MovieImageModel para obtener los nombres de las imagenes por que nos generó problema al usar `first();` en vez de `findAll();` por no estar atento... ;-)
 ### Aula 101 - Personalizar los errores de formulario en CodeIgniter 4
