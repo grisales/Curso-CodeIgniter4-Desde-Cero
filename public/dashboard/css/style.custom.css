@@ -1,0 +1,13 @@
+.crud-images{
+    position: absolute;
+    right: 0%;
+    margin: 15px;
+    border-radius: 20px;
+}
+
+.crud-images span{
+    padding: 0px 0px 5px;
+    font-size: 25px;
+    line-height: 0.5;
+    margin: -2px;
+}
