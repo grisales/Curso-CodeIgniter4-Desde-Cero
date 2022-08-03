@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 5 - Instalar y configurar BootStrap en la aplicación
+### Aula 103 - CRUD imágenes movies: Procesar y devolver desde el servidor
+Todo ok
 ### Aula 102 - CRUD imágenes movies: Listar
 Todo Ok. Especial atención al query usado en MovieImageModel para obtener los nombres de las imagenes por que nos generó problema al usar `first();` en vez de `findAll();` por no estar atento... ;-)
 ### Aula 101 - Personalizar los errores de formulario en CodeIgniter 4

@@ -9,6 +9,20 @@ class Home extends BaseController
         return view('welcome_message');
     }
 
+    public function obtenerImagen($movie_id, $image)
+    {
+        $name = WRITEPATH.'uploads/movies/'.$movie_id.'/'.$image;
+        $fp = fopen($name, 'rb');
+
+        // envía las cabeceras correctas
+        header("Content-Type: image/png");
+        header("Content-Length: " . filesize($name));
+
+        // vuelca la imagen y detiene el script
+        fpassthru($fp);
+        exit;
+    }
+
     public function contacto($name = "Pepe")
     {
 
