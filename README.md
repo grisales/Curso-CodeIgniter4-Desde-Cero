@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 5 - Instalar y configurar BootStrap en la aplicación
+### Aula 111 - Instalar FontAwesome para nuestros icones
+Todo ok
 ### Aula 110 - Vista de detalle: Carrusel de imágenes
 Todo Ok
 ### Aula 109 - Vista de detalle: Cartas en Bootstrap
