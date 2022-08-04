@@ -1,5 +1,13 @@
 # Notas Aulas 
-## Sección 5 - Instalar y configurar BootStrap en la aplicación
+## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
+### Aula 117 - Introducción
+Todo ok
+
+<details><summary>Sección 5 - Intermedio - Instalar y configurar Bootstrap en la aplicación</summary>
+
+## Sección 5 - Intermedio - Instalar y configurar Bootstrap en la aplicación
+### Aula 115 - ¿Que hemos aprendido?
+Todo ok
 ### Aula 114 - Detalles: Centrar paginación, título, ancho extra descripción
 Todo Ok
 ### Aula 113 - Tarea: CRUD de categorías
@@ -58,11 +66,11 @@ Todo Ok
 Todo Ok
 ### Aula 92 -Instalar la CDN de Bootstrap 4 y dependencias en CodeIgniter 4
 Todo Ok
+</details>
 
+##_La sección 4 *Introducción a las rutas* fué trabajada en un ambiente separado que se encuentra en la aplicacion `*ci4dcs4*`_##
 
-##_La sección 4 fué trabajada en un ambiente separado que se encuentra en la aplicacion `*ci4dcs4*`_##
-
-<details><summary>Sección 3 - Creando nuestro CRUD</summary>
+<details><summary>Sección 3 - Intermedio - Creando nuestro CRUD</summary>
 
 ## Sección 3 - Creando nuestro CRUD
 ### Aulas 76 y 77
