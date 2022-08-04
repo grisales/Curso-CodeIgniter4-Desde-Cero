@@ -1,5 +1,26 @@
 # Notas Aulas 
 ## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
+### Aula 120 - Crear migración y modelo para el usuario
+Todo ok
+Ojo!: Cuando se crea el archivo de migración, los campos binarios `true/false` deben lelvar el valor fuera de comillas o si no la construcción del campo omite la validación
+
+Correcto:
+```SQL
+username' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '20',
+                'unique'     => true,
+            ]
+```
+Errado:
+```SQL
+username' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '20',
+                'unique'     => 'true',
+            ]
+```
+
 ### Aula 119 - Crear vista para el login
 Todo ok.
 Particularmente en esta práctica, en el controlador user no se definió un metodo `INDEX` y consecuentemente, en el `loadDefaultView()` se llama a la vista *login* y no *index*.
