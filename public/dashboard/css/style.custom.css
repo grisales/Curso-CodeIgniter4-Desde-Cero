@@ -12,3 +12,7 @@
     margin: -2px;
     color:ivory;
 }
+
+textarea.form-control{
+    min-height: 150px;
+}

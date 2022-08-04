@@ -8,7 +8,7 @@
 
 <div class="form-group">
     <h4><label for="description">Description</label></h4>
-    <textarea class="form-control" name="description" id="description" cols="45" rows="4"><?= old('description', $movie->movie_description) ?></textarea>
+    <textarea class="form-control" name="description" id="description" cols="45"><?= old('description', $movie->movie_description) ?></textarea>
 </div>
 
 <?php if(!$created): ?>

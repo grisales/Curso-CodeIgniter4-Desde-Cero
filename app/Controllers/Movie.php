@@ -33,7 +33,7 @@ class Movie extends BaseController {
                 'pager' => $movie->pager,
             ];
 
-        $this->_loadDefaultView('Listado de peliculas',$data,'index');
+        $this->_loadDefaultView('Listado de películas',$data,'index');
             
     }
 

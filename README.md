@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 5 - Instalar y configurar BootStrap en la aplicación
+### Aula 114 - Detalles: Centrar paginación, título, ancho extra descripción
+Todo Ok
 ### Aula 113 - Tarea: CRUD de categorías
 Todo ok. No olvidar el uso de las "limitaciones" cuando se implementen rutas generales de tipo presenter o resources, de la forma `['except',['method_1','method_2']]` para exclusión, o, `['only',['method_1','method_2']]` para selección.
 ### Aula 112 - Incorporar tooltip en el listado

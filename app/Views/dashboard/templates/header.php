@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>/dashboard/css/style.custom.css">
     <link rel="stylesheet" href="<?= base_url() ?>/fontawesome/css/all.min.css">
 
-    <title>Document</title>
+    <title><?php echo $title ?></title>
 </head>
 <body>
 
@@ -45,13 +45,11 @@
 </nav>
 <!-- Fin del navbar -->
 
-<!-- <a href="<?= route_to('paginaDeContacto','Juan') ?>">Contacto</a> |
-<a href="<?= route_to('paginaDePeliculas','') ?>">Pelis</a> | -->
-<h1>
+<h1 class="text-center mt-3 mb-3">
     <?php echo $title ?>
 </h1>
-
 <!-- Inicio del container -->
 <div class="container-md">
-
+  <hr>
+  
     <?= view("dashboard/partials/_session"); ?>
