@@ -1,11 +1,15 @@
 # Notas Aulas 
 ## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
+### Aula 118 - Crear ruta y controlador para el login
+Todo ok
 ### Aula 117 - Introducción
 Todo ok
 
 <details><summary>Sección 5 - Intermedio - Instalar y configurar Bootstrap en la aplicación</summary>
 
 ## Sección 5 - Intermedio - Instalar y configurar Bootstrap en la aplicación
+### Aula 116 - Código fuente
+Todo ok
 ### Aula 115 - ¿Que hemos aprendido?
 Todo ok
 ### Aula 114 - Detalles: Centrar paginación, título, ancho extra descripción
@@ -68,8 +72,13 @@ Todo Ok
 Todo Ok
 </details>
 
-##_La sección 4 *Introducción a las rutas* fué trabajada en un ambiente separado que se encuentra en la aplicacion `*ci4dcs4*`_##
+<details><summary>Sección 4 - Actualización - Introducción a las rutas</summary>
 
+## Sección 4 - Introducción a las rutas
+Todo ok
+
+La sección 4 *Introducción a las rutas* fué trabajada en un ambiente separado que se encuentra en la aplicacion `ci4dcs4`
+</details>
 <details><summary>Sección 3 - Intermedio - Creando nuestro CRUD</summary>
 
 ## Sección 3 - Creando nuestro CRUD
