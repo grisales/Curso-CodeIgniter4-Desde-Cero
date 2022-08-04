@@ -47,6 +47,8 @@ $routes->get('/movie/image/(:num)', 'Movie::deleteImage/$1',['as' => 'image_dele
 
 $routes->group('dashboard', static function ($routes) {
     $routes->presenter('movie');
+    // $routes->presenter('category');
+    $routes->presenter('category',['except'=>['show']]);
 });
 
 /*

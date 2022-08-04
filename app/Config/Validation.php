@@ -32,6 +32,10 @@ class Validation extends BaseConfig
         'description' => 'min_length[3]|max_length[5000]'
     ];
 
+    public $categories = [
+        'title' => 'required|min_length[3]|max_length[255]'
+    ];
+
     /**
      * Specifies the views that are used to display the
      * errors.

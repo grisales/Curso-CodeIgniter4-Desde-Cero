@@ -24,8 +24,9 @@ class App extends BaseConfig
      *
      * @var string
      */
+    // public $baseURL = 'http://ci4dc.test/';
     public $baseURL = 'http://ci4dc.test/';
-
+    
     /**
      * --------------------------------------------------------------------------
      * Index File

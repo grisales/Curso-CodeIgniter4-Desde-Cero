@@ -125,6 +125,7 @@ nb-configuration.xml
 /results/
 /phpunit*.xml
 /.phpunit.*.cache
+ci4dc.code-workspace
 
 # Anotaciones German *.GFWC
 .gfwcnotes

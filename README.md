@@ -1,5 +1,9 @@
 # Notas Aulas 
 ## Sección 5 - Instalar y configurar BootStrap en la aplicación
+### Aula 113 - Tarea: CRUD de categorías
+Todo ok. No olvidar el uso de las "limitaciones" cuando se implementen rutas generales de tipo presenter o resources, de la forma `['except',['method_1','method_2']]` para exclusión, o, `['only',['method_1','method_2']]` para selección.
+### Aula 112 - Incorporar tooltip en el listado
+Todo ok
 ### Aula 111 - Instalar FontAwesome para nuestros icones
 Todo ok
 ### Aula 110 - Vista de detalle: Carrusel de imágenes
