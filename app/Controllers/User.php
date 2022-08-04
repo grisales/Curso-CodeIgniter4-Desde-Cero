@@ -20,7 +20,7 @@ class User extends BaseController {
     public function login()
     {
         
-        $this->_loadDefaultView([],'index');
+        $this->_loadDefaultView([],'login');
             
     }
 

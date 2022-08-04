@@ -1,5 +1,9 @@
 # Notas Aulas 
 ## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
+### Aula 119 - Crear vista para el login
+Todo ok.
+Particularmente en esta práctica, en el controlador user no se definió un metodo `INDEX` y consecuentemente, en el `loadDefaultView()` se llama a la vista *login* y no *index*.
+Adicionalmente, como en la practica estamos usando Bootstrap 4, tomamos el codigo de ejemplo del `InternetArchive.org`
 ### Aula 118 - Crear ruta y controlador para el login
 Todo ok
 ### Aula 117 - Introducción
