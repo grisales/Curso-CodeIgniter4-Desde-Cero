@@ -1,8 +1,11 @@
 # Notas Aulas 
 ## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
+### Aula 121 - Mover controlador de usuarios
+Todo ok
+Atención a este detalle: las rutas de tipo `resource||presenter` requieren que los controladores estén en la raiz, no funcionan si estan definidos dentro de subcarpetas.
 ### Aula 120 - Crear migración y modelo para el usuario
 Todo ok
-Ojo!: Cuando se crea el archivo de migración, los campos binarios `true/false` deben lelvar el valor fuera de comillas o si no la construcción del campo omite la validación
+Ojo!: Cuando se crea el archivo de migración, los campos binarios `true/false` deben llevar el valor fuera de comillas o si no la construcción del campo omite la validación
 
 Correcto:
 ```SQL
