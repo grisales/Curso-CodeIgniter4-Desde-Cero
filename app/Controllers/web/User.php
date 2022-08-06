@@ -80,8 +80,20 @@ class User extends BaseController {
     {
         
         $session = session();
-
-        echo $session->username;
+        
+        if ($session->username)
+        {
+            $url1=$_SERVER['REQUEST_URI'];
+            echo "Ahora me ves:".$session->username." ( •_•)";
+            $session->destroy();
+            header("Refresh: 2; URL=$url1");
+        }
+        else
+        {
+            $url1= base_url('/login');
+            echo "Ahora no me ves:".$session->username." ⌐■-■";
+            header("Refresh: 2; URL=$url1");
+        }
             
     }
 

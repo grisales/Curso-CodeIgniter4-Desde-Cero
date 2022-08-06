@@ -1,8 +1,10 @@
 # Notas Aulas 
 ## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
+### Aula 127 - Cerrar sesión
+
 ### Aula 126 - Presentación de la sesión
 Todo Ok
-### Aula 125 - Verificar si el password es correcto
+### Aula 125 - Procesar el formulario de login
 Todo Ok
 ### Aula 124 - Verificar si el password es correcto
 Todo ok
@@ -10,7 +12,7 @@ Todo ok
 Todo ok
 ### Aula 122 - CRUD de usuarios: proceso inicial
 Aparentemente todo ok.
-Sucede que en el desarrollo del curso manejé las primeras rutas presenter dentro del grupo `$routes->group('dashboard', static function ($routes)` , al colocar la ruta "user" por fuera del grupo generó un error, manejándola por dentro del grupo funcinó ok.
+Sucede que en el desarrollo del curso manejé las primeras rutas presenter dentro del grupo `$routes->group('dashboard', static function ($routes)` , al colocar la ruta "user" por fuera del grupo generó un error, manejándola por dentro del grupo funcionó ok.
 
 >Queda como práctica personal hacer un Branch en Github para:
 >1. Sacar las rutas del grupo, y,
