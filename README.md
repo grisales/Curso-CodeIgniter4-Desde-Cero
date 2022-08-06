@@ -1,7 +1,9 @@
 # Notas Aulas 
 ## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
+### Aula 128 - Guardar datos de login en sesión
+Todo ok
 ### Aula 127 - Cerrar sesión
-
+Todo ok
 ### Aula 126 - Presentación de la sesión
 Todo Ok
 ### Aula 125 - Procesar el formulario de login

@@ -20,13 +20,6 @@ class User extends BaseController {
 
         // $session = \Config\Services::session();
 
-        $array = array("username" => "german","email" => "german@cosa.test");
-
-        $session = session();
-        $session->set($array);
-
-        echo $session->username;
-        
         $this->_loadDefaultView([],'login');
             
     }
@@ -50,7 +43,7 @@ class User extends BaseController {
         $emailUserName = $this->request->getPost('email');
         $password = $this->request->getPost('password');
 
-        $user = $userModel->asObject()->orWhere('email',$emailUserName)->orWhere('username',$emailUserName)->first();
+        $user = $userModel->orWhere('email',$emailUserName)->orWhere('username',$emailUserName)->first();
 
         if(!$user)
         {
@@ -58,10 +51,14 @@ class User extends BaseController {
             return;
         }
 
-        if(verifyPassword($password,$user->password))
+        if(verifyPassword($password,$user['password']))
         {
+
+            $session = session();
+            $session->set($user);
+
             echo "Logramos entrar Batman!<br>
-            <pre>        (⌐■_■)        </pre>";
+            <pre>(⌐■_■) --> ".$user['email']."</pre>";
         }
         // var_dump($user);
             
