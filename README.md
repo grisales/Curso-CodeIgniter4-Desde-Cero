@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
+### Aula 123 - CRUD de usuarios: crear un hash de la contraseña con un helper
+Todo ok
 ### Aula 122 - CRUD de usuarios: proceso inicial
 Aparentemente todo ok.
 Sucede que en el desarrollo del curso manejé las primeras rutas presenter dentro del grupo `$routes->group('dashboard', static function ($routes)` , al colocar la ruta "user" por fuera del grupo generó un error, manejándola por dentro del grupo funcinó ok.

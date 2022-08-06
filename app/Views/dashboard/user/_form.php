@@ -3,15 +3,15 @@
 
 <div class="form-group">
     <h4><label for="username">Usuario</label></h4>
-    <input type="text" class="form-control" name="username" id="username" value="<?= old('title', $user->username) ?>" />
+    <input <?= !$created ? "readonly" : "" ?> class="form-control" type="text"name="username" id="username" value="<?= old('title', $user->username) ?>" />
 </div>
 <div class="form-group">
     <h4><label for="email">E-Mail</label></h4>
-    <input type="text" class="form-control" name="email" id="email" value="<?= old('title', $user->email) ?>" />
+    <input <?= !$created ? "readonly" : "" ?> class="form-control" type="text"name="email" id="email" value="<?= old('title', $user->email) ?>" />
 </div>
 <div class="form-group">
     <h4><label for="password">Contraseña</label></h4>
-    <input type="password" class="form-control" name="password" id="password" value="<?= old('title', $user->password) ?>" />
+    <input class="form-control" type="password" name="password" id="password" value="" placeholder="•••" />
 </div>
 
 <button type="submit" class="btn btn-success btn-sm">

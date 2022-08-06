@@ -69,6 +69,8 @@ class User extends BaseController {
 
     public function create()
     {
+        helper("user");
+
         $user = new UserModel();
         
         if($this->validate('users'))
@@ -77,7 +79,8 @@ class User extends BaseController {
             [
                 'username' => $this->request->getPost('username'),
                 'email' => $this->request->getPost('email'),
-                'password' => $this->request->getPost('password')
+                'user_type' => 'admin',
+                'password' => hashPassword($this->request->getPost('password'))
             ]);
             return redirect()->to("dashboard/user/edit/$id")->with('message', 'Usuario '.$this->request->getPost('username').' creado con éxito!');
         }
@@ -96,6 +99,10 @@ class User extends BaseController {
 
     public function edit($id = null)
     {
+        // helper("user");
+        
+        // echo hashPassword("holamundo");
+
         $user = new UserModel();
 
         if ($user->find($id) == null)
@@ -127,6 +134,8 @@ class User extends BaseController {
 
     public function update($id = null)
     {
+        helper("user");
+
         $user = new UserModel();
 
         if ($user->find($id) == null)
@@ -134,14 +143,14 @@ class User extends BaseController {
             throw PageNotFoundException::forPageNotFound();
         }
 
-        if($this->validate('users'))
+        if($this->validate('usersUpdate'))
         {
 
             $user->update($id, [
-                'password' => $this->request->getPost('password')
+                'password' => hashPassword($this->request->getPost('password'))
             ]);
 
-            return redirect()->to('user')->with('message', 'Usuario '.$id.' actualizado con éxito!');
+            return redirect()->to('dashboard/user')->with('message', 'Usuario '.$id.' actualizado con éxito! - <span '.$this->request->getPost('password').'> ');
             
         }
         

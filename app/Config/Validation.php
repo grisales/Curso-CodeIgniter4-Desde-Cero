@@ -42,6 +42,10 @@ class Validation extends BaseConfig
         'password' => 'required|min_length[5]|max_length[20]'
     ];
 
+    public $usersUpdate = [
+        'password' => 'required|min_length[5]|max_length[20]'
+    ];
+
     /**
      * Specifies the views that are used to display the
      * errors.
