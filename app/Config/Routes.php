@@ -45,6 +45,7 @@ $routes->get('/movie/image/(:num)', 'Movie::deleteImage/$1',['as' => 'image_dele
 $routes->group('dashboard', static function ($routes) {
     $routes->presenter('movie');
     $routes->presenter('category',['except'=>['show']]);
+    $routes->presenter('user',['except'=>['show']]);
 });
 
 $routes->get('/login', 'web\User::login',['as' => 'user_login_get']);

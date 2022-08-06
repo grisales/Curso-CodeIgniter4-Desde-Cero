@@ -34,10 +34,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="<?= base_url() ?>/dashboard/movie"><i class="fa-solid fa-film mr-2"></i> Películas</a>
-          <!-- <a class="dropdown-item" href="<?= base_url() ?>/dashboard/movie/new">Agregar nueva película</a> -->
           <a class="dropdown-item" href="<?= base_url() ?>/dashboard/category"><i class="fa-solid fa-masks-theater mr-2"></i> Categorías</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="<?= base_url() ?>/contacto/Manchis"><i class="fa-solid fa-headset mr-2"></i> Contacto</a>
+          <a class="dropdown-item" href="<?= base_url() ?>/dashboard/user"><i class="fa fa-user mr-2"></i> Usuario</a>
         </div>
       </li>
     </ul>

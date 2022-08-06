@@ -36,6 +36,12 @@ class Validation extends BaseConfig
         'title' => 'required|min_length[3]|max_length[255]'
     ];
 
+    public $users = [
+        'username' => 'required|min_length[3]|max_length[20]|is_unique[users.username]',
+        'email' => 'required|min_length[6]|max_length[100]|is_unique[users.email]',
+        'password' => 'required|min_length[5]|max_length[20]'
+    ];
+
     /**
      * Specifies the views that are used to display the
      * errors.

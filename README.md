@@ -1,5 +1,15 @@
 # Notas Aulas 
 ## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
+### Aula 122 - CRUD de usuarios: proceso inicial
+Aparentemente todo ok.
+Sucede que en el desarrollo del curso manejé las primeras rutas presenter dentro del grupo `$routes->group('dashboard', static function ($routes)` , al colocar la ruta "user" por fuera del grupo generó un error, manejándola por dentro del grupo funcinó ok.
+
+>Queda como práctica personal hacer un Branch en Github para:
+>1. Sacar las rutas del grupo, y,
+>2. Pasar los controladores a una carpeta "Dashboard".
+>
+>_Ver la respuesta del foro: https://forum.codeigniter.com/showthread.php?tid=82658_
+
 ### Aula 121 - Mover controlador de usuarios
 Todo ok
 Atención a este detalle: las rutas de tipo `resource||presenter` requieren que los controladores estén en la raiz, no funcionan si estan definidos dentro de subcarpetas.
