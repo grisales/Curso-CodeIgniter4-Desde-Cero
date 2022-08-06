@@ -99,9 +99,6 @@ class User extends BaseController {
 
     public function edit($id = null)
     {
-        // helper("user");
-        
-        // echo hashPassword("holamundo");
 
         $user = new UserModel();
 
