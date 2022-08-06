@@ -1,10 +1,8 @@
 <?php
 
 namespace App\Controllers\web;
-use App\Models\CategoryModel;
 use App\Controllers\BaseController;
-use \CodeIgniter\Exceptions\PageNotFoundException;
-
+use App\Models\UserModel;
 
 class User extends BaseController {
 
@@ -19,6 +17,15 @@ class User extends BaseController {
 
     public function login()
     {
+
+        // $session = \Config\Services::session();
+
+        $array = array("username" => "german","email" => "german@cosa.test");
+
+        $session = session();
+        $session->set($array);
+
+        echo $session->username;
         
         $this->_loadDefaultView([],'login');
             
@@ -36,9 +43,27 @@ class User extends BaseController {
     public function login_post()
     {
         
-        /**
-         *  Code...
-         */
+        helper("user");
+        
+        $userModel = new UserModel();
+
+        $emailUserName = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+
+        $user = $userModel->asObject()->orWhere('email',$emailUserName)->orWhere('username',$emailUserName)->first();
+
+        if(!$user)
+        {
+            echo "Ningún registro coincide";
+            return;
+        }
+
+        if(verifyPassword($password,$user->password))
+        {
+            echo "Logramos entrar Batman!<br>
+            <pre>        (⌐■_■)        </pre>";
+        }
+        // var_dump($user);
             
     }
 
@@ -54,9 +79,9 @@ class User extends BaseController {
     public function logout()
     {
         
-        /**
-         *  Code...
-         */
+        $session = session();
+
+        echo $session->username;
             
     }
 

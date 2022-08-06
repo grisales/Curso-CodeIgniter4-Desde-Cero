@@ -1,6 +1,11 @@
 # Notas Aulas 
 ## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
+### Aula 126 - Presentación de la sesión
+Todo Ok
+### Aula 125 - Verificar si el password es correcto
+Todo Ok
 ### Aula 124 - Verificar si el password es correcto
+Todo ok
 ### Aula 123 - CRUD de usuarios: crear un hash de la contraseña con un helper
 Todo ok
 ### Aula 122 - CRUD de usuarios: proceso inicial

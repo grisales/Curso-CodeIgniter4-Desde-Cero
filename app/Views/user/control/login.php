@@ -8,11 +8,11 @@
             <h5 class="card-title text-center">Login</h5>
             <form class="form-signin" action="<?= route_to("user_login_post"); ?>" method="Post">
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <input name="email" type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
               </div>
 
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
               </div>
 
               <div class="custom-control custom-checkbox mb-3">
