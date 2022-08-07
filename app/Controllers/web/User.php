@@ -17,11 +17,13 @@ class User extends BaseController {
 
     public function login()
     {
-
+        
         // $session = \Config\Services::session();
-
+        
         $this->_loadDefaultView([],'login');
-            
+        
+        return $this->_redirectAuth();
+        
     }
 
     
@@ -43,25 +45,26 @@ class User extends BaseController {
         $emailUserName = $this->request->getPost('email');
         $password = $this->request->getPost('password');
 
-        $user = $userModel->orWhere('email',$emailUserName)->orWhere('username',$emailUserName)->first();
+        $user = $userModel->select('user_id,username,email,password,user_type')->orWhere('email',$emailUserName)->orWhere('username',$emailUserName)->first();
 
         if(!$user)
         {
-            echo "Ningún registro coincide";
-            return;
+            return redirect()->back()->with('message','Usuario y/o contraseña incorrecto');
         }
-
+        
         if(verifyPassword($password,$user['password']))
         {
-
+            unset($user['password']); //Este llamado lo hacemos para no asignar la contraseña de las variables de sesión ni por error
+            // var_dump($user);
+            
+            //Acá es donde se construye la sesión
             $session = session();
             $session->set($user);
-
-            echo "Logramos entrar Batman!<br>
-            <pre>(⌐■_■) --> ".$user['email']."</pre>";
+            return $this->_redirectAuth();
         }
-        // var_dump($user);
-            
+        
+        return redirect()->back()->with('message','Usuario y/o contraseña incorrecto');
+        
     }
 
         
@@ -77,23 +80,36 @@ class User extends BaseController {
     {
         
         $session = session();
+        $session->destroy();
+        return redirect()->to("/login")->with('message','Sesión finalizada');
         
-        if ($session->username)
-        {
-            $url1=$_SERVER['REQUEST_URI'];
-            echo "Ahora me ves:".$session->username." ( •_•)";
-            $session->destroy();
-            header("Refresh: 2; URL=$url1");
-        }
-        else
-        {
-            $url1= base_url('/login');
-            echo "Ahora no me ves:".$session->username." ⌐■-■";
-            header("Refresh: 2; URL=$url1");
-        }
-            
     }
 
+        
+    /**
+     * =======================================================
+     *    ---:::[ FUNCIÓN REDIRECIONAMIENTO AUTOMÁTICO ]:::---   
+     * =======================================================
+     * 
+     * Descripción
+     */
+    
+    private function _redirectAuth()
+    {
+        
+        $session = session();
+
+        if($session->user_type == "admin")
+        {
+            return redirect()->to("/dashboard/movie")->with('message','Hola '.$session->username);
+        }
+
+        else if($session->user_type == "regular")
+        {
+            return redirect()->to("/")->with('message','Hola '.$session->username);
+        }
+
+    }
         
     /**
      * ========================================
