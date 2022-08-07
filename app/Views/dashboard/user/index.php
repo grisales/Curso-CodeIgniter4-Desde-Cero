@@ -21,7 +21,6 @@
                 </td>
                 <td>
                     <form action="user/delete/<?= $u->user_id ?>" method="POST">
-                        <!-- <input type="submit" class="btn btn-danger btn-sm mt-2" name="submit" value="Borrar" /> -->
                         <button data-toggle="tooltip" data-placement="top" title="Borrar" type="submit" class="btn btn-danger btn-sm m-2 float-right" value="Borrar">
                             <i class="fa-solid fa-trash-can"></i>
                         </button>

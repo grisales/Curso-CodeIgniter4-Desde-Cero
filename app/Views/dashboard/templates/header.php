@@ -39,6 +39,20 @@
         </div>
       </li>
     </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Usuario
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <form action="<?= base_url() ?>/logout" method="POST" class="dropdown-item">
+            <button title="Finalizar sesión" type="submit" class="btn btn-light btn-sm m-2 float-right" value="Salir">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i> Finalizar sesión
+            </button>
+          </form>
+        </div>
+      </li>
+    </ul>
   </div>
 </nav>
 <!-- Fin del navbar -->
