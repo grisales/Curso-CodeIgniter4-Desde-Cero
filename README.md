@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
+### Aula 138 - Procesamiento de imágenes: rotate
+Todo ok
 ### Aula 137 - Procesamiento de imágenes: quality
 Todo ok
 ### Aula 136 - Procesamiento de imágenes: crop

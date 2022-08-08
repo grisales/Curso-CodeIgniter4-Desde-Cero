@@ -55,6 +55,7 @@ $routes->post('/logout', 'web\User::logout',['as' => 'user_logout']);
 $routes->get('/im/image_fit', 'ImageManipulation::image_fit');
 $routes->get('/im/image_quality', 'ImageManipulation::image_quality');
 $routes->get('/im/image_crop', 'ImageManipulation::image_crop');
+$routes->get('/im/image_rotate', 'ImageManipulation::image_rotate');
 
 /*
 * --------------------------------------------------------------------
