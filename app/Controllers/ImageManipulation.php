@@ -14,6 +14,13 @@ class ImageManipulation extends BaseController
         ->save(WRITEPATH . 'uploads/imagemanipulation/image_fit.png');
     }
     
+    public function image_quality()
+    {
+        $image = \Config\Services::image()
+        ->withFile(WRITEPATH . 'uploads/movies/10/1659279359_52e596ae1cc8e056c672.png')
+        ->save(WRITEPATH . 'uploads/imagemanipulation/image_quality.png',15);
+    }
+    
     public function image_crop()
     {
         $xOffset = 100;
