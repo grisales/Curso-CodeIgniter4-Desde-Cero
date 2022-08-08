@@ -22,7 +22,8 @@ class Movie extends BaseController {
 
     public function index()
     {
-        
+        // $this->cachePage(60);
+
         $movie = new MovieModel();
         
         $data = [
