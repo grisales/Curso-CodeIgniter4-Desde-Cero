@@ -57,6 +57,7 @@ $routes->get('/im/image_quality', 'ImageManipulation::image_quality');
 $routes->get('/im/image_crop', 'ImageManipulation::image_crop');
 $routes->get('/im/image_rotate', 'ImageManipulation::image_rotate');
 $routes->get('/im/image_resize', 'ImageManipulation::image_resize');
+$routes->get('/im/image_multiple', 'ImageManipulation::image_multiple');
 
 /*
 * --------------------------------------------------------------------

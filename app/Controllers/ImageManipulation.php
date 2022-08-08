@@ -14,6 +14,15 @@ class ImageManipulation extends BaseController
         ->save(WRITEPATH . 'uploads/imagemanipulation/image_fit.png');
     }
     
+    public function image_multiple()
+    {
+        $image = \Config\Services::image()
+        ->withFile(WRITEPATH . 'uploads/movies/10/1659279359_52e596ae1cc8e056c672.png')
+        ->rotate(90)
+        ->resize(300, 150, true)
+        ->save(WRITEPATH . 'uploads/imagemanipulation/image_multiple.png');
+    }
+
     public function image_rotate()
     {
         $image = \Config\Services::image()
