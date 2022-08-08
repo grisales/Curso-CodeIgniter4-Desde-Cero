@@ -25,12 +25,28 @@ class Movie extends BaseController {
         // $this->cachePage(60);
 
         $movie = new MovieModel();
+
+        // if (!$movies = cache('movies'))
+        // {
+        //     echo "Cache no existe";
+
+            $movies = $movie->asObject()
+            ->select('movies.*, categories.category_name')
+            ->join('categories','categories.category_id = movies.category_id')
+            ->paginate(6);
+
+        //     cache()->save('movies',$movies,60);
+
+        //     // var_dump($movies);
+        // }
+        // else
+        // {
+        //     echo "Cache existe!";
+        //     // var_dump($movies);
+        // }
         
         $data = [
-                'movies' => $movie->asObject()
-                ->select('movies.*, categories.category_name')
-                ->join('categories','categories.category_id = movies.category_id')
-                ->paginate(6),
+                'movies' => $movies,
                 'pager' => $movie->pager,
             ];
 
@@ -40,9 +56,9 @@ class Movie extends BaseController {
 
         
     /**
-     * ===================================
+     * ===========================================
      *    ---:::[ FUNCIÓN NUEVO REGISTRO ]:::---   
-     * ===================================
+     * ===========================================
      * 
      * Descripción
      */
@@ -67,9 +83,9 @@ class Movie extends BaseController {
 
         
     /**
-     * ===================================
+     * ===========================================
      *    ---:::[ FUNCIÓN CREAR REGISTRO ]:::---   
-     * ===================================
+     * ===========================================
      * 
      * Descripción
      */
@@ -97,9 +113,9 @@ class Movie extends BaseController {
 
         
     /**
-     * ==========================================
+     * ============================================
      *    ---:::[ FUNCIÓN EDITAR REGISTRO ]:::---   
-     * ==========================================
+     * ============================================
      * 
      * Descripción
      */
@@ -132,9 +148,9 @@ class Movie extends BaseController {
 
         
     /**
-     * ==============================================
+     * ================================================
      *    ---:::[ FUNCIÓN ACTUALIZAR REGISTRO ]:::---   
-     * ==============================================
+     * ================================================
      * 
      * Descripción
      */
@@ -157,6 +173,8 @@ class Movie extends BaseController {
                 'category_id' => $this->request->getPost('category_id'),
             ]);
 
+            // cache()->delete('movies');
+
             $this->_upload($id);
 
             return redirect()->to('dashboard/movie')->with('message', 'Película '.$id.' actualizada con éxito!');
@@ -169,9 +187,9 @@ class Movie extends BaseController {
 
         
     /**
-     * ==========================================
+     * ============================================
      *    ---:::[ FUNCIÓN BORRAR REGISTRO ]:::---   
-     * ==========================================
+     * ============================================
      * 
      * Descripción
      */
@@ -193,9 +211,9 @@ class Movie extends BaseController {
 
         
     /**
-     * ===========================================
+     * =============================================
      *    ---:::[ FUNCIÓN MOSTRAR REGISTRO ]:::---   
-     * ===========================================
+     * =============================================
      * 
      * Descripción
      */
@@ -226,9 +244,9 @@ class Movie extends BaseController {
 
         
     /**
-     * =========================================
+     * ===========================================
      *    ---:::[ FUNCIÓN CARGAR ARCHIVO ]:::---   
-     * =========================================
+     * ===========================================
      * 
      * Descripción
      */
@@ -276,9 +294,9 @@ class Movie extends BaseController {
 
         
     /**
-     * ===================================
+     * ===========================================
      *    ---:::[ FUNCIÓN BORRAR ARCHIVO ]:::---   
-     * ===================================
+     * ===========================================
      * 
      * Descripción
      */
@@ -316,9 +334,9 @@ class Movie extends BaseController {
 
     
     /**
-     * ===================================
+     * ==========================================
      *    ---:::[ FUNCIÓN CARGAR LAYOUT ]:::---   
-     * ===================================
+     * ==========================================
      * 
      * Descripción
      */

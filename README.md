@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
+### Aula 142 - Caché de los datos
+Todo Ok
 ### Aula 141 - Caché de las páginas
 Todo ok
 ### Aula 140 - Procesamiento de imágenes: Multiples operaciones
