@@ -83,6 +83,20 @@ class User extends BaseController {
         $session->destroy();
         return redirect()->to("/login")->with('message','Sesión finalizada');
         
+        // if ($session->username)
+        // {
+        //     $session->destroy();
+        //     $url1=$_SERVER['REQUEST_URI'];
+        //     echo "Ahora me ves:".$session->username." ( •_•)";
+        //     header("Refresh: 2; URL=$url1");
+        // }
+        // else
+        // {
+        //     $url1= base_url('/login');
+        //     echo "Ahora no me ves:".$session->username." ⌐■-■";
+        //     header("Refresh: 2; URL=$url1");
+        // }
+            
     }
 
         
@@ -106,7 +120,8 @@ class User extends BaseController {
 
         else if($session->user_type == "regular")
         {
-            return redirect()->to("/")->with('message','Hola '.$session->username);
+            // return ;
+            return redirect()->to("/contacto/$session->username")->with('message','Hola '.$session->username);
         }
 
     }

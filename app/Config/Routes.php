@@ -49,8 +49,8 @@ $routes->group('dashboard', static function ($routes) {
 });
 
 $routes->get('/login', 'web\User::login',['as' => 'user_login_get']);
+// $routes->get('/login', 'web\User::login');
 $routes->post('/login_post', 'web\User::login_post',['as' => 'user_login_post']);
-// $routes->post('/logout', 'web\User::logout',['as' => 'user_logout']);
 $routes->post('/logout', 'web\User::logout',['as' => 'user_logout']);
 
 // $routes->get('/dashboard/movie', 'Home::index',['as' => 'paginaDePeliculas']);

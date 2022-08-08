@@ -35,14 +35,14 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="<?= base_url() ?>/dashboard/movie"><i class="fa-solid fa-film mr-2"></i> Películas</a>
           <a class="dropdown-item" href="<?= base_url() ?>/dashboard/category"><i class="fa-solid fa-masks-theater mr-2"></i> Categorías</a>
-          <a class="dropdown-item" href="<?= base_url() ?>/dashboard/user"><i class="fa fa-user mr-2"></i> Usuario</a>
+          <a class="dropdown-item" href="<?= base_url() ?>/dashboard/user"><i class="fa fa-user mr-2"></i> Usuarios</a>
         </div>
       </li>
     </ul>
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Usuario
+        <?php $session = session(); echo $session->username; ?>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <form action="<?= base_url() ?>/logout" method="POST" class="dropdown-item">

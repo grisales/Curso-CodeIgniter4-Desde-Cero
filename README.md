@@ -1,6 +1,7 @@
 # Notas Aulas 
 ## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
-
+### Aula 131 - Introducción a los filtros: Proteger el módulo de dashboard
+Todo ok
 ### Aula 130 - Opción de cerrar sesión desde el header/nav
 Todo ok
 ### Aula 129 - Terminar de procesar la petición para el login
