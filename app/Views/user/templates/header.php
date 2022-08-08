@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/user/css/style.custom.css">
 
-    <title>Login</title>
+    <title> <?php echo "Login :: ".$site ?></title>
 </head>
 <body>
 
@@ -26,7 +26,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="<?= base_url('/logout') ?>">Logout <span class="sr-only">(current)</span></a>
+        <!-- <a class="nav-link" href="">Logout <span class="sr-only">(current)</span></a> -->
       </li>
   </ul>
   </div>

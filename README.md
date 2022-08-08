@@ -1,5 +1,78 @@
 # Notas Aulas 
 ## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
+### Aula 142 - Introducción a las configuraciones personalizadas
+Todo ok.
+
+Aspectos interesantes de las configuraciones personalizadas.
+
+Ejemplo: Archivo `\app\Config\Web.php` 
+
+```php
+// Archivo de configuración: \app\Config\Web.php
+<?php
+
+namespace Config;
+
+use CodeIgniter\Config\BaseConfig;
+
+class Web extends BaseConfig
+{
+    public $siteName = 'CRUDIgniter';
+    public $siteDescription = 'Site de Cruds y mucho mas';
+    public $siteEmail = 'contacto@ci4dc.test';
+}
+```
+
+Para consumir las configuraciones personalizadas se pueden incluir para consumo dentro de la funcion de la forma `$config = new \Config\Web();`
+
+```php
+private function _loadDefaultView($title, $data, $view)
+{
+    $config = new \Config\Web();
+    $dataHeader = [
+        'title' => $title,
+        'site' => $config->siteName
+    ];
+    
+    echo view ("dashboard/templates/header", $dataHeader);
+    echo view ("dashboard/category/$view", $data);
+    echo view ("dashboard/templates/footer");
+
+}
+```
+
+O de la forma global en el controlador para ser consumido en varias funciones de la forma `use \Config\Web;`
+```php
+<?php
+
+//...
+
+use \Config\Web;
+
+//...
+
+private function _loadDefaultView($title, $data, $view)
+{
+    $config = new Web();
+    $dataHeader = [
+        'title' => $title,
+        'site' => $config->siteName
+    ];
+    
+    echo view ("dashboard/templates/header", $dataHeader);
+    echo view ("dashboard/movie/$view", $data);
+    echo view ("dashboard/templates/footer");
+
+}
+```
+
+También las cofiguraciones pueden ser "sobre escritas" segun el entorno (environment) que se defina en el archivo `.env` anteponiendo el nombre del archivo de configuración a la variable
+
+Ejemplo, la variable `siteName` dentro del archivo de configuracion `\app\Config\Web.php`.
+```php
+web.siteName = "ByManchicolo (⌐■_■)"
+```
+
 ### Aula 142 - Caché de los datos
 Todo Ok
 ### Aula 141 - Caché de las páginas

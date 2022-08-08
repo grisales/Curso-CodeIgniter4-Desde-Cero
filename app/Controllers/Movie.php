@@ -7,7 +7,8 @@ use App\Models\CategoryModel;
 use App\Models\MovieImageModel;
 use App\Controllers\BaseController;
 use \CodeIgniter\Exceptions\PageNotFoundException;
-
+use \Config\App;
+use \Config\Web;
 
 class Movie extends BaseController {
 
@@ -22,6 +23,15 @@ class Movie extends BaseController {
 
     public function index()
     {
+        //$config = new \Config\Web();
+        $config = config('Web');
+        $config2 = new App();
+
+
+        // var_dump($config);
+         echo $config->siteName;
+        
+
         // $this->cachePage(60);
 
         $movie = new MovieModel();
@@ -343,8 +353,10 @@ class Movie extends BaseController {
     
     private function _loadDefaultView($title, $data, $view)
     {
+        $config = new Web();
         $dataHeader = [
-            'title' => $title
+            'title' => $title,
+            'site' => $config->siteName
         ];
         
         echo view ("dashboard/templates/header", $dataHeader);

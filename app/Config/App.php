@@ -7,6 +7,8 @@ use CodeIgniter\Session\Handlers\FileHandler;
 
 class App extends BaseConfig
 {
+    public $siteName = 'By Manchis (⌐■_■)';
+
     /**
      * --------------------------------------------------------------------------
      * Base Site URL

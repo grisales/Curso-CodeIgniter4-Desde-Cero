@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>/dashboard/css/style.custom.css">
     <link rel="stylesheet" href="<?= base_url() ?>/fontawesome/css/all.min.css">
 
-    <title><?php echo $title ?></title>
+    <title><?php echo $title." :: ".$site; ?></title>
 </head>
 <body>
 

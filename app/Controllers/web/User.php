@@ -136,8 +136,12 @@ class User extends BaseController {
     
     private function _loadDefaultView($data, $view)
     {
-        
-        echo view ("user/templates/header");
+        $config = new \Config\Web();
+        $dataHeader = [
+            // 'title' => $title,
+            'site' => $config->siteName
+        ];        
+        echo view ("user/templates/header",$dataHeader);
         echo view ("user/control/$view", $data);
         echo view ("user/templates/footer");
 
