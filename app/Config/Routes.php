@@ -49,16 +49,13 @@ $routes->group('dashboard', static function ($routes) {
 });
 
 $routes->get('/login', 'web\User::login',['as' => 'user_login_get']);
-// $routes->get('/login', 'web\User::login');
 $routes->post('/login_post', 'web\User::login_post',['as' => 'user_login_post']);
 $routes->post('/logout', 'web\User::logout',['as' => 'user_logout']);
 
-// $routes->get('/dashboard/movie', 'Home::index',['as' => 'paginaDePeliculas']);
-// $routes->get('/dashboard/movie/new', 'Home::index',['as' => 'nuevaPelicula']);
-// $routes->get('/category', 'dashboard\CategoryController::index');
+$routes->get('/im/image_fit', 'ImageManipulation::image_fit');
 
 /*
- * --------------------------------------------------------------------
+* --------------------------------------------------------------------
  * Additional Routing
  * --------------------------------------------------------------------
  *

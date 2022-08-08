@@ -1,5 +1,8 @@
 # Notas Aulas 
 ## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
+### Aula 135 - Procesamiento de imágenes: fit
+Todo ok
+
 <details><summary>Sección 6 - Intermedia - Creando nuestro módulo de login y usuario</summary>
 
 ## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
