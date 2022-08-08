@@ -1,5 +1,14 @@
 # Notas Aulas 
+## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
+<details><summary>Sección 6 - Intermedia - Creando nuestro módulo de login y usuario</summary>
+
 ## Sección 6 - Intermedia - Creando nuestro módulo de login y usuario
+### Aula 134 - Código fuente
+Todo ok
+### Aula 133 - Que hemos aprendido
+Todo ok
+### Aula 132 - Parámetros obligatorios en los filtros
+Todo ok
 ### Aula 131 - Introducción a los filtros: Proteger el módulo de dashboard
 Todo ok
 ### Aula 130 - Opción de cerrar sesión desde el header/nav
@@ -60,6 +69,7 @@ Adicionalmente, como en la practica estamos usando Bootstrap 4, tomamos el codig
 Todo ok
 ### Aula 117 - Introducción
 Todo ok
+</details>
 
 <details><summary>Sección 5 - Intermedio - Instalar y configurar Bootstrap en la aplicación</summary>
 
