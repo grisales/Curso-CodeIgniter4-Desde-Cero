@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
+### Aula 136 - Procesamiento de imágenes: crop
+Todo ok
 ### Aula 135 - Procesamiento de imágenes: fit
 Todo ok
 
