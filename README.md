@@ -1,6 +1,9 @@
 # Notas Aulas 
 ## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
-### Aula 142 - Introducción a las configuraciones personalizadas
+
+### Aula 144 - Generar logs de sistema
+Todo Ok
+### Aula 143 - Introducción a las configuraciones personalizadas
 Todo ok.
 
 Aspectos interesantes de las configuraciones personalizadas.

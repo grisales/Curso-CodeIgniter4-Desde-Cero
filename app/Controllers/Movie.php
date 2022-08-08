@@ -168,6 +168,7 @@ class Movie extends BaseController {
     public function update($id = null)
     {
         $movie = new MovieModel();
+        $session = session();
 
         if ($movie->find($id) == null)
         {
@@ -182,6 +183,8 @@ class Movie extends BaseController {
                 'movie_description' => $this->request->getPost('description'),
                 'category_id' => $this->request->getPost('category_id'),
             ]);
+
+            log_message("info","Película \"Id:[{id}] - {movie}\" actualizada por: {username}",['id' => $id,'movie' => $this->request->getPost('title'),'username' => $session->username]);
 
             // cache()->delete('movies');
 
