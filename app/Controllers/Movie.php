@@ -23,13 +23,16 @@ class Movie extends BaseController {
 
     public function index()
     {
+
+        echo lang("Form.name");
+
         //$config = new \Config\Web();
         $config = config('Web');
         $config2 = new App();
 
 
         // var_dump($config);
-         echo $config->siteName;
+        //  echo $config->siteName;
         
 
         // $this->cachePage(60);

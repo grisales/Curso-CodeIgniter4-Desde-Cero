@@ -1,6 +1,7 @@
 # Notas Aulas 
 ## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
-
+### Aula 144 - Generar Archivos de lenguaje
+Todo Ok
 ### Aula 144 - Generar logs de sistema
 Todo Ok
 ### Aula 143 - Introducción a las configuraciones personalizadas
