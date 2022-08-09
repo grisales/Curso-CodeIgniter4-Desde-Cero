@@ -1,6 +1,8 @@
 # Notas Aulas 
 ## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
-### Aula 144 - Generar Archivos de lenguaje
+### Aula 146 - Detectar el idioma del cliente y traducir la app con los lenguajes soportados
+Todo Ok
+### Aula 145 - Generar Archivos de lenguaje
 Todo Ok
 ### Aula 144 - Generar logs de sistema
 Todo Ok
