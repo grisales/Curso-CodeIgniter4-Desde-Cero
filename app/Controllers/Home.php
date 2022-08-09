@@ -11,6 +11,24 @@ class Home extends BaseController
         return view('welcome_message');
     }
 
+    public function my_request()
+    {
+        $config = new \Config\Web();
+        $dataHeader = [
+            'title' => 'Request',
+            'site' => $config->siteName
+        ];
+
+        $r = $this->request;
+
+        // echo $r -> getIPAddress();
+        // var_dump($r);
+        
+        echo view ("dashboard/templates/header", $dataHeader);
+        echo view ("home/my_request",['request'=> $r]);
+        echo view ("dashboard/templates/footer");
+    }
+
     public function obtenerImagen($movie_id = null, $image = null)
     {
 

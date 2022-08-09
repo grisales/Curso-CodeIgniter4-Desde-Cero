@@ -368,7 +368,6 @@ class Movie extends BaseController {
         echo view ("dashboard/templates/header", $dataHeader);
         echo view ("dashboard/movie/$view", $data);
         echo view ("dashboard/templates/footer");
-
     }
 
 }

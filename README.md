@@ -1,5 +1,7 @@
 # Notas Aulas 
 ## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
+### Aula 148 - Objeto request
+Todo Ok
 ### Aula 147 - Traducir un formulario
 Todo Ok
 ### Aula 146 - Detectar el idioma del cliente y traducir la app con los lenguajes soportados
