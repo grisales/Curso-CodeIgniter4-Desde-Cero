@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\MovieModel;
 use \CodeIgniter\Exceptions\PageNotFoundException;
+use \Config\Web;
 
 class Home extends BaseController
 {
@@ -13,20 +15,54 @@ class Home extends BaseController
 
     public function my_request()
     {
-        $config = new \Config\Web();
+        $config = new Web();
         $dataHeader = [
             'title' => 'Request',
             'site' => $config->siteName
         ];
-
+        //Esto:
         $r = $this->request;
-
-        // echo $r -> getIPAddress();
+        //Es lo mismo que esto:
+        $r = \Config\Services::request(); 
         // var_dump($r);
         
         echo view ("dashboard/templates/header", $dataHeader);
         echo view ("home/my_request",['request'=> $r]);
         echo view ("dashboard/templates/footer");
+    }
+
+    public function my_transaction()
+    {
+        $db = \Config\Database::connect();
+
+        $movie = new MovieModel();
+
+        $db->transStart();
+
+        $movie->update
+        (
+            2,
+            [
+                'movie_title' => 'MeC  V.1 - Millestone Comics',
+            ]
+        );
+        
+        $movie->update
+        (
+            4,
+            [
+                'movie_title' => 'MeC  V.2 - Detective Comics',
+            ]
+        );
+        
+        if ($db->transStatus())
+        {
+            echo "Éxito";
+            $db->transRollback();
+        }
+        
+        $db->transComplete();
+        
     }
 
     public function obtenerImagen($movie_id = null, $image = null)
@@ -67,9 +103,10 @@ class Home extends BaseController
 
     public function contacto($name = "Pepe")
     {
-
+        $config = new Web();
         $dataHeader = [
             'title' => 'Contacto '.$name,
+            'site' => $config->siteName,
         ];
 
         echo view ("dashboard/templates/header", $dataHeader);

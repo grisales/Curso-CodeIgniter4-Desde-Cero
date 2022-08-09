@@ -60,6 +60,7 @@ $routes->get('/im/image_resize', 'ImageManipulation::image_resize');
 $routes->get('/im/image_multiple', 'ImageManipulation::image_multiple');
 
 $routes->get('/my_request', 'Home::my_request');
+$routes->get('/my_transaction', 'Home::my_transaction');
 
 /*
 * --------------------------------------------------------------------
