@@ -1,5 +1,10 @@
 # Notas Aulas 
 ## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
+### Aula 151 - Métodos put, patch y delete
+Aunque logré poner en práctica la teoria del PUT, esta aula me dejo medio perdido.
+
+Sucede que el profesor hace referencias a un material y metodos que "supuestamente" fueron creados en aulas anteriores en donde se incluyó un controlador llamado `RestMovie.php`.
+No logro ubicar por ningun lado ese material ni la video aula en la que se creó, da la impresión de que ese video fué "suprimido" de la playlist del curso. ¯\\_(ツ)_/¯
 ### Aula 150 - Metadata de la base de datos
 Casi Todo Ok.
 
