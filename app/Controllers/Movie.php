@@ -43,14 +43,19 @@ class Movie extends BaseController {
         // {
         //     echo "Cache no existe";
 
-            $movies = $movie->asObject()
-            ->select('movies.*, categories.category_name')
-            ->join('categories','categories.category_id = movies.category_id')
-            ->paginate(6);
+        $movies = $movie->asObject()
+        ->select('movies.*, categories.category_name')
+        ->join('categories','categories.category_id = movies.category_id')
+        ->paginate(6);
 
-        //     cache()->save('movies',$movies,60);
+        // $db = \Config\Database::connect();
+        // $builder = $db->table('movies');
+        // $sql = $builder->select('movies.movie_id as Codigo,movies.movie_title as Pelicula, categories.category_name as Genero,movies.movie_description as Sinopsis')->join('categories','categories.category_id = movies.category_id')->getCompiledSelect();
+        // echo $sql;
 
-        //     // var_dump($movies);
+        // cache()->save('movies',$movies,60);
+
+        // // var_dump($movies);
         // }
         // else
         // {

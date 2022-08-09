@@ -1,5 +1,24 @@
 # Notas Aulas 
 ## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
+### Aula 150 - Metadata de la base de datos
+Casi Todo Ok.
+
+El método que muestran en el video para usar la función `getCompiledSelect();` genera error y no exibe ningun query.
+
+La manera correcta de usar la función es cargando el metodo del Query Builder:
+```php
+<?php
+//...
+$db = \Config\Database::connect()
+//...
+$builder = $db->table('movies');
+//...
+$sql = $builder->getCompiledSelect();
+echo $sql;
+// Muestra en pantalla: SELECT * FROM movies
+```
+Referencia: https://codeigniter.com/user_guide/database/query_builder.html
+
 ### Aula 149 - Transacciones
 Todo ok
 ### Aula 148 - Objeto request

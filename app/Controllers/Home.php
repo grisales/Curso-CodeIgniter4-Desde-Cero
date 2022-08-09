@@ -13,6 +13,21 @@ class Home extends BaseController
         return view('welcome_message');
     }
 
+    public function my_database()
+    {
+        $db = \Config\Database::connect();
+        
+        $config = new Web();
+        $dataHeader = [
+            'title' => 'Request',
+            'site' => $config->siteName
+        ];
+        
+        echo view ("dashboard/templates/header", $dataHeader);
+        echo view ("home/my_database",['db'=> $db]);
+        echo view ("dashboard/templates/footer");
+    }
+
     public function my_request()
     {
         $config = new Web();
