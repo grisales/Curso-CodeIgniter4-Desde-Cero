@@ -24,7 +24,7 @@ class Movie extends BaseController {
     public function index()
     {
 
-        echo lang("Form.name");
+        //echo lang("Form.name");
 
         //$config = new \Config\Web();
         $config = config('Web');

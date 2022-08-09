@@ -28,7 +28,7 @@ class Category extends BaseController {
                 'pager' => $category->pager,
             ];
 
-        $this->_loadDefaultView('Listado de categorías',$data,'index');
+        $this->_loadDefaultView(lang('Form.categories_page_title'),$data,'index');
             
     }
 
@@ -48,7 +48,7 @@ class Category extends BaseController {
         $validation = \Config\Services::validation();
         $this->_loadDefaultView
         (
-            'Crear categoría',
+            lang('Form.create_category'),
             [
                 'validation'=>$validation,
                 'category'=> new CategoryModel(),
@@ -80,7 +80,7 @@ class Category extends BaseController {
                     'category_name' => $this->request->getPost('title')
                 ]);
             
-            return redirect()->to("dashboard/category/edit/$id")->with('message', 'Categoría '.$this->request->getPost('title').' creada con éxito!');
+            return redirect()->to("dashboard/category/edit/$id")->with('message', lang('Form.sucessful_created_message'));
             
         }
         return redirect()->back()->withInput();
@@ -108,7 +108,7 @@ class Category extends BaseController {
         $validation = \Config\Services::validation();
         $this->_loadDefaultView
         (
-            'Actualizar categoría',
+            lang('Form.update_category'),
             [
                 'validation'=>$validation,
                 'category'=>$category->asObject()->find($id),
@@ -143,7 +143,7 @@ class Category extends BaseController {
                 'category_name' => $this->request->getPost('title'),
             ]);
 
-            return redirect()->to('dashboard/category')->with('message', 'Categoria '.$id.' actualizada con éxito!');
+            return redirect()->to('dashboard/category')->with('message', lang('Form.sucessful_update_message', [$id]));
             
         }
         
@@ -170,7 +170,7 @@ class Category extends BaseController {
         }
 
         $category->delete($category_id);
-        return redirect()->to('dashboard/category')->with('message', 'Categoría '.$category->category_name.' eliminada con éxito!');
+        return redirect()->to('dashboard/category')->with('message', lang('Form.sucessful_delete_message'));
 
     }
 
