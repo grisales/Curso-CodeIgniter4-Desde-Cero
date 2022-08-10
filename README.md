@@ -1,8 +1,26 @@
 # Notas Aulas 
-## Sección 7 - Extra: Avanzado - Mas componentes de CodeIgniter 4
+
+
+## Sección 8: Avanzado - Rest Api en CodeIgniter 4 (Películas)
+_El profesor cambió el orden de las video aulas en Ago10_
+
+<details><summary>Sección 7: Creando una tienda de películas</summary>
+
+## Sección 7 - Creando una tienda de peliculas
+_Pendiente,  el profesor cambió el orden de las video aulas en Ago10_
+</details>
+
+<details><summary>Secciones "Extra" : Componentes, Librerias y helpers</summary>
+<details><summary>Sección 11 - Extra: Trabajando con helpers</summary>
+
+## Sección 11 - Extra: Trabajando con helpers
+_Pendiente,  el profesor cambió el orden de las video aulas en Ago10_
+</details>
+<details><summary>Sección 10 - Extra: Avanzado - Mas componentes de CodeIgniter 4</summary>
+
+## Sección 10 - Extra: Avanzado - Mas componentes de CodeIgniter 4
 ### Aula 151 - Métodos put, patch y delete
 Aunque logré poner en práctica la teoria del PUT, esta aula me dejo medio perdido.
-
 Sucede que el profesor hace referencias a un material y metodos que "supuestamente" fueron creados en aulas anteriores en donde se incluyó un controlador llamado `RestMovie.php`.
 No logro ubicar por ningun lado ese material ni la video aula en la que se creó, da la impresión de que ese video fué "suprimido" de la playlist del curso. ¯\\_(ツ)_/¯
 ### Aula 150 - Metadata de la base de datos
@@ -125,6 +143,13 @@ Todo ok
 Todo ok
 ### Aula 135 - Procesamiento de imágenes: fit
 Todo ok
+</details>
+<details><summary>Sección 9 - Extra: Trabajando con librerías</summary>
+
+## Sección 9 - Extra: Trabajando con librerías
+_Pendiente,  el profesor cambió el orden de las video aulas en Ago10_
+</details>
+</details>
 
 <details><summary>Sección 6 - Intermedia - Creando nuestro módulo de login y usuario</summary>
 
