@@ -129,5 +129,5 @@ ci4dc.code-workspace
 
 # Anotaciones German *.GFWC
 .gfwcnotes
-
+*.xmind
 env

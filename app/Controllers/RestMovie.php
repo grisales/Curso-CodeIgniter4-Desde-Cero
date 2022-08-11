@@ -4,25 +4,37 @@ namespace App\Controllers;
 
 use App\Models\MovieModel;
 use App\Models\CategoryModel;
-use App\Models\MovieImageModel;
-use CodeIgniter\RESTful\ResourceController;
+use App\Controllers\MyRestApi;
+// use App\Models\MovieImageModel;
+// use CodeIgniter\RESTful\ResourceController;
 
 
-class RestMovie extends ResourceController
+class RestMovie extends MyRestApi
 {
     protected $modelName = 'App\Models\MovieModel';
-    protected $format    = 'xml';
+    protected $format    = 'json';
 
     public function index()
     {
-        return $this->respond($this->model->findAll(),404,"Mecatiado en cositas");
+        return $this->genericResponse($this->model->findAll(),null,200);
+        //
+    }
+    
+    /**
+     * ---:::[ FUNCIÓN PARA CONSULTAR REGISTRO ]:::---   
+     * 
+     * Esta función es para la consulta de RestApi
+     */
+    public function show($id = null)
+    {
+        return $this->respond($this->model->find($id));
         //
     }
 
     /**
      * ---:::[ FUNCIÓN CREAR REGISTRO ]:::---   
      * 
-     * Esta función es para la RestApi
+     * Esta función es para la creacion de registros usando la RestApi
      */
 
     public function create()
@@ -34,7 +46,7 @@ class RestMovie extends ResourceController
         {
             if (!$category->get($this->request->getPost('category_id')))
             {
-                return $this->respond(array("category_id" => "Categoria no existe"));
+                return $this->genericResponse(null,array("category_id" => "Categoria no existe"),500);
             }
             
             $id = $movie->insert(
@@ -43,14 +55,15 @@ class RestMovie extends ResourceController
                 'movie_description' => $this->request->getPost('description'),
                 'category_id' => $this->request->getPost('category_id'),
             ]);
-        
-            return $this->respond($this->model->find($id));
-            // return redirect()->to("dashboard/movie/edit/$id")->with('message', 'Película creada con éxito!');
             
+            return $this->genericResponse($this->model->find($id),null,200);
+            // return redirect()->to("dashboard/movie/edit/$id")->with('message', 'Película creada con éxito!');
+                
         }
-
+            
         $validation = \Config\Services::validation();
-        return $this->respond($validation->getErrors());
+
+        return $this->genericResponse(null,$validation->getErrors(),500);
 
         // Errores
         // return redirect()->back()->withInput();
