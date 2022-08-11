@@ -43,8 +43,9 @@ class RestMovie extends ResourceController
             // return redirect()->to("dashboard/movie/edit/$id")->with('message', 'Película creada con éxito!');
             
         }
-        
-        return $this->respond("Errores");
+
+        $validation = \Config\Services::validation();
+        return $this->respond($validation->getErrors());
 
         // Errores
         // return redirect()->back()->withInput();
