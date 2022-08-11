@@ -36,9 +36,9 @@ class RestMovie extends MyRestApi
     }
 
     /**
-     * ---:::[ FUNCIÓN PARA CONSULTAR REGISTRO ]:::---   
+     * ---:::[ FUNCIÓN PARA ELIMINAR UN REGISTRO ]:::---   
      * 
-     * Esta función es para la consulta de RestApi
+     * Esta función es para la eliminación dfe datos via RestApi
      */
     public function delete($id = null)
     {
@@ -133,6 +133,12 @@ class RestMovie extends MyRestApi
 
         // Errores
         // return redirect()->back()->withInput();
+    }
+
+    public function categories()
+    {
+        $category = new CategoryModel();
+        return $this->genericResponse($category->findAll(),null,200);
     }
 
 }
