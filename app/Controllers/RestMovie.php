@@ -28,9 +28,14 @@ class RestMovie extends ResourceController
     public function create()
     {
         $movie = new MovieModel();
+        $category = new CategoryModel();
         
         if($this->validate('movies'))
         {
+            if (!$category->get($this->request->getPost('category_id')))
+            {
+                return $this->respond(array("category_id" => "Categoria no existe"));
+            }
             
             $id = $movie->insert(
             [
