@@ -3,6 +3,17 @@
 ## Sección 8: Avanzado - Rest Api en CodeIgniter 4 (Películas)
 _El profesor cambió el orden de las video aulas en Ago10, tuve que dar un salto a la videoaula 198 de la sección 8 para no perder el hilo._
 
+### Aula 207 - Editar un producto
+Todo ok.
+
+Atento a la manera como se hace el request de las variables para PATCH via PUT usando una variable como array de datos mediante la funcion `getRawInput()`.
+```php
+//...
+$data = $request->getRawInput();
+//...
+```
+### Aula 206 - Eliminar un producto
+Todo ok
 ### Aula 205 - Mostrar un producto
 Todo ok
 ### Aula 204 - Normalizar respuesta de la RestApi

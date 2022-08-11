@@ -13,6 +13,7 @@ class MyRestApi extends ResourceController
         {
             return $this->respond(array(
                 "data" => $data,
+                "msj" => $msj,
                 "code" => $code
             ));
         }

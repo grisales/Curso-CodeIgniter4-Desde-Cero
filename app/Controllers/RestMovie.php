@@ -27,7 +27,30 @@ class RestMovie extends MyRestApi
      */
     public function show($id = null)
     {
+        $movie = new MovieModel();
+        if (!$movie->find($id))
+        {        
+            return $this->genericResponse($id,"Pelicula no encontrada",404);
+        }
         return $this->genericResponse($this->model->find($id),null,200);
+    }
+
+    /**
+     * ---:::[ FUNCIÓN PARA CONSULTAR REGISTRO ]:::---   
+     * 
+     * Esta función es para la consulta de RestApi
+     */
+    public function delete($id = null)
+    {
+        $movie = new MovieModel();
+
+        if (!$movie->find($id))
+        {
+            return $this->genericResponse(null,"Pelicula no existe",404);
+        }
+
+        $movie->delete($id);
+        return $this->genericResponse($id,"Pelicula eliminada con exito",200);
         //
     }
 
@@ -57,7 +80,50 @@ class RestMovie extends MyRestApi
             ]);
             
             return $this->genericResponse($this->model->find($id),null,200);
-            // return redirect()->to("dashboard/movie/edit/$id")->with('message', 'Película creada con éxito!');
+                
+        }
+            
+        $validation = \Config\Services::validation();
+
+        return $this->genericResponse(null,$validation->getErrors(),500);
+
+        // Errores
+        // return redirect()->back()->withInput();
+    }
+
+    /**
+     * ---:::[ FUNCIÓN ACTUALIZAR REGISTRO ]:::---   
+     * 
+     * Esta función es para la actualización de registros usando la RestApi
+     */
+
+    public function update($id = null)
+    {
+        $movie = new MovieModel();
+        $category = new CategoryModel();
+        
+        $data = $this->request->getRawInput();
+
+        if($this->validate('movies'))
+        {
+            if (!$movie->get($id))
+            {
+                return $this->genericResponse(null,array("movie_id" => "Pelicula no existe"),500);
+            }
+            
+            if (!$category->get($data['category_id']))
+            {
+                return $this->genericResponse(null,array("category_id" => "Categoria no existe"),500);
+            }
+            
+            $movie->update($id,
+            [
+                'movie_title' => $data['title'],
+                'movie_description' => $data['description'],
+                'category_id' => $data['category_id'],
+            ]);
+            
+            return $this->genericResponse($this->model->find($id),null,200);
                 
         }
             
