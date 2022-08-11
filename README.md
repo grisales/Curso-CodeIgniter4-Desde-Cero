@@ -3,6 +3,10 @@
 ## Sección 8: Avanzado - Rest Api en CodeIgniter 4 (Películas)
 _El profesor cambió el orden de las video aulas en Ago10, tuve que dar un salto a la videoaula 198 de la sección 8 para no perder el hilo._
 
+### Aula 201 - Crear un producto: Definir esquema básico
+Todo ok
+### Aula 200 - Instalar PostMan para realizar peticiones a la Rest Api
+Todo ok
 ### Aula 199 - Empezando con un controlador de tipo Rest
 Todo ok
 ### Aula 198 - Introducción
