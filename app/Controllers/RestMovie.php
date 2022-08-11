@@ -27,7 +27,7 @@ class RestMovie extends MyRestApi
      */
     public function show($id = null)
     {
-        return $this->respond($this->model->find($id));
+        return $this->genericResponse($this->model->find($id),null,200);
         //
     }
 
