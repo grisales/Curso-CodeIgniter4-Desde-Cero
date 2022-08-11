@@ -53,6 +53,11 @@ $routes->get('/login', 'web\User::login',['as' => 'user_login_get']);
 $routes->post('/login_post', 'web\User::login_post',['as' => 'user_login_post']);
 $routes->post('/logout', 'web\User::logout',['as' => 'user_logout']);
 
+//**REST */
+$routes->resource('rest-movie', ['controller' => 'RestMovie']);
+
+
+
 $routes->get('/im/image_fit', 'ImageManipulation::image_fit');
 $routes->get('/im/image_quality', 'ImageManipulation::image_quality');
 $routes->get('/im/image_crop', 'ImageManipulation::image_crop');

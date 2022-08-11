@@ -1,8 +1,12 @@
 # Notas Aulas 
 
-
 ## Sección 8: Avanzado - Rest Api en CodeIgniter 4 (Películas)
-_El profesor cambió el orden de las video aulas en Ago10_
+_El profesor cambió el orden de las video aulas en Ago10, tuve que dar un salto a la videoaula 198 de la sección 8 para no perder el hilo._
+
+### Aula 199 - Empezando con un controlador de tipo Rest
+Todo ok
+### Aula 198 - Introducción
+Todo ok
 
 <details><summary>Sección 7: Creando una tienda de películas</summary>
 
