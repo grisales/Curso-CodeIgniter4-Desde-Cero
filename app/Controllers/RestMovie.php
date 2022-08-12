@@ -12,12 +12,32 @@ use App\Controllers\MyRestApi;
 class RestMovie extends MyRestApi
 {
     protected $modelName = 'App\Models\MovieModel';
-    protected $format    = 'json';
+    protected $format    = 'xml';
 
     public function index()
     {
         return $this->genericResponse($this->model->findAll(),null,200);
         //
+    }
+
+    public function paginate()
+    {
+        // $movie = new MovieModel();
+
+        // $movie->asObject()
+        // ->select('movies.*, categories.category_name')
+        // ->join('categories','categories.category_id = movies.category_id');
+
+        // return $this->genericResponse($this->model->paginate(10),null,200);
+
+        $movieImage = $this->model->asObject()
+        ->select('movies.*,categories.category_name as category, any_value(movies_images.movie_image) as image')
+        ->join('categories','categories.category_id = movies.category_id')
+        ->join('movies_images','movies.movie_id = movies_images.movie_id','left')
+        ->groupBy('movie_id');
+
+        return $this->genericResponse($this->model->paginate(5),null,200);
+
     }
     
     /**

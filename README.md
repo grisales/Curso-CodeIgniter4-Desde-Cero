@@ -3,10 +3,15 @@
 ## Sección 8: Avanzado - Rest Api en CodeIgniter 4 (Películas)
 _El profesor cambió el orden de las video aulas en Ago10, tuve que dar un salto a la videoaula 198 de la sección 8 para no perder el hilo._
 
+### Aula 209 - Recurso rest paginado
+Todo ok
+
 ### Aula 208 - Listado de categorías
 Todo ok.
+
+Atención a la prioridad (orden en la declaración) de las rutas para que no haya conflicto con las rutas genericas de `resources`.
 ### Aula 207 - Editar un producto
-Todo ok.
+Todo ok
 
 Atento a la manera como se hace el request de las variables para PATCH via PUT usando una variable como array de datos mediante la funcion `getRawInput()`.
 ```php

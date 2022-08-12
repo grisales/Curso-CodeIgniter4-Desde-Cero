@@ -49,13 +49,16 @@ $routes->group('dashboard', static function ($routes) {
     $routes->resource('movie');
 });
 
+//**REST */
+$routes->get('/rest-movie/paginate', 'RestMovie::paginate');
+$routes->resource('rest-movie', ['controller' => 'RestMovie']);
+
+$routes->get('/rest-movie/categories', 'RestMovie::categories');
+
 $routes->get('/login', 'web\User::login',['as' => 'user_login_get']);
 $routes->post('/login_post', 'web\User::login_post',['as' => 'user_login_post']);
 $routes->post('/logout', 'web\User::logout',['as' => 'user_logout']);
 
-//**REST */
-$routes->get('/rest-movie/categories', 'RestMovie::categories');
-$routes->resource('rest-movie', ['controller' => 'RestMovie']);
 
 
 
