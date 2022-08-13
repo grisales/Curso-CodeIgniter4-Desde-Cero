@@ -69,4 +69,23 @@ class MyLibraries extends BaseController
 
         var_dump($body);
     } //https://codeigniter.com/user_guide/libraries/curlrequest.html?highlight=curlrequest
+
+
+    // agentes
+    public function agent()
+    {
+        $config = new \Config\Web();
+        $data = $this->request->getUserAgent();
+        
+        $dataHeader = [
+            'title' => "Agent",
+            'site' => $config->siteName
+        ];
+
+        echo view("dashboard/templates/header", $dataHeader);
+        echo view("librarie/my_agent", ['agent' => $data]);
+        echo view("dashboard/templates/footer");
+    }
+
+    
 }
