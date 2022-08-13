@@ -51,6 +51,8 @@ $routes->group('dashboard', static function ($routes) {
 
 //**REST */
 $routes->get('/rest-movie/paginate', 'RestMovie::paginate');
+$routes->get('/rest-movie/search', 'RestMovie::search');
+
 $routes->resource('rest-movie', ['controller' => 'RestMovie']);
 
 $routes->get('/rest-movie/categories', 'RestMovie::categories');
