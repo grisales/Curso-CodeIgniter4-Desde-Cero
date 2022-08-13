@@ -27,9 +27,10 @@ class RestMovie extends MyRestApi
         ->select('movies.*,categories.category_name as category, any_value(movies_images.movie_image) as image')
         ->join('categories','categories.category_id = movies.category_id')
         ->join('movies_images','movies.movie_id = movies_images.movie_id','left')
-        ->groupBy('movie_id');
+        ->groupBy('movies.movie_id');
 
-        return $this->genericResponse($this->model->paginate(5),null,200);
+        // return $this->genericResponse($this->model->paginate(5),null,200);
+        return $this->genericPaginateResponse($this->model->paginate(5),null,200,$movieImage->pager);
 
     }
 
@@ -42,7 +43,7 @@ class RestMovie extends MyRestApi
         ->select('movies.*,categories.category_name as category, any_value(movies_images.movie_image) as image')
         ->join('categories','categories.category_id = movies.category_id')
         ->join('movies_images','movies.movie_id = movies_images.movie_id','left')
-        ->groupBy('movie_id');
+        ->groupBy('movies.movie_id');
 
         if ($search) {
             $movieImage->like('movies.movie_title', $search);
@@ -52,8 +53,8 @@ class RestMovie extends MyRestApi
             $movieImage->where('categories.category_id', $category_id);
         }
         
-        return $this->genericResponse($movieImage->paginate(10),null,200);
-        // return $this->genericPaginateResponse($movieImage->paginate(10),null,200,$movieImage->pager);
+        // return $this->genericResponse($movieImage->paginate(10),null,200);
+        return $this->genericPaginateResponse($movieImage->paginate(10),null,200,$movieImage->pager);
     }
     
     /**
