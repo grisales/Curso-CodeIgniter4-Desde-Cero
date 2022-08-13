@@ -49,34 +49,33 @@ $routes->group('dashboard', static function ($routes) {
     $routes->resource('movie');
 });
 
-//**REST */
-$routes->get('/rest-movie/paginate', 'RestMovie::paginate');
-$routes->get('/rest-movie/search', 'RestMovie::search');
-
-$routes->resource('rest-movie', ['controller' => 'RestMovie']);
-
-$routes->get('/rest-movie/categories', 'RestMovie::categories');
-
 $routes->get('/login', 'web\User::login',['as' => 'user_login_get']);
 $routes->post('/login_post', 'web\User::login_post',['as' => 'user_login_post']);
 $routes->post('/logout', 'web\User::logout',['as' => 'user_logout']);
 
-
-
+//**REST */
+$routes->get('/rest-movie/paginate', 'RestMovie::paginate');
+$routes->get('/rest-movie/search', 'RestMovie::search');
+$routes->resource('rest-movie', ['controller' => 'RestMovie']);
+$routes->get('/rest-movie/categories', 'RestMovie::categories');
 
 $routes->get('/im/image_fit', 'ImageManipulation::image_fit');
-$routes->get('/im/image_quality', 'ImageManipulation::image_quality');
-$routes->get('/im/image_crop', 'ImageManipulation::image_crop');
 $routes->get('/im/image_rotate', 'ImageManipulation::image_rotate');
 $routes->get('/im/image_resize', 'ImageManipulation::image_resize');
 $routes->get('/im/image_multiple', 'ImageManipulation::image_multiple');
-
+$routes->get('/im/image_crop', 'ImageManipulation::image_crop');
+$routes->get('/im/image_quality', 'ImageManipulation::image_quality');
 $routes->get('/my_request', 'Home::my_request');
 $routes->get('/my_transaction', 'Home::my_transaction');
 $routes->get('/my_database', 'Home::my_database');
 
-/*
-* --------------------------------------------------------------------
+// librerias
+$routes->get('/lib/curl_get', 'MyLibraries::curl_get');
+$routes->get('/lib/curl_remove', 'MyLibraries::curl_remove');
+
+
+
+/** --------------------------------------------------------------------
  * Additional Routing
  * --------------------------------------------------------------------
  *

@@ -1,59 +1,30 @@
 # Notas Aulas 
 
-## Sección 8: Avanzado - Rest Api en CodeIgniter 4 (Películas)
-_El profesor cambió el orden de las video aulas en Ago10, tuve que dar un salto a la videoaula 198 de la sección 8 para no perder el hilo._
 
-### Aula 211 - Respuesta personalizada para los métodos paginados
-Todo ok
-### Aula 210 - Recurso rest con filtros y paginado
-Todo ok
-### Aula 209 - Recurso rest paginado
-Todo ok
-### Aula 208 - Listado de categorías
-Todo ok.
+## Sección 9 - Extra: Trabajando con librerías
+_El profesor cambió el orden de las video aulas en Ago10_
+### Aula 213 - Haciendo peticiones HTTP (CURL): get y delete
+Funcionó parcialmente.
 
-Atención a la prioridad (orden en la declaración) de las rutas para que no haya conflicto con las rutas genericas de `resources`.
-### Aula 207 - Editar un producto
-Todo ok
+La implementación de `'headers' => ['Accept' => 'application/json']` en el controlador `MyLibraries.php` nunca reconoció en la salida la declaración del tipo de salida 'xml/json'. Siempre la prioridad la tuvo el definido en el formato definido en el controlador RestMovie.php con `protected $format = 'json';` o en su ausencia usando el formato por defecto del FrameWork.
 
-Atento a la manera como se hace el request de las variables para PATCH via PUT usando una variable como array de datos mediante la funcion `getRawInput()`.
-```php
-//...
-$data = $request->getRawInput();
-//...
-```
-### Aula 206 - Eliminar un producto
-Todo ok
-### Aula 205 - Mostrar un producto
-Todo ok
-### Aula 204 - Normalizar respuesta de la RestApi
-Todo ok
-### Aula 203 - Crear un producto: Validar categoría válida
-Todo ok
-### Aula 202 - Crear un producto: Mostrar los errores de formulario
-Todo ok
-### Aula 201 - Crear un producto: Definir esquema básico
-Todo ok
-### Aula 200 - Instalar PostMan para realizar peticiones a la Rest Api
-Todo ok
-### Aula 199 - Empezando con un controlador de tipo Rest
-Todo ok
-### Aula 198 - Introducción
-Todo ok
+También un detalle en el IDE VSCode,  la función `getBody()` se resaltaba como error aunque no lo es, al parecer por algo inherente a la extensión de inteliphense instalada en el IDE.
 
-<details><summary>Sección 7: Creando una tienda de películas</summary>
+Continué un thread en el foro oficial de CI : https://forum.codeigniter.com/showthread.php?tid=80209
+
+<details><summary>[P] Sección 7: Creando una tienda de películas</summary>
 
 ## Sección 7 - Creando una tienda de peliculas
 _Pendiente,  el profesor cambió el orden de las video aulas en Ago10_
 </details>
 
-<details><summary>Secciones "Extra" : Componentes, Librerias y helpers</summary>
-<details><summary>Sección 11 - Extra: Trabajando con helpers</summary>
+<details><summary>[P] Secciones "Extra": [10]Componentes, [9]Librerias y [11]helpers</summary>
+<details><summary>[P] Sección 11 - Extra: Trabajando con helpers</summary>
 
 ## Sección 11 - Extra: Trabajando con helpers
 _Pendiente,  el profesor cambió el orden de las video aulas en Ago10_
 </details>
-<details><summary>Sección 10 - Extra: Avanzado - Mas componentes de CodeIgniter 4</summary>
+<details><summary>[Ok] Sección 10 - Extra: Avanzado - Mas componentes de CodeIgniter 4</summary>
 
 ## Sección 10 - Extra: Avanzado - Mas componentes de CodeIgniter 4
 ### Aula 151 - Métodos put, patch y delete
@@ -181,11 +152,53 @@ Todo ok
 ### Aula 135 - Procesamiento de imágenes: fit
 Todo ok
 </details>
-<details><summary>Sección 9 - Extra: Trabajando con librerías</summary>
-
-## Sección 9 - Extra: Trabajando con librerías
-_Pendiente,  el profesor cambió el orden de las video aulas en Ago10_
+<details><summary>[P] Sección 9 - Extra: Trabajando con librerías</summary>
+~~> Aqui va <~~
 </details>
+</details>
+
+<details><summary>Sección 8: Avanzado - Rest Api en CodeIgniter 4 (Películas)</summary>
+
+## Sección 8: Avanzado - Rest Api en CodeIgniter 4 (Películas)
+_El profesor cambió el orden de las video aulas en Ago10, tuve que dar un salto a la videoaula 198 de la sección 8 para no perder el hilo._
+
+### Aula 211 - Respuesta personalizada para los métodos paginados
+Todo ok
+### Aula 210 - Recurso rest con filtros y paginado
+Todo ok
+### Aula 209 - Recurso rest paginado
+Todo ok
+### Aula 208 - Listado de categorías
+Todo ok.
+
+Atención a la prioridad (orden en la declaración) de las rutas para que no haya conflicto con las rutas genericas de `resources`.
+### Aula 207 - Editar un producto
+Todo ok
+
+Atento a la manera como se hace el request de las variables para PATCH via PUT usando una variable como array de datos mediante la funcion `getRawInput()`.
+```php
+//...
+$data = $request->getRawInput();
+//...
+```
+### Aula 206 - Eliminar un producto
+Todo ok
+### Aula 205 - Mostrar un producto
+Todo ok
+### Aula 204 - Normalizar respuesta de la RestApi
+Todo ok
+### Aula 203 - Crear un producto: Validar categoría válida
+Todo ok
+### Aula 202 - Crear un producto: Mostrar los errores de formulario
+Todo ok
+### Aula 201 - Crear un producto: Definir esquema básico
+Todo ok
+### Aula 200 - Instalar PostMan para realizar peticiones a la Rest Api
+Todo ok
+### Aula 199 - Empezando con un controlador de tipo Rest
+Todo ok
+### Aula 198 - Introducción
+Todo ok
 </details>
 
 <details><summary>Sección 6 - Intermedia - Creando nuestro módulo de login y usuario</summary>
