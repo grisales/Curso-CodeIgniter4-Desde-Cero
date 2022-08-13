@@ -83,7 +83,7 @@ class RestMovie extends MyRestApi
 
         if (!$movie->find($id))
         {
-            return $this->genericResponse(null,"Pelicula no existe",404);
+            return $this->genericResponse(null,"Pelicula no existe",200);
         }
 
         $movie->delete($id);
@@ -160,7 +160,7 @@ class RestMovie extends MyRestApi
                 'category_id' => $data['category_id'],
             ]);
             
-            return $this->genericResponse($this->model->find($id),null,200);
+            return $this->genericResponse($this->model->find($id),"Pelicula actualizada",200);
                 
         }
             

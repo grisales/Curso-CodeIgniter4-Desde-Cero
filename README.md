@@ -3,6 +3,9 @@
 
 ## Sección 9 - Extra: Trabajando con librerías
 _El profesor cambió el orden de las video aulas en Ago10_
+### Aula 214 - Haciendo peticiones HTTP (CURL): post y put
+Todo ok
+
 ### Aula 213 - Haciendo peticiones HTTP (CURL): get y delete
 Funcionó parcialmente.
 

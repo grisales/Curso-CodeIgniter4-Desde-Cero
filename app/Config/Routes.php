@@ -59,20 +59,33 @@ $routes->get('/rest-movie/search', 'RestMovie::search');
 $routes->resource('rest-movie', ['controller' => 'RestMovie']);
 $routes->get('/rest-movie/categories', 'RestMovie::categories');
 
-$routes->get('/im/image_fit', 'ImageManipulation::image_fit');
-$routes->get('/im/image_rotate', 'ImageManipulation::image_rotate');
-$routes->get('/im/image_resize', 'ImageManipulation::image_resize');
-$routes->get('/im/image_multiple', 'ImageManipulation::image_multiple');
-$routes->get('/im/image_crop', 'ImageManipulation::image_crop');
-$routes->get('/im/image_quality', 'ImageManipulation::image_quality');
+$routes->group('im', function($routes) {
+    $routes->get('image_fit', 'ImageManipulation::image_fit');
+    $routes->get('image_rotate', 'ImageManipulation::image_rotate');
+    $routes->get('image_resize', 'ImageManipulation::image_resize');
+    $routes->get('image_multiple', 'ImageManipulation::image_multiple');
+    $routes->get('image_crop', 'ImageManipulation::image_crop');
+    $routes->get('image_quality', 'ImageManipulation::image_quality');
+});
+
 $routes->get('/my_request', 'Home::my_request');
 $routes->get('/my_transaction', 'Home::my_transaction');
 $routes->get('/my_database', 'Home::my_database');
 
 // librerias
-$routes->get('/lib/curl_get', 'MyLibraries::curl_get');
-$routes->get('/lib/curl_remove', 'MyLibraries::curl_remove');
-
+$routes->group('lib', function($routes)
+{
+	$routes->get('curl_get', 'MyLibraries::curl_get');
+	$routes->get('curl_post', 'MyLibraries::curl_post');
+	$routes->get('curl_put', 'MyLibraries::curl_put');
+	$routes->get('curl_remove', 'MyLibraries::curl_remove');
+	$routes->get('agent', 'MyLibraries::agent');
+	$routes->get('email', 'MyLibraries::email');
+	$routes->get('encrypt', 'MyLibraries::encrypt');
+	$routes->get('time', 'MyLibraries::time');
+	$routes->get('uri', 'MyLibraries::uri');
+	$routes->get('file', 'MyLibraries::file');
+});
 
 
 /** --------------------------------------------------------------------
