@@ -113,4 +113,17 @@ class MyLibraries extends BaseController
         echo "acabé 4!";
     }
 
+    public function encrypt()
+    {
+        $encrypter = \Config\Services::encrypter();
+
+        $cadena = "Este mensaje lleva el numero 1234 5678 9012 3456 de la TC";
+
+        $encrypt = $encrypter->encrypt($cadena);
+
+        echo $encrypt."<br>&nbsp<br>";
+
+        echo $encrypter->decrypt($encrypt);
+    }
+
 }

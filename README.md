@@ -3,15 +3,14 @@
 
 ## Sección 9 - Extra: Trabajando con librerías
 _El profesor cambió el orden de las video aulas en Ago10_
+### Aula 217 - Encriptando textos
+Todo ok
 ### Aula 216 - Enviando E-Mails
 Todo ok
-
 ### Aula 215 - Detectando el agente (tipo de dispositivo y navegador)
 Todo ok
-
 ### Aula 214 - Haciendo peticiones HTTP (CURL): post y put
 Todo ok
-
 ### Aula 213 - Haciendo peticiones HTTP (CURL): get y delete
 Funcionó parcialmente.
 
