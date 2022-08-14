@@ -3,6 +3,8 @@
 
 ## Sección 9 - Extra: Trabajando con librerías
 _El profesor cambió el orden de las video aulas en Ago10_
+### Aula 218 - Trabajando con fechas
+Todo ok
 ### Aula 217 - Encriptando textos
 Todo ok
 ### Aula 216 - Enviando E-Mails

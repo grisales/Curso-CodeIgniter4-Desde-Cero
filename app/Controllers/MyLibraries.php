@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use CodeIgniter\I18n\Time;
 
 
 class MyLibraries extends BaseController
@@ -124,6 +125,43 @@ class MyLibraries extends BaseController
         echo $encrypt."<br>&nbsp<br>";
 
         echo $encrypter->decrypt($encrypt);
+    }
+
+    public function time()
+    {
+
+        $time = new Time('+3 week','America/Bogota','es_ES');
+        echo $time->humanize().": ";
+        echo $time."<br>";
+
+        $time = Time::parse('now');
+        echo $time->humanize().": ";
+        echo $time."<br>";
+        $time = Time::parse('-3 day');
+        echo $time->humanize().": ";
+        echo $time."<br>";
+        $time = Time::parse('+3 day');
+        echo $time->humanize().": ";
+        echo $time."<br>";
+        $time = Time::parse('+3 week');
+        echo $time->humanize().": ";
+        echo $time."<br>";
+        $time = Time::parse('+3 year');
+        echo $time->humanize().": ";
+        echo $time."<br>&nbsp;<br>";
+        
+        $time = Time::parse('now');
+        echo "<h1>O tempo agora</h1>";
+        echo "Ano: ".$time->year."<br>";           
+        echo "Mês: ".$time->month."<br>";          
+        echo "Dia: ".$time->day."<br>";           
+        echo "Hora: ".$time->hour."<br>";           
+        echo "Minuto: ".$time->minute."<br>";        
+        echo "Segundo: ".$time->second."<br>";
+
+        // $time = Time::parse('March 10, 2017', 'America/Sao_Paulo');
+
+        echo $time->humanize();
     }
 
 }
