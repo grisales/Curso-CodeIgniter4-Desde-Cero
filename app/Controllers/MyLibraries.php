@@ -87,5 +87,30 @@ class MyLibraries extends BaseController
         echo view("dashboard/templates/footer");
     }
 
-    
+    public function email()
+    {
+        $email = \Config\Services::email();
+
+        $config['userAgent'] = 'SIPEMailer';
+        $config['protocol'] = 'smtp';
+        $config['SMTPHost'] = 'smtp.mailtrap.io';
+        $config['SMTPPort']  = 2525;
+        $config['SMTPUser'] = '••••••••••••••';// verificar credenciales con el proveedor
+        $config['SMTPPass'] = '••••••••••••••';
+        $config['CRLF'] = "\r\n";
+        $config['newline'] = "\r\n";
+        $config['mailType'] = "html";
+
+        $email->initialize($config);
+
+        $email->setFrom('unusuario@portedi.com', 'Administrador');
+        $email->setTo('uncliente@suemail.com');
+
+        $email->setSubject('Cuarto saludo');
+        $email->setMessage('<u>Hola <b>Mundo</b></u> #4');
+
+        $email->send();
+        echo "acabé 4!";
+    }
+
 }

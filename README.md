@@ -3,6 +3,9 @@
 
 ## Sección 9 - Extra: Trabajando con librerías
 _El profesor cambió el orden de las video aulas en Ago10_
+### Aula 216 - Enviando E-Mails
+Todo ok
+
 ### Aula 215 - Detectando el agente (tipo de dispositivo y navegador)
 Todo ok
 
@@ -12,7 +15,7 @@ Todo ok
 ### Aula 213 - Haciendo peticiones HTTP (CURL): get y delete
 Funcionó parcialmente.
 
-La implementación de `'headers' => ['Accept' => 'application/json']` en el controlador `MyLibraries.php` nunca reconoció en la salida la declaración del tipo de salida 'xml/json'. Siempre la prioridad la tuvo el definido en el formato definido en el controlador RestMovie.php con `protected $format = 'json';` o en su ausencia usando el formato por defecto del FrameWork.
+La implementación de `'headers' => ['Accept' => 'application/json']` en el controlador `MyLibraries.php` nunca reconoció en la salida la declaración del tipo de salida 'xml/json'. Siempre la prioridad la tuvo el formato definido en el controlador RestMovie.php con `protected $format = 'json';` o en su ausencia usando el formato por defecto del FrameWork.
 
 También un detalle en el IDE VSCode,  la función `getBody()` se resaltaba como error aunque no lo es, al parecer por algo inherente a la extensión de inteliphense instalada en el IDE.
 
