@@ -71,7 +71,6 @@ class MyLibraries extends BaseController
         var_dump($body);
     } //https://codeigniter.com/user_guide/libraries/curlrequest.html?highlight=curlrequest
 
-
     // agentes
     public function agent()
     {
@@ -82,11 +81,31 @@ class MyLibraries extends BaseController
             'title' => "Agent",
             'site' => $config->siteName
         ];
-
+        
         echo view("dashboard/templates/header", $dataHeader);
         echo view("librarie/my_agent", ['agent' => $data]);
         echo view("dashboard/templates/footer");
     }
+
+    // uri
+    public function uri()
+    {
+        $config = new \Config\Web();
+        $uri = $this->request->uri;
+
+        $data = new \CodeIgniter\HTTP\URI('https://www.desarrollolibre.net:80/blog/django/creando-nuestro-primer-proyecto-y-aplicacion-en-django?IdUsuario=46546&NombreUsuario=PepeLePu#La-PQEK');
+        
+        $dataHeader =
+        [
+            'title' => "Uri",
+            'site' => $config->siteName
+        ];
+
+        echo view("dashboard/templates/header", $dataHeader);
+        echo view("librarie/my_uri", ['uri' => $data]);
+        echo view("dashboard/templates/footer");
+    }
+    
 
     public function email()
     {
