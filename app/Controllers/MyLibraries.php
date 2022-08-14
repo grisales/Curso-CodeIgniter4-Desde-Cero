@@ -2,8 +2,9 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
 use CodeIgniter\I18n\Time;
+use CodeIgniter\Files\File;
+use App\Controllers\BaseController;
 
 
 class MyLibraries extends BaseController
@@ -92,7 +93,7 @@ class MyLibraries extends BaseController
     {
         $config = new \Config\Web();
         $uri = $this->request->uri;
-
+        
         $data = new \CodeIgniter\HTTP\URI('https://www.desarrollolibre.net:80/blog/django/creando-nuestro-primer-proyecto-y-aplicacion-en-django?IdUsuario=46546&NombreUsuario=PepeLePu#La-PQEK');
         
         $dataHeader =
@@ -100,7 +101,7 @@ class MyLibraries extends BaseController
             'title' => "Uri",
             'site' => $config->siteName
         ];
-
+        
         echo view("dashboard/templates/header", $dataHeader);
         echo view("librarie/my_uri", ['uri' => $data]);
         echo view("dashboard/templates/footer");
@@ -110,7 +111,7 @@ class MyLibraries extends BaseController
     public function email()
     {
         $email = \Config\Services::email();
-
+        
         $config['userAgent'] = 'SIPEMailer';
         $config['protocol'] = 'smtp';
         $config['SMTPHost'] = 'smtp.mailtrap.io';
@@ -122,7 +123,7 @@ class MyLibraries extends BaseController
         $config['mailType'] = "html";
 
         $email->initialize($config);
-
+        
         $email->setFrom('unusuario@portedi.com', 'Administrador');
         $email->setTo('uncliente@suemail.com');
 
@@ -138,21 +139,21 @@ class MyLibraries extends BaseController
         $encrypter = \Config\Services::encrypter();
 
         $cadena = "Este mensaje lleva el numero 1234 5678 9012 3456 de la TC";
-
+        
         $encrypt = $encrypter->encrypt($cadena);
-
+        
         echo $encrypt."<br>&nbsp<br>";
-
+        
         echo $encrypter->decrypt($encrypt);
     }
-
+    
     public function time()
     {
 
         $time = new Time('+3 week','America/Bogota','es_ES');
         echo $time->humanize().": ";
         echo $time."<br>";
-
+        
         $time = Time::parse('now');
         echo $time->humanize().": ";
         echo $time."<br>";
@@ -177,10 +178,27 @@ class MyLibraries extends BaseController
         echo "Hora: ".$time->hour."<br>";           
         echo "Minuto: ".$time->minute."<br>";        
         echo "Segundo: ".$time->second."<br>";
-
+        
         // $time = Time::parse('March 10, 2017', 'America/Sao_Paulo');
-
+        
         echo $time->humanize();
     }
+    
+    public function file(){
+        //echo dirname(__DIR__);
+        $config = new \Config\Web();
+        
+        // $file = new File('C:\laragon\www\ci4dc\public\robots.txt');
+        $file = new File(dirname(__DIR__,2).'\public\image_rotate.png');
+        
+        $dataHeader = [
+            'title' => "File",
+            'site' => $config->siteName
+        ];
 
+        echo view("dashboard/templates/header", $dataHeader);
+        echo view("librarie/my_file", ['file' => $file]);
+        echo view("dashboard/templates/footer");
+    }
+    
 }

@@ -3,6 +3,8 @@
 
 ## Sección 9 - Extra: Trabajando con librerías
 _El profesor cambió el orden de las video aulas en Ago10_
+### Aula 220 - Trabajando con archivos
+Todo Ok
 ### Aula 219 - Trabajando con las URIs
 Todo Ok
 ### Aula 218 - Trabajando con fechas
