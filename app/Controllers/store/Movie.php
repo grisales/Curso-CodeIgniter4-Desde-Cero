@@ -27,7 +27,7 @@ class Movie extends BaseController
 
         $data = [
             'movies' => $movie->asObject()
-            ->select('movies.*, categories.category_name')
+            ->select('movies.*, categories.category_name, any_value(movies_images.movie_image) as image')
             ->join('categories','categories.category_id = movies.category_id')
             ->join('movies_images','movies_images.movie_id = movies.movie_id','left')
             ->groupBy('movies.movie_id')

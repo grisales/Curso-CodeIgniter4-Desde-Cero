@@ -1,6 +1,8 @@
 # Notas Aulas 
 
 ## Sección 7 - Creando una tienda de peliculas
+### Aula 140 - Mostrar la imagen en el listado
+Todo Ok
 ### Aula 139 - Obtener una imagen por película y paginar los resultados
 Todo Ok
 ### Aula 138 - Crear vista de listado de películas
