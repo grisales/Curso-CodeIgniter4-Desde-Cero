@@ -100,6 +100,7 @@ $routes->group('helper', function($routes)
 
 //* Store */
 $routes->get('/', 'store\Movie::index',['as'=> 'store_movie_index']);
+$routes->get('/store/(:num)', 'store\Movie::show/$1',['as'=> 'store_movie_show']);
 
 
 /** --------------------------------------------------------------------

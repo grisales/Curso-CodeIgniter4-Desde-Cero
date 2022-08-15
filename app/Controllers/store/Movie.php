@@ -38,10 +38,27 @@ class Movie extends BaseController
         $this->_loadDefaultView('Listado de películas',$data,'index');
     }
 
-    public function show()
+    public function show($id = null)
     {
-        # code...
+
+        $movieModel = new MovieModel();
+        $movie = $movieModel->asObject()->find($id);
+        $imageModel = new MovieImageModel();
+
+        if ($movie == null) {
+            throw PageNotFoundException::forPageNotFound();
+        }
+
+        $this->_loadDefaultView(
+            $movie->movie_title,
+            [
+                'movie' => $movie,
+                'images' => $imageModel->getByMovieId($id)
+            ],
+            'show'
+        );
     }
+
 
     /**
      * ==========================================

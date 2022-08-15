@@ -12,12 +12,12 @@
                     <li class="list-group-item" style="color:#dc3545;font-weight: 600;"><?= $m->category_name?></li>
                 </ul>
                 <div class="card-body">
-                <a href="<?= site_url('movie/'.$m->movie_id);?>" class="btn btn-primary">Peli Id [<?= $m->movie_id?>]</a>
-                <a href="#" class="btn btn-primary">Otro Link</a>
+                    <a href="<?= route_to('store_movie_show',$m->movie_id)?>" class="btn btn-info btn-sm float-right"> <i class="fa fa-eye"></i> Ver</a>
+                    <!-- <a href="#" class="btn btn-primary btn-sm float-right">Otro Link</a> -->
               </div>
              </div>
             </div>
         <?php endforeach?>
     </div>
-
+<!--  -->
 <?= $pager->links() ?>
