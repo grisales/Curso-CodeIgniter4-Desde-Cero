@@ -20,14 +20,18 @@ class Movie extends BaseController
 {
     public function index()
     {
-        $config = new Web();
-        $dataHeader = [
-            'title' => "Portada",
-            'site' => $config->siteName
+
+        $movie = new MovieModel();
+
+        $data = [
+            'movies' => $movie->asObject()
+            ->select('movies.*, categories.category_name')
+            ->join('categories','categories.category_id = movies.category_id')
+            ->paginate(6),
+            'pager' => $movie->pager
         ];
 
-        echo view ("dashboard/templates/header", $dataHeader);
-        echo view ("dashboard/templates/footer");
+        $this->_loadDefaultView('Listado de películas',$data,'index');
     }
 
     public function show()
@@ -51,9 +55,9 @@ class Movie extends BaseController
             'site' => $config->siteName
         ];
         
-        echo view ("dashboard/templates/header", $dataHeader);
-        echo view ("dashboard/movie/$view", $data);
-        echo view ("dashboard/templates/footer");
+        echo view ("store/templates/header", $dataHeader);
+        echo view ("store/movie/$view", $data);
+        echo view ("store/templates/footer");
     }
 
 }

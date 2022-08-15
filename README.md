@@ -1,13 +1,14 @@
 # Notas Aulas 
 
+## Sección 7 - Creando una tienda de peliculas
+### Aula 137 - Crear vistas base
+Todo Ok
 ### Aula 136 - Crear controlador base
-
+Todo Ok
 
 <details><summary>[P] Sección 7: Creando una tienda de películas</summary>
 
 ## Sección 7 - Creando una tienda de peliculas
-### 136 - Crear controlador base
-Todo ok
 
 _Pendiente,  el profesor cambió el orden de las video aulas en Ago10_
 </details>
