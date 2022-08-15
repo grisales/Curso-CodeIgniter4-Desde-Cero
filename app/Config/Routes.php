@@ -75,7 +75,7 @@ $routes->get('/my_database', 'Home::my_database');
 // librerias
 $routes->group('lib', function($routes)
 {
-	$routes->get('curl_get', 'MyLibraries::curl_get');
+    $routes->get('curl_get', 'MyLibraries::curl_get');
 	$routes->get('curl_post', 'MyLibraries::curl_post');
 	$routes->get('curl_put', 'MyLibraries::curl_put');
 	$routes->get('curl_remove', 'MyLibraries::curl_remove');
@@ -87,6 +87,12 @@ $routes->group('lib', function($routes)
 	$routes->get('file', 'MyLibraries::file');
 });
 
+//Helpers
+$routes->group('helper', function($routes)
+{
+    $routes->get('array', 'MyHelper::array');
+
+});
 
 /** --------------------------------------------------------------------
  * Additional Routing
