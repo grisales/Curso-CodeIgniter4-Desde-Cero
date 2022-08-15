@@ -1,6 +1,8 @@
 # Notas Aulas 
 
 ## Sección 11 - Extra: Trabajando con Helpers
+### Aula 241 - Text
+Todo ok
 ### Aula 240 - Number
 Todo ok
 ### Aula 239 - File system

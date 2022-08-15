@@ -69,5 +69,19 @@ class MyHelper extends BaseController
         echo number_to_roman(1999);
     }
 
+    public function text()
+    {
+        helper('text');
+
+        // echo random_string('numeric',10);
+        // echo random_string('alpha',10);
+        // echo random_string('alnum',10);
+        // echo increment_string('file','-',8);
+        // echo increment_string('file_7');
+
+        for ($i = 0; $i < 10; $i++) {
+            echo alternator(' German', ' Vilma', ' Julio', ' Patricia');
+        }
+    }
 
 }

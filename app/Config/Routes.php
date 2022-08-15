@@ -93,7 +93,7 @@ $routes->group('helper', function($routes)
     $routes->get('array', 'MyHelper::array');
     $routes->get('filesystem', 'MyHelper::filesystem');
     $routes->get('number', 'MyHelper::number');
-    
+    $routes->get('text', 'MyHelper::text');    
 });
 
 /** --------------------------------------------------------------------
