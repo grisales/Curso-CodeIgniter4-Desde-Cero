@@ -1,6 +1,8 @@
 # Notas Aulas 
 
 ## Sección 7 - Creando una tienda de peliculas
+### Aula 142 - Limitar la cantidad de texto en el listado de peliculas
+Todo Ok
 ### Aula 141 - Crear la estructura para el detalle de la película
 Todo Ok
 ### Aula 140 - Mostrar la imagen en el listado

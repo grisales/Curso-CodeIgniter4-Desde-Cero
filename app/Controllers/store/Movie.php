@@ -9,7 +9,6 @@ use App\Models\MovieImageModel;
 use App\Controllers\BaseController;
 use \CodeIgniter\Exceptions\PageNotFoundException;
 
-helper('text');
 
 // use PayPalCheckoutSdk\Core\PayPalHttpClient;
 // use PayPalCheckoutSdk\Core\SandboxEnvironment;
@@ -22,6 +21,7 @@ class Movie extends BaseController
 {
     public function index()
     {
+        helper('text');
 
         $movie = new MovieModel();
 
