@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controllers;
-use App\Models\CategoryModel;
+namespace App\Controllers\dashboard;
+use App\Models\UserModel;
 use App\Controllers\BaseController;
 use \CodeIgniter\Exceptions\PageNotFoundException;
 
 
-class Category extends BaseController {
+class User extends BaseController {
 
 
     /**
@@ -20,15 +20,15 @@ class Category extends BaseController {
     public function index()
     {
         
-        $category = new CategoryModel();
+        $user = new UserModel();
         
         $data = [
-                'categories' => $category->asObject()
-                ->paginate(6),
-                'pager' => $category->pager,
+                'users' => $user->asObject()
+                ->paginate(10),
+                'pager' => $user->pager,
             ];
 
-        $this->_loadDefaultView(lang('Form.categories_page_title'),$data,'index');
+        $this->_loadDefaultView('Listado de usuarios',$data,'index');
             
     }
 
@@ -43,16 +43,15 @@ class Category extends BaseController {
 
     public function new()
     {
-        $category = new CategoryModel();
+        $user = new UserModel();
         
         $validation = \Config\Services::validation();
         $this->_loadDefaultView
         (
-            lang('Form.create_category'),
+            'Crear usuario',
             [
                 'validation'=>$validation,
-                'category'=> new CategoryModel(),
-                'categories' => $category->asObject()->findAll()
+                'user'=> new UserModel()
             ],
             'new'
         );
@@ -70,18 +69,20 @@ class Category extends BaseController {
 
     public function create()
     {
-        $category = new CategoryModel();
+        helper("user");
+
+        $user = new UserModel();
         
-        if($this->validate('categories'))
-            {
-                
-                $id = $category->insert(
-                [
-                    'category_name' => $this->request->getPost('title')
-                ]);
-            
-            return redirect()->to("dashboard/category/edit/$id")->with('message', lang('Form.sucessful_created_message'));
-            
+        if($this->validate('users'))
+        {
+            $id = $user->insert(
+            [
+                'username' => $this->request->getPost('username'),
+                'email' => $this->request->getPost('email'),
+                'user_type' => 'admin',
+                'password' => hashPassword($this->request->getPost('password'))
+            ]);
+            return redirect()->to("dashboard/user/edit/$id")->with('message', 'Usuario '.$this->request->getPost('username').' creado con éxito!');
         }
         return redirect()->back()->withInput();
         
@@ -98,9 +99,10 @@ class Category extends BaseController {
 
     public function edit($id = null)
     {
-        $category = new CategoryModel();
 
-        if ($category->find($id) == null)
+        $user = new UserModel();
+
+        if ($user->find($id) == null)
         {
             throw PageNotFoundException::forPageNotFound();
         }
@@ -108,10 +110,10 @@ class Category extends BaseController {
         $validation = \Config\Services::validation();
         $this->_loadDefaultView
         (
-            lang('Form.update_category'),
+            'Actualizar usuario',
             [
                 'validation'=>$validation,
-                'category'=>$category->asObject()->find($id),
+                'user'=>$user->asObject()->find($id),
             ],
             'edit'
         );
@@ -129,21 +131,23 @@ class Category extends BaseController {
 
     public function update($id = null)
     {
-        $category = new CategoryModel();
+        helper("user");
 
-        if ($category->find($id) == null)
+        $user = new UserModel();
+
+        if ($user->find($id) == null)
         {
             throw PageNotFoundException::forPageNotFound();
         }
 
-        if($this->validate('categories'))
+        if($this->validate('usersUpdate'))
         {
 
-            $category->update($id, [
-                'category_name' => $this->request->getPost('title'),
+            $user->update($id, [
+                'password' => hashPassword($this->request->getPost('password'))
             ]);
 
-            return redirect()->to('dashboard/category')->with('message', lang('Form.sucessful_update_message', [$id]));
+            return redirect()->to('dashboard/user')->with('message', 'Usuario '.$id.' actualizado con éxito! - <span '.$this->request->getPost('password').'> ');
             
         }
         
@@ -160,18 +164,17 @@ class Category extends BaseController {
      * Descripción
      */
 
-    public function delete($category_id = null)
+    public function delete($user_id = null)
     {
-        $category = new CategoryModel();
+        $user = new UserModel();
 
-        if ($category->find($category_id) == null)
+        if ($user->find($user_id) == null)
         {
             throw PageNotFoundException::forPageNotFound();
         }
 
-        $category->delete($category_id);
-        return redirect()->to('dashboard/category')->with('message', lang('Form.sucessful_delete_message'));
-
+        $user->delete($user_id);
+        return redirect()->to('user')->with('message', 'Usuario '.$user->user_name.' eliminado con éxito!');
     }
 
         
@@ -186,13 +189,14 @@ class Category extends BaseController {
     private function _loadDefaultView($title, $data, $view)
     {
         $config = new \Config\Web();
+        
         $dataHeader = [
             'title' => $title,
             'site' => $config->siteName
         ];
         
         echo view ("dashboard/templates/header", $dataHeader);
-        echo view ("dashboard/category/$view", $data);
+        echo view ("dashboard/user/$view", $data);
         echo view ("dashboard/templates/footer");
 
     }

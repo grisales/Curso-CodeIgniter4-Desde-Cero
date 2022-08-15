@@ -35,20 +35,21 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+// $routes->get('/', 'Home::index');
 $routes->get('/contacto/(:any)', 'Home::contacto/$1',['as' => 'paginaDeContacto']);
 
 $routes->get('/image', 'Home::obtenerImagen');
 $routes->get('/image/(:num)/(:any)', 'Home::obtenerImagen/$1/$2',['as' => 'get_image']);
 $routes->get('/movie/image/(:num)', 'Movie::deleteImage/$1',['as' => 'image_delete']);
 
-$routes->group('dashboard', static function ($routes) {
+$routes->group('dashboard', ['namespace' => '\App\Controllers\dashboard'], static function ($routes) {
     $routes->presenter('movie');
     $routes->presenter('category',['except'=>['show']]);
     $routes->presenter('user',['except'=>['show']]);
     $routes->resource('movie');
 });
 
+// Rutas de autenticación
 $routes->get('/login', 'web\User::login',['as' => 'user_login_get']);
 $routes->post('/login_post', 'web\User::login_post',['as' => 'user_login_post']);
 $routes->post('/logout', 'web\User::logout',['as' => 'user_logout']);
@@ -96,6 +97,10 @@ $routes->group('helper', function($routes)
     $routes->get('text', 'MyHelper::text');    
     $routes->get('url', 'MyHelper::url');    
 });
+
+//* Store */
+$routes->get('/', 'store\Movie::index',['as'=> 'store_movie_index']);
+
 
 /** --------------------------------------------------------------------
  * Additional Routing

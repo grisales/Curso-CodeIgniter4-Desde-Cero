@@ -1,5 +1,20 @@
 # Notas Aulas 
 
+### Aula 136 - Crear controlador base
+
+
+<details><summary>[P] Sección 7: Creando una tienda de películas</summary>
+
+## Sección 7 - Creando una tienda de peliculas
+### 136 - Crear controlador base
+Todo ok
+
+_Pendiente,  el profesor cambió el orden de las video aulas en Ago10_
+</details>
+
+<details><summary>[Ok] Secciones "Extra": [9]Librerias, [10]Componentes y [11]helpers</summary>
+<details><summary>[Ok] Sección 11 - Extra: Trabajando con helpers</summary>
+
 ## Sección 11 - Extra: Trabajando con Helpers
 ### Aula 242 - Url
 Todo ok
@@ -11,18 +26,6 @@ Todo ok
 Todo ok
 ### Aula 238 - Array helper
 Todo ok
-
-<details><summary>[P] Sección 7: Creando una tienda de películas</summary>
-
-## Sección 7 - Creando una tienda de peliculas
-_Pendiente,  el profesor cambió el orden de las video aulas en Ago10_
-</details>
-
-<details><summary>[P] Secciones "Extra": [10]Componentes, [9]Librerias y [11]helpers</summary>
-<details><summary>[P] Sección 11 - Extra: Trabajando con helpers</summary>
-
-## Sección 11 - Extra: Trabajando con helpers
-_Pendiente,  el profesor cambió el orden de las video aulas en Ago10_
 </details>
 <details><summary>[Ok] Sección 10 - Extra: Avanzado - Mas componentes de CodeIgniter 4</summary>
 

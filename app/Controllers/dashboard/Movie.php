@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Controllers;
-// namespace App\Controllers\dashboard;
+// namespace App\Controllers;
+namespace App\Controllers\dashboard;
 use App\Models\MovieModel;
 use App\Models\CategoryModel;
 use App\Models\MovieImageModel;
