@@ -1,6 +1,8 @@
 # Notas Aulas 
 
 ## Sección 11 - Extra: Trabajando con Helpers
+### Aula 242 - Url
+Todo ok
 ### Aula 241 - Text
 Todo ok
 ### Aula 240 - Number

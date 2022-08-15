@@ -94,6 +94,7 @@ $routes->group('helper', function($routes)
     $routes->get('filesystem', 'MyHelper::filesystem');
     $routes->get('number', 'MyHelper::number');
     $routes->get('text', 'MyHelper::text');    
+    $routes->get('url', 'MyHelper::url');    
 });
 
 /** --------------------------------------------------------------------

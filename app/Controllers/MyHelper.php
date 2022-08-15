@@ -84,4 +84,16 @@ class MyHelper extends BaseController
         }
     }
 
+    public function url()
+    {
+        // echo site_url('noticia/otro/12');
+        $segment = ['noticia','otro',13];
+        echo site_url($segment);
+        echo "<br>";
+        echo base_url();
+        echo "<br>";
+        echo base_url($segment);
+        echo "<br>";
+        echo uri_string();
+    }
 }
