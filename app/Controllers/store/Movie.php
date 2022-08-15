@@ -29,6 +29,8 @@ class Movie extends BaseController
             'movies' => $movie->asObject()
             ->select('movies.*, categories.category_name')
             ->join('categories','categories.category_id = movies.category_id')
+            ->join('movies_images','movies_images.movie_id = movies.movie_id','left')
+            ->groupBy('movies.movie_id')
             ->paginate(6),
             'pager' => $movie->pager
         ];
