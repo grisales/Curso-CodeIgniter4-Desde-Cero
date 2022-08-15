@@ -91,7 +91,8 @@ $routes->group('lib', function($routes)
 $routes->group('helper', function($routes)
 {
     $routes->get('array', 'MyHelper::array');
-
+    $routes->get('filesystem', 'MyHelper::filesystem');
+    
 });
 
 /** --------------------------------------------------------------------

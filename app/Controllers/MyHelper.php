@@ -24,4 +24,19 @@ class MyHelper extends BaseController
         var_dump($val);
     }
 
+    public function filesystem()
+    {
+        helper('filesystem');
+
+        // $map = directory_map('.');
+        // $map = directory_map('./bootstrap');
+        // $map = directory_map('./bootstrap',1);
+        // $map = directory_map('../');
+        // $map = directory_map('../',1);
+        // $map = directory_map('../app',1);
+        // var_dump($map);
+
+        write_file('./bootstrap/customcss.css', 'body{color:red}');
+    }
+
 }
