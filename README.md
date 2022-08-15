@@ -1,6 +1,8 @@
 # Notas Aulas 
 
 ## Sección 11 - Extra: Trabajando con Helpers
+### Aula 240 - Number
+Todo ok
 ### Aula 239 - File system
 Todo ok
 ### Aula 238 - Array helper
