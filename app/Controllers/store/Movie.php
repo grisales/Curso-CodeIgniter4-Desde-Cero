@@ -9,6 +9,8 @@ use App\Models\MovieImageModel;
 use App\Controllers\BaseController;
 use \CodeIgniter\Exceptions\PageNotFoundException;
 
+helper('text');
+
 // use PayPalCheckoutSdk\Core\PayPalHttpClient;
 // use PayPalCheckoutSdk\Core\SandboxEnvironment;
 // use App\Controllers\Store\CustomBaseController;

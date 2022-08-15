@@ -1,38 +1,23 @@
-<a href="movie/new" class="btn btn-success mb-4"><i class="fa-solid fa-plus"></i> Crear</a>
-
-    <table class="table table-hover ">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Categoría</th>
-                <th>Opciones</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="row row-cols-1 row-cols-md-3">
         <?php foreach ($movies as $key => $m): ?>
-            <tr>
-                <td><?= $m->movie_id?></td>
-                <td>
-                    <span><?= $m->movie_title?></span>
-                </td>
-                <td><?= $m->category_name?></td>
-                <td>
-                    
-                    <form action="movie/delete/<?= $m->movie_id ?>" method="POST">
-                        <!-- <input type="submit" class="btn btn-danger btn-sm mt-2" name="submit" value="Borrar" /> -->
-                        <button data-toggle="tooltip" data-placement="top" title="Borrar" type="submit" class="btn btn-danger btn-sm m-2 float-right" value="Borrar">
-                            <i class="fa-solid fa-trash-can"></i>
-                        </button>
-                    </form>
-                    
-                    <a data-toggle="tooltip" data-placement="top" title="Editar" class="btn btn-primary btn-sm m-2 float-right" href="movie/edit/<?= $m->movie_id ?>"><i class="fa-solid fa-pen-to-square"></i> </a>
-                    
-                    <a data-toggle="tooltip" data-placement="top" title="Ver" class="btn btn-primary btn-sm m-2 float-right" href="movie/<?= $m->movie_id ?>"><i class="fa fa-eye"></i></a>
-                </td>
-            </tr>
-            <?php endforeach?>
-        </tbody>
-    </table>
+            <div class="col mb-4">
+             <div class="card h-100">
+              <img src="https://dummyimage.com/600x400/4290de/fff.png&text=Peli+<?= $m->movie_id?>" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title"><?= $m->movie_title?></h5>
+                  <p class="card-text"><?= character_limiter($m->movie_description,60)?></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-danger" style="color:#fff;font-weight: 600;">Género</li>
+                    <li class="list-group-item" style="color:#dc3545;font-weight: 600;"><?= $m->category_name?></li>
+                </ul>
+                <div class="card-body">
+                <a href="<?= site_url('movie/'.$m->movie_id);?>" class="btn btn-primary">Peli Id [<?= $m->movie_id?>]</a>
+                <a href="#" class="btn btn-primary">Otro Link</a>
+              </div>
+             </div>
+            </div>
+        <?php endforeach?>
+    </div>
 
 <?= $pager->links() ?>

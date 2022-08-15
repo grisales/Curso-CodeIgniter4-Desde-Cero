@@ -1,6 +1,8 @@
 # Notas Aulas 
 
 ## Sección 7 - Creando una tienda de peliculas
+### Aula 138 - Crear vista de listado de películas
+Todo Ok
 ### Aula 137 - Crear vistas base
 Todo Ok
 ### Aula 136 - Crear controlador base
