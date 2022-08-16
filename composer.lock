@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "codeigniter4/framework",
-            "version": "v4.2.1",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeigniter4/framework.git",
-                "reference": "f65a2cff3a572c58c8ab9c8f61bdba904362b549"
+                "reference": "f91bc95493dcbdc398372e1366f09827656f2982"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeigniter4/framework/zipball/f65a2cff3a572c58c8ab9c8f61bdba904362b549",
-                "reference": "f65a2cff3a572c58c8ab9c8f61bdba904362b549",
+                "url": "https://api.github.com/repos/codeigniter4/framework/zipball/f91bc95493dcbdc398372e1366f09827656f2982",
+                "reference": "f91bc95493dcbdc398372e1366f09827656f2982",
                 "shasum": ""
             },
             "require": {
@@ -62,20 +62,20 @@
                 "slack": "https://codeigniterchat.slack.com",
                 "source": "https://github.com/codeigniter4/CodeIgniter4"
             },
-            "time": "2022-06-16T13:53:25+00:00"
+            "time": "2022-08-13T13:46:07+00:00"
         },
         {
             "name": "kint-php/kint",
-            "version": "4.1.3",
+            "version": "4.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kint-php/kint.git",
-                "reference": "055630e77a9ae625968ade09addb0bd57ce1f4b3"
+                "reference": "84a61c9b19abd4bed2b961af8254d38deae33d44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kint-php/kint/zipball/055630e77a9ae625968ade09addb0bd57ce1f4b3",
-                "reference": "055630e77a9ae625968ade09addb0bd57ce1f4b3",
+                "url": "https://api.github.com/repos/kint-php/kint/zipball/84a61c9b19abd4bed2b961af8254d38deae33d44",
+                "reference": "84a61c9b19abd4bed2b961af8254d38deae33d44",
                 "shasum": ""
             },
             "require": {
@@ -125,9 +125,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kint-php/kint/issues",
-                "source": "https://github.com/kint-php/kint/tree/4.1.3"
+                "source": "https://github.com/kint-php/kint/tree/4.1.4"
             },
-            "time": "2022-07-12T15:40:11+00:00"
+            "time": "2022-07-30T16:29:40+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
@@ -2323,25 +2323,25 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v2.5.2",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66"
+                "reference": "26954b3d62a6c5fd0ea8a2a00c0353a14978d05c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
-                "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/26954b3d62a6c5fd0ea8a2a00c0353a14978d05c",
+                "reference": "26954b3d62a6c5fd0ea8a2a00c0353a14978d05c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1"
+                "php": ">=8.0.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.5-dev"
+                    "dev-main": "3.0-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -2370,7 +2370,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.2"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.0.2"
             },
             "funding": [
                 {
@@ -2386,7 +2386,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-02T09:53:40+00:00"
+            "time": "2022-01-02T09:55:41+00:00"
         },
         {
             "name": "theseer/tokenizer",

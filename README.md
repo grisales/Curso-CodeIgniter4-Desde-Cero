@@ -1,6 +1,8 @@
 # Notas Aulas 
 
 ## Sección 7 - Creando una tienda de peliculas
+### Aula 143 - Agregar columna para el precio a la película
+Todo Ok
 ### Aula 142 - Limitar la cantidad de texto en el listado de peliculas
 Todo Ok
 ### Aula 141 - Crear la estructura para el detalle de la película
